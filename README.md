@@ -3,7 +3,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/S2-group/android-runner/badge.svg?branch=master)](https://coveralls.io/github/S2-group/android-runner?branch=master&service=github)
 # Android Runner
 Android Runner (AR) is a tool for automatically executing measurement-based experiments on native and web apps running on Android devices.
-The following scientific publication gives an overview about the main components, plugins, and configurations of Android Runner (as of 2020): [A-Mobile 2020 publication](https://github.com/S2-group/android-runner/blob/master/documentation/A_Mobile_2020.pdf).  
+
+The following scientific publication gives an overview about the main components, plugins, and configurations of Android Runner (as of 2020): [A-Mobile 2020 publication](https://github.com/S2-group/android-runner/blob/master/documentation/A_Mobile_2020.pdf)  
+
+A complete tutorial on how to use Android Runner is available in the following YouTube playlist: [Android Runner Tutorials (YouTube)](https://www.youtube.com/watch?v=-ZXT176ljjI&list=PLLbZZOioDh3P50WcYbuBMZEJokJH3ZONr)    
 
 As visualized below, Android Runner consists of the following components:
 - **Experiment orchestrator**: Is in charge of executing the whole experiment according to the experiment configuration provided by the user.
@@ -22,7 +25,7 @@ If Android Runner is helping your research, consider to cite it as follows, than
 ``` 
 @inproceedings{A_Mobile_2020,
   title={{A Framework for the Automatic Execution of Measurement-based Experiments on Android Devices}},
-  author={Ivano Malavolta and Eoin Maritno Grua and Cheng-Yu Lam and Randy de Vries and Franky Tan and Eric Zielinski and Michael Peters and Luuk Kaandorp},
+  author={Ivano Malavolta and Eoin Martino Grua and Cheng-Yu Lam and Randy de Vries and Franky Tan and Eric Zielinski and Michael Peters and Luuk Kaandorp},
   booktitle={35th IEEE/ACM International Conference on Automated Software Engineering Workshops (ASEW '20)},
   year={2020},
   url= {https://github.com/S2-group/android-runner/blob/master/documentation/A_Mobile_2020.pdf},
@@ -170,6 +173,7 @@ Currently, Android Runner contains the plugins listed below, they can immediatel
 | [mem-CPU](./AndroidRunner/Plugins/android/) (Performance)       | Collects memory and CPU usage via the `cpuinfo` and `meminfo` Android utilities found in ADB's [dumpsys](https://developer.android.com/studio/command-line/dumpsys).                                                                                                                        |
 | [frametimes](./AndroidRunner/Plugins/frametimes/) (Performance) | Collects frame rendering durations and the number of delayed frames with the technique used in [this article](https://dl.acm.org/doi/pdf/10.1145/2897073.2897100?casa_token=jD3bYLV001kAAAAA:OZiAzZFwtvSO-uK3hgWlz6iNVcTt6uYoT1UWroDEGhDHrEBvLbsIl4E13RhAtRK4IaEPd6putLTzzZw).              |
 | [gc](./AndroidRunner/Plugins/trepn/) (Performance)              | Collects the number of garbage collections as in [this article](https://dl.acm.org/doi/pdf/10.1145/2897073.2897100?casa_token=jD3bYLV001kAAAAA:OZiAzZFwtvSO-uK3hgWlz6iNVcTt6uYoT1UWroDEGhDHrEBvLbsIl4E13RhAtRK4IaEPd6putLTzzZw).                                                            |
+| [perfume_js](./AndroidRunner/Plugins/perfume_js/) (Performance)              | Collects performance metrics using the `Perfume.js` library, e.g. FP, FCP, NavigationTiming, storageEstimate and networkInformation.                                                            |
 > Did you develop a plugin for Android Runner? You can [create a pull request](https://github.com/iivanoo/covid-apps-observer/pulls/new) in this repository and we will include it!
 
 
