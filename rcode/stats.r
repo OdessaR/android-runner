@@ -1,6 +1,7 @@
 library(magrittr) #to use %>% notation
 library(tidyverse)
 library(dplyr)
+library(ggplot2)
 
 #get csv paths of test folder
 csv_paths_test <- list.files(path="./data/test",
@@ -59,3 +60,27 @@ res.ttest
 #effect size?
 require(effsize)
 cohen.d(Joule_calculated ~ experiment, data = test_data)
+
+
+
+ggplot(test_data, aes(y=Joule_calculated, x=experiment, fill=experiment)) + 
+    #limits are possible
+    #ylim(50, 55) +
+    #add labels
+    xlab("Experiment") + ylab("Joule calculated") + 
+    #interesting looking shape represents the distribution
+    geom_violin(trim=FALSE, alpha=1) +
+    #add boxplots
+    geom_boxplot() +
+    #add points
+    stat_summary(fun=mean, color='black', geom ='point')
+ 
+ggplot(test_data, aes(y=Joule_calculated, x=experiment, fill=experiment)) + 
+  #points
+  geom_jitter(width=.1) +
+  #add boxplots
+  geom_boxplot() +
+  #add points
+  stat_summary(fun=mean, color='black', geom ='point')
+
+geom_qq()
