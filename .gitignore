@@ -113,3 +113,6 @@ AndroidRunner/Plugins/monsoon/script/monsoon_config.csv
 # ignore any ouputs of experiments
 rcode/output/
 rcode/.Rproj.user
+.Rproj.user
+rcode/.RData
+rcode/.Rhistory
