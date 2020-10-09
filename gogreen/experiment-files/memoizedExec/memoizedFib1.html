@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1 id="mytext">0</h1>
+
+    <!-- MEMOIZATION LIB -->
+    <script src="../lib/memoization.js"></script>
+
+    <!-- WEBSITE -->
+    <script src="../websites/fibo1/main.js"></script>
+
+    <!-- EXECUTION -->
+    <script type="text/javascript">
+        const memoFunc = memoizer(fibonacci)
+
+        var i;
+        for (i = 0; i < 40; i++) {
+            // execute function(s)
+
+            console.log(memoFunc(i));
+
+            var h = document.getElementById('mytext');
+            h.firstChild.nodeValue = memoFunc(i);
+        }
+    </script>
+</body>
+</html>

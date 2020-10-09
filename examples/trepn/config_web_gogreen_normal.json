@@ -3,15 +3,15 @@
   "devices": {
     "nexusLab": {}
   },
-  "repetitions": 15,
+  "repetitions": 2,
   "randomization": false,
   "browsers": [
-    "chrome"
+    "firefox"
   ],
   "paths": [
-    "https://google.com/",
-    "https://apple.com/",
-    "https://wikipedia.com/"
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib1.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib2.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib3.html"
   ],
   "profilers": {
     "trepn": {
@@ -22,9 +22,8 @@
         "battery_power_source_selection": "Direct Power"
       },
       "data_points": [
-        "battery_remaining",
         "battery_power",
-        "cpu_load",
+        "cpu_load_normalized",
         "mem_usage"
       ]
     }
