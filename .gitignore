@@ -114,3 +114,5 @@ AndroidRunner/Plugins/monsoon/script/monsoon_config.csv
 rcode/output/
 rcode/.Rproj.user
 .Rproj.user
+rcode/.RData
+rcode/.Rhistory
