@@ -4,9 +4,10 @@
     "nexusLab": {}
   },
   "repetitions": 2,
+  "duration": 30000,
   "randomization": false,
   "browsers": [
-    "firefox"
+    "chrome"
   ],
   "paths": [
     "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib1.html",
@@ -36,8 +37,7 @@
       {
         "type": "python3",
         "path": "Scripts/interaction.py",
-        "timeout": 500,
-        "logcat_regex": "some keyword"
+        "timeout": 50000
       }
     ],
     "before_close": "Scripts/before_close.py",
