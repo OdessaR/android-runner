@@ -119,3 +119,6 @@ rcode/.Rhistory
 
 # ignore macOS
 .DS_Store
+
+# ignore WEBSITES
+gogreen/experiment-files/websites/*
