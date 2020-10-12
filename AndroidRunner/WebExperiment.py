@@ -46,7 +46,8 @@ class WebExperiment(Experiment):
     def before_run(self, device, path, run, *args, **kwargs):
         super(WebExperiment, self).before_run(device, path, run)
         device.shell('logcat -c')
-        browser = args[0]
+        browser = args[0]   
+        device.shell('echo "chrome --disable-fre --no-default-browser-check --no-first-run" > /data/local/tmp/chrome-command-line')
         browser.start(device)
         time.sleep(5)
 
