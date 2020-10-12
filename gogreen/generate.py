@@ -43,7 +43,7 @@ for path in glob(os.path.sep.join(["experiment-files", "normalExec", "*"])):
 
         i = 0
         for line in lines:
-            if line is None: lines[i] = "\n".join(["        /* ==> CONF: MEMOIZE FUNCTION */", "        const memoFunc = memoizer(%s)" % fn_name])
+            if line is None: lines[i] = "\n".join(["        /* ==> CONF: MEMOIZE FUNCTION */", "        const memoFunc = memoizer(%s);\n" % fn_name])
             i += 1
         
         path_parts = os.path.splitext(os.path.basename(path))
