@@ -48,7 +48,8 @@ class WebExperiment(Experiment):
         device.shell('logcat -c')
         browser = args[0]
         device.clear_app_data('com.android.chrome')
-        device.shell('echo "chrome --disable-fre --no-default-browser-check --no-first-run" > /data/local/tmp/chrome-command-line')
+        #device.shell('echo "chrome --disable-fre --no-default-browser-check --no-first-run" > /data/local/tmp/chrome-command-line')
+        device.shell('am set-debug-app --persistent com.android.chrome')
         device.shell('pm grant com.android.chrome android.permission.READ_EXTERNAL_STORAGE')
         browser.start(device)
         time.sleep(5)
