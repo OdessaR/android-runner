@@ -10,6 +10,7 @@
     "chrome"
   ],
   "paths": [
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoized360doc.com.html",
     "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedFib1.html",
     "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedFib2.html",
     "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedFib3.html"

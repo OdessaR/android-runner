@@ -1,7 +1,7 @@
 {
   "type": "web",
   "devices": {
-    "nexusLab": {}
+    "emu": {}
   },
   "repetitions": 2,
   "duration": 30000,
@@ -10,6 +10,7 @@
     "chrome"
   ],
   "paths": [
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/360doc.com.html",
     "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib1.html",
     "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib2.html",
     "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib3.html"
@@ -24,6 +25,7 @@
       },
       "data_points": [
         "battery_power",
+        "battery_remaining",
         "cpu_load_normalized",
         "mem_usage"
       ]
