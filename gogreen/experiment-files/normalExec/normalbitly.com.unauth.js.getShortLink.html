@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        var jQuery = {"ajaxSetup":()=>{}};
+        var _xsrf = "";
+        var cookieValue = "";
+        var shortlinks =  []
+
+        function getHash(shortLink) {
+            return shortLink.split("/").pop();
+        }
+
+        function getShortLink(hash) {
+            var shortlink;
+            for (var i = 0; i < shortlinks.length; i++) {
+                if (getHash(shortlinks[i]) === hash) {
+                    shortlink = shortlinks[i];
+                }
+            }
+            return shortlink;
+        }
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        var set = [
+        "1/=2",
+        "1/=2&a=b",
+        "1=2&a=b&c=3",
+        "1/=2&a=b&c=3&q=z",
+        "1/=1#1=2&a=b&c=3&q=z",
+        "/",
+        "1/=1&1=2",
+        "1=/1&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2",
+        "-",
+        "",
+        ".",
+        "f097a/sf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%g",
+        ];
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            for (i = 0; i < set.length; i++) {
+                // memo
+                
+                console.log(getShortLink(set[i]));
+            }
+            break;
+
+        }
+    </script>
+</body>
+</html>
