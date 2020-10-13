@@ -10,9 +10,16 @@
     "chrome"
   ],
   "paths": [
-    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedFib1.html",
-    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedFib2.html",
-    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedFib3.html"
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoized360doc.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoized58.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedAbc.es.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedAccenture.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedHola.org.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedJrj.com.cn.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedLast.fm.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedNba.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedOracle.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/memoizedExec/memoizedWebs.com.html"
   ],
   "profilers": {
     "trepn": {
