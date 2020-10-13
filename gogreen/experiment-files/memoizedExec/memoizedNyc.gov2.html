@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/nyc.gov/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(validateRange);
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var d = new Date(2018, 11, 24, 10, 33, 30, 0),
+                c = new Date(2019, 8, 21, 9, 15, 20, 0);
+            for (x = 0; x < 40; x++) {
+                // memo
+                memoFunc(d,c)
+            }
+
+        }
+    </script>
+</body>
+</html>

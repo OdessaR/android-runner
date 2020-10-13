@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/tutorialspoint.com/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(isEmail);
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var d = "lorum@ipsum.com";
+            for (x = 0; x < 40; x++) {
+                // memo
+                memoFunc(d)
+            }
+
+        }
+    </script>
+</body>
+</html>
