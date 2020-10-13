@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/accenture.com/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(code);
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var myStringArray = ['https://mozilla.org/?x=шеллы','https://mozilla.org/?x=шеллыäüöü+','https://mozilla.org/?x=+-.','https://mozilla.org/?x=123456','https://mozilla.org/?x=qerfg6zh,','https://mozilla.org/?x=12345trg"§$','https://mozilla.org/?x==?Ü','https://mozilla.org/?x=Ä,','https://mozilla.org/?x=1589/*-+-554','https://mozilla.org/?x=58965','https://mozilla.org/?x=шеллы','https://mozilla.org/?x=loaf','https://mozilla.org/?x=23456','https://mozilla.org/?x=+#*','https://mozilla.org/?x=üöäöü','https://mozilla.org/?x=+äöüöö#+üöä$%&','https://mozilla.org/?x= äüö','https://mozilla.org/?x= ()6','https://mozilla.org/?x=[adfsfdg]].','https://mozilla.org/?x=adsf','https://mozilla.org/?x=jh','https://mozilla.org/?x=123456()','https://mozilla.org/?x=?','https://mozilla.org/?x=12wedf,','https://mozilla.org/?x==)','https://mozilla.org/?x=.-,PÖL','https://mozilla.org/?x=ÜÄÖÖÄöüäÜÄöäüö'];
+            var arrayLength = myStringArray.length;
+            for (var i = 0; i < arrayLength; i++) {
+                // memo
+                memoFunc(myStringArray[i]);
+            }
+
+        }
+    </script>
+</body>
+</html>

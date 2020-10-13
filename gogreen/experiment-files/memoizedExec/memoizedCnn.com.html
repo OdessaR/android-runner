@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -8,22 +8,21 @@
 <body>
     <!-- memoization lib -->
     <script src="../lib/memoization.js"></script>
-
     <!-- ==> CONF: WEBSITE -->
-    <script src="../websites/fibo3/main.js"></script>
+    <script src="../websites/cnn.com/main.js"></script>
 
     <!-- exectution -->
     <script type="text/javascript">
-
         /* ==> CONF: MEMOIZE FUNCTION */
-        const memoFunc = memoizer(fibonacci)
+        const memoFunc = memoizer(transform);
 
         while (true) {
 
             /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
-            var i;
-            for (i = 0; i < 40; i++) {
-                memoFunc(i)
+            var d = "tWSnIKzBnPJl4PBWTe7m";
+            for (x = 0; x < 40; x++) {
+                // memo
+                memoFunc(d)
             }
 
         }
