@@ -1,0 +1,252 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "118", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "            },\n", "            C = function(a, c, d) {\n", "                b[(d ? \"add\" : \"remove\") + \"Class\"](a, \"pswp__\" + c)\n", "            },\n", "            D = function() {\n", "                var a = 1 === q.getNumItemsFn();\n", "                a !== p && (C(d, \"ui--one-slide\", a), p = a)\n", "            },\n", "            E = function() {\n", "                C(i, \"share-modal--hidden\", y)\n", "            },\n", "            F = function() {\n", "                return y = !y, y ? (b.removeClass(i, \"pswp__share-modal--fade-in\"), setTimeout(function() {\n", "                    y && E()\n", "                }, 300)) : (E(), setTimeout(function() {\n", "                    y || b.addClass(i, \"pswp__share-modal--fade-in\")\n", "                }, 30)), y || H(), !1\n", "            },\n", "            G = function(b) {\n", "                var c = b.target || b.srcElement;\n", "            },\n", "            H = function() {\n", "                for (var a, b, c, d, e, f = \"\", g = 0; g < q.shareButtons.length; g++) a = q.shareButtons[g], c = q.getImageURLForShare(a), d = q.getPageURLForShare(a), e = q.getTextForShare(a), b = a.url.replace(\"{{url}}\", encodeURIComponent(d)).replace(\"{{image_url}}\", encodeURIComponent(c)).replace(\"{{raw_image_url}}\", c).replace(\"{{text}}\", encodeURIComponent(e)), f += '<a href=\"' + b + '\" target=\"_blank\" class=\"pswp__share--' + a.id + '\"' + (a.download ? \"download\" : \"\") + \">\" + a.label + \"</a>\", q.parseShareButtonOut && (f = q.parseShareButtonOut(a, f));\n", "                i.children[0].innerHTML = f, i.children[0].onclick = G\n", "            },\n", "            I = function(a) {\n", "                for (var c = 0; c < q.closeElClasses.length; c++)\n", "                    if (b.hasClass(a, \"pswp__\" + q.closeElClasses[c])) return !0\n", "            },\n", "            J = 0,\n", "            K = function() {\n", "                clearTimeout(u), J = 0, k && v.setIdle(!1)\n", "            },\n", "            L = function(a) {\n", "                var b = a.relatedTarget || a.toElement;\n", "                b && \"HTML\" !== b.nodeName || (clearTimeout(u), u = setTimeout(function() {\n", "                    v.setIdle(!0)\n", "                }, q.timeToIdleOutside))\n", "            },\n", "            M = function() {\n", "                q.fullscreenEl && (c || (c = v.getFullscreenAPI()), c ? (b.bind(document, c.eventK, v.updateFullscreen), v.updateFullscreen(), b.addClass(a.template, \"pswp--supports-fs\")) : b.removeClass(a.template, \"pswp--supports-fs\"))\n", "            },\n", "            N = function() {\n", "                q.preloaderEl && (O(!0), l(\"beforeChange\", function() {\n", "                    clearTimeout(o), o = setTimeout(function() {\n", "                        a.currItem && a.currItem.loading ? (!a.allowProgressiveImg() || a.currItem.img && !a.currItem.img.naturalWidth) && O(!1) : O(!0)\n", "                    }, q.loadingIndicatorDelay)\n", "                }), l(\"imageLoadComplete\", function(b, c) {\n", "                    a.currItem === c && O(!0)\n", "                }))\n", "            },\n", "            O = function(a) {\n", "                n !== a && (C(m, \"preloader--active\", !a), n = a)\n", "            },\n", "            P = function(a) {\n", "                var c = a.vGap;\n", "                if (B()) {\n", "                    var g = q.barsSize;\n", "                    if (q.captionEl && \"auto\" === g.bottom)\n", "                        if (f || (f = b.createEl(\"pswp__caption pswp__caption--fake\"), f.appendChild(b.createEl(\"pswp__caption__center\")), d.insertBefore(f, e), b.addClass(d, \"pswp__ui--fit\")), q.addCaptionHTMLFn(a, f, !0)) {\n", "                            var h = f.clientHeight;\n", "                            c.bottom = parseInt(h, 10) || 44\n", "                        } else c.bottom = g.top;\n", "                    else c.bottom = g.bottom;\n", "                    c.top = g.top\n", "                } else c.top = c.bottom = 0\n", "            },\n", "            Q = function() {\n", "                q.timeToIdle && l(\"mouseUsed\", function() {\n", "                    b.bind(document, \"mousemove\", K), b.bind(document, \"mouseout\", L), t = setInterval(function() {\n", "                        J++, 2 === J && v.setIdle(!0)\n", "                    }, q.timeToIdle / 2)\n", "                })\n", "            },\n", "            R = function() {\n", "                l(\"onVerticalDrag\", function(a) {\n", "                    x && .95 > a ? v.hideControls() : !x && a >= .95 && v.showControls()\n", "                });\n", "                var a;\n", "                l(\"onPinchClose\", function(b) {\n", "                    x && .9 > b ? (v.hideControls(), a = !0) : a && !x && b > .9 && v.showControls()\n", "                }), l(\"zoomGestureEnded\", function() {\n", "                    a = !1, a && !x && v.showControls()\n", "                })\n", "            },\n", "            S = [{\n", "                name: \"caption\",\n", "                option: \"captionEl\",\n", "                onInit: function(a) {\n", "                    e = a\n", "                }\n", "            }, {\n", "                name: \"share-modal\",\n", "                option: \"shareEl\",\n", "                onInit: function(a) {\n", "                    i = a\n", "                },\n", "                onTap: function() {\n", "                    F()\n", "                }\n", "            }, {\n", "                name: \"button--share\",\n", "                option: \"shareEl\",\n", "                onInit: function(a) {\n", "                    h = a\n", "                },\n", "                onTap: function() {\n", "                    F()\n", "                }\n", "            }, {\n", "                name: \"button--zoom\",\n", "                option: \"zoomEl\",\n", "                onTap: a.toggleDesktopZoom\n", "            }, {\n", "                name: \"counter\",\n", "                option: \"counterEl\",\n", "                onInit: function(a) {\n", "                    g = a\n", "                }\n", "            }, {\n", "                name: \"button--close\",\n", "                option: \"closeEl\",\n", "                onTap: a.close\n", "            }, {\n", "                name: \"button--arrow--left\",\n", "                option: \"arrowEl\",\n", "                onTap: a.prev\n", "            }, {\n", "                name: \"button--arrow--right\",\n", "                option: \"arrowEl\",\n", "                onTap: a.next\n", "            }, {\n", "                name: \"button--fs\",\n", "                option: \"fullscreenEl\",\n", "                onTap: function() {\n", "                    c.isFullscreen() ? c.exit() : c.enter()\n", "                }\n", "            }, {\n", "                name: \"preloader\",\n", "                option: \"preloaderEl\",\n", "                onInit: function(a) {\n", "                    m = a\n", "                }\n", "            }],\n", "            T = function() {\n", "                var a, c, e, f = function(d) {\n", "                    if (d)\n", "                        for (var f = d.length, g = 0; f > g; g++) {\n", "                            a = d[g], c = a.className;\n", "                            for (var h = 0; h < S.length; h++) e = S[h], c.indexOf(\"pswp__\" + e.name) > -1 && (q[e.option] ? (b.removeClass(a, \"pswp__element--disabled\"), e.onInit && e.onInit(a)) : b.addClass(a, \"pswp__element--disabled\"))\n", "                        }\n", "                };\n", "                f(d.children);\n", "                var g = b.getChildByClass(d, \"pswp__top-bar\");\n", "                g && f(g.children)\n", "            };\n", "        v.init = function() {\n", "            b.extend(a.options, z, !0), q = a.options, d = b.getChildByClass(a.scrollWrap, \"pswp__ui\"), l = a.listen, R(), l(\"beforeChange\", v.update), l(\"doubleTap\", function(b) {\n", "                var c = a.currItem.initialZoomLevel;\n", "                a.getZoomLevel() !== c ? a.zoomTo(c, b, 333) : a.zoomTo(q.getDoubleTapZoom(!1, a.currItem), b, 333)\n", "            }), l(\"preventDragEvent\", function(a, b, c) {\n", "                var d = a.target || a.srcElement;\n", "                d && d.className && a.type.indexOf(\"mouse\") > -1 && (d.className.indexOf(\"__caption\") > 0 || /(SMALL|STRONG|EM)/i.test(d.tagName)) && (c.prevent = !1)\n", "            }), l(\"bindEvents\", function() {\n", "                b.bind(d, \"pswpTap click\", A), b.bind(a.scrollWrap, \"pswpTap\", v.onGlobalTap), a.likelyTouchDevice || b.bind(a.scrollWrap, \"mouseover\", v.onMouseOver)\n", "            }), l(\"unbindEvents\", function() {\n", "                y || F(), t && clearInterval(t), b.unbind(document, \"mouseout\", L), b.unbind(document, \"mousemove\", K), b.unbind(d, \"pswpTap click\", A), b.unbind(a.scrollWrap, \"pswpTap\", v.onGlobalTap), b.unbind(a.scrollWrap, \"mouseover\", v.onMouseOver), c && (b.unbind(document, c.eventK, v.updateFullscreen), c.isFullscreen() && (q.hideAnimationDuration = 0, c.exit()), c = null)\n", "            }), l(\"destroy\", function() {\n", "                q.captionEl && (f && d.removeChild(f), b.removeClass(e, \"pswp__caption--empty\")), i && (i.children[0].onclick = null), b.removeClass(d, \"pswp__ui--over-close\"), b.addClass(d, \"pswp__ui--hidden\"), v.setIdle(!1)\n", "            }), q.showAnimationDuration || b.removeClass(d, \"pswp__ui--hidden\"), l(\"initialZoomIn\", function() {\n", "                q.showAnimationDuration && b.removeClass(d, \"pswp__ui--hidden\")\n", "            }), l(\"initialZoomOut\", function() {\n", "                b.addClass(d, \"pswp__ui--hidden\")\n", "            }), l(\"parseVerticalMargin\", P), T(), q.shareEl && h && i && (y = !0), D(), Q(), M(), N()\n", "        }, v.setIdle = function(a) {\n", "            k = a, C(d, \"ui--idle\", a)\n", "        }, v.update = function() {\n", "            x && a.currItem ? (v.updateIndexIndicator(), q.captionEl && (q.addCaptionHTMLFn(a.currItem, e), C(e, \"caption--empty\", !a.currItem.title)), w = !0) : w = !1, y || F(), D()\n", "        }, v.updateFullscreen = function() {\n", "            C(a.template, \"fs\", c.isFullscreen())\n", "        }, v.updateIndexIndicator = function() {\n", "            q.counterEl && (g.innerHTML = a.getCurrentIndex() + 1 + q.indexIndicatorSep + q.getNumItemsFn())\n", "        }, v.onGlobalTap = function(c) {\n", "            var d = c.target || c.srcElement;\n", "            if (!r)\n", "                if (c.detail && \"mouse\" === c.detail.pointerType) {\n", "                    if (I(d)) return void a.close();\n", "                    b.hasClass(d, \"pswp__img\") && (1 === a.getZoomLevel() && a.getZoomLevel() <= a.currItem.fitRatio ? q.clickToCloseNonZoomable && a.close() : a.toggleDesktopZoom(c.detail.releasePoint))\n", "                } else if (q.tapToToggleControls && (x ? v.hideControls() : v.showControls()), q.tapToClose && (b.hasClass(d, \"pswp__img\") || I(d))) return void a.close()\n", "        }, v.onMouseOver = function(a) {\n", "            var b = a.target || a.srcElement;\n", "            C(d, \"ui--over-close\", I(b))\n", "        }, v.hideControls = function() {\n", "            b.addClass(d, \"pswp__ui--hidden\"), x = !1\n", "        }, v.showControls = function() {\n", "            x = !0, w || v.update(), b.removeClass(d, \"pswp__ui--hidden\")\n", "        }, v.supportsFullscreen = function() {\n", "            return !!(a.exitFullscreen || a.mozCancelFullScreen || a.webkitExitFullscreen || a.msExitFullscreen)\n", "        }, v.getFullscreenAPI = function() {\n", "                d = \"fullscreenchange\";\n", "            return c.requestFullscreen ? b = {\n", "                enterK: \"requestFullscreen\",\n", "                exitK: \"exitFullscreen\",\n", "                elementK: \"fullscreenElement\",\n", "                eventK: d\n", "            } : c.mozRequestFullScreen ? b = {\n", "                enterK: \"mozRequestFullScreen\",\n", "                exitK: \"mozCancelFullScreen\",\n", "                elementK: \"mozFullScreenElement\",\n", "                eventK: \"moz\" + d\n", "            } : c.webkitRequestFullscreen ? b = {\n", "                enterK: \"webkitRequestFullscreen\",\n", "                exitK: \"webkitExitFullscreen\",\n", "                elementK: \"webkitFullscreenElement\",\n", "                eventK: \"webkit\" + d\n", "            } : c.msRequestFullscreen && (b = {\n", "                enterK: \"msRequestFullscreen\",\n", "                exitK: \"msExitFullscreen\",\n", "                elementK: \"msFullscreenElement\",\n", "                eventK: \"MSFullscreenChange\"\n", "            }), b && (b.enter = function() {\n", "            }, b.exit = function() {\n", "            }, b.isFullscreen = function() {\n", "            }), b\n", "        }\n"]} -->
+    <script>
+        var testFunc = function() {
+            },
+            C = function(a, c, d) {
+                b[(d ? "add" : "remove") + "Class"](a, "pswp__" + c)
+            },
+            D = function() {
+                var a = 1 === q.getNumItemsFn();
+                a !== p && (C(d, "ui--one-slide", a), p = a)
+            },
+            E = function() {
+                C(i, "share-modal--hidden", y)
+            },
+            F = function() {
+                return y = !y, y ? (b.removeClass(i, "pswp__share-modal--fade-in"), setTimeout(function() {
+                    y && E()
+                }, 300)) : (E(), setTimeout(function() {
+                    y || b.addClass(i, "pswp__share-modal--fade-in")
+                }, 30)), y || H(), !1
+            },
+            G = function(b) {
+                var c = b.target || b.srcElement;
+            },
+            H = function() {
+                for (var a, b, c, d, e, f = "", g = 0; g < q.shareButtons.length; g++) a = q.shareButtons[g], c = q.getImageURLForShare(a), d = q.getPageURLForShare(a), e = q.getTextForShare(a), b = a.url.replace("{{url}}", encodeURIComponent(d)).replace("{{image_url}}", encodeURIComponent(c)).replace("{{raw_image_url}}", c).replace("{{text}}", encodeURIComponent(e)), f += '<a href="' + b + '" target="_blank" class="pswp__share--' + a.id + '"' + (a.download ? "download" : "") + ">" + a.label + "</a>", q.parseShareButtonOut && (f = q.parseShareButtonOut(a, f));
+                i.children[0].innerHTML = f, i.children[0].onclick = G
+            },
+            I = function(a) {
+                for (var c = 0; c < q.closeElClasses.length; c++)
+                    if (b.hasClass(a, "pswp__" + q.closeElClasses[c])) return !0
+            },
+            J = 0,
+            K = function() {
+                clearTimeout(u), J = 0, k && v.setIdle(!1)
+            },
+            L = function(a) {
+                var b = a.relatedTarget || a.toElement;
+                b && "HTML" !== b.nodeName || (clearTimeout(u), u = setTimeout(function() {
+                    v.setIdle(!0)
+                }, q.timeToIdleOutside))
+            },
+            M = function() {
+                q.fullscreenEl && (c || (c = v.getFullscreenAPI()), c ? (b.bind(document, c.eventK, v.updateFullscreen), v.updateFullscreen(), b.addClass(a.template, "pswp--supports-fs")) : b.removeClass(a.template, "pswp--supports-fs"))
+            },
+            N = function() {
+                q.preloaderEl && (O(!0), l("beforeChange", function() {
+                    clearTimeout(o), o = setTimeout(function() {
+                        a.currItem && a.currItem.loading ? (!a.allowProgressiveImg() || a.currItem.img && !a.currItem.img.naturalWidth) && O(!1) : O(!0)
+                    }, q.loadingIndicatorDelay)
+                }), l("imageLoadComplete", function(b, c) {
+                    a.currItem === c && O(!0)
+                }))
+            },
+            O = function(a) {
+                n !== a && (C(m, "preloader--active", !a), n = a)
+            },
+            P = function(a) {
+                var c = a.vGap;
+                if (B()) {
+                    var g = q.barsSize;
+                    if (q.captionEl && "auto" === g.bottom)
+                        if (f || (f = b.createEl("pswp__caption pswp__caption--fake"), f.appendChild(b.createEl("pswp__caption__center")), d.insertBefore(f, e), b.addClass(d, "pswp__ui--fit")), q.addCaptionHTMLFn(a, f, !0)) {
+                            var h = f.clientHeight;
+                            c.bottom = parseInt(h, 10) || 44
+                        } else c.bottom = g.top;
+                    else c.bottom = g.bottom;
+                    c.top = g.top
+                } else c.top = c.bottom = 0
+            },
+            Q = function() {
+                q.timeToIdle && l("mouseUsed", function() {
+                    b.bind(document, "mousemove", K), b.bind(document, "mouseout", L), t = setInterval(function() {
+                        J++, 2 === J && v.setIdle(!0)
+                    }, q.timeToIdle / 2)
+                })
+            },
+            R = function() {
+                l("onVerticalDrag", function(a) {
+                    x && .95 > a ? v.hideControls() : !x && a >= .95 && v.showControls()
+                });
+                var a;
+                l("onPinchClose", function(b) {
+                    x && .9 > b ? (v.hideControls(), a = !0) : a && !x && b > .9 && v.showControls()
+                }), l("zoomGestureEnded", function() {
+                    a = !1, a && !x && v.showControls()
+                })
+            },
+            S = [{
+                name: "caption",
+                option: "captionEl",
+                onInit: function(a) {
+                    e = a
+                }
+            }, {
+                name: "share-modal",
+                option: "shareEl",
+                onInit: function(a) {
+                    i = a
+                },
+                onTap: function() {
+                    F()
+                }
+            }, {
+                name: "button--share",
+                option: "shareEl",
+                onInit: function(a) {
+                    h = a
+                },
+                onTap: function() {
+                    F()
+                }
+            }, {
+                name: "button--zoom",
+                option: "zoomEl",
+                onTap: a.toggleDesktopZoom
+            }, {
+                name: "counter",
+                option: "counterEl",
+                onInit: function(a) {
+                    g = a
+                }
+            }, {
+                name: "button--close",
+                option: "closeEl",
+                onTap: a.close
+            }, {
+                name: "button--arrow--left",
+                option: "arrowEl",
+                onTap: a.prev
+            }, {
+                name: "button--arrow--right",
+                option: "arrowEl",
+                onTap: a.next
+            }, {
+                name: "button--fs",
+                option: "fullscreenEl",
+                onTap: function() {
+                    c.isFullscreen() ? c.exit() : c.enter()
+                }
+            }, {
+                name: "preloader",
+                option: "preloaderEl",
+                onInit: function(a) {
+                    m = a
+                }
+            }],
+            T = function() {
+                var a, c, e, f = function(d) {
+                    if (d)
+                        for (var f = d.length, g = 0; f > g; g++) {
+                            a = d[g], c = a.className;
+                            for (var h = 0; h < S.length; h++) e = S[h], c.indexOf("pswp__" + e.name) > -1 && (q[e.option] ? (b.removeClass(a, "pswp__element--disabled"), e.onInit && e.onInit(a)) : b.addClass(a, "pswp__element--disabled"))
+                        }
+                };
+                f(d.children);
+                var g = b.getChildByClass(d, "pswp__top-bar");
+                g && f(g.children)
+            };
+        v.init = function() {
+            b.extend(a.options, z, !0), q = a.options, d = b.getChildByClass(a.scrollWrap, "pswp__ui"), l = a.listen, R(), l("beforeChange", v.update), l("doubleTap", function(b) {
+                var c = a.currItem.initialZoomLevel;
+                a.getZoomLevel() !== c ? a.zoomTo(c, b, 333) : a.zoomTo(q.getDoubleTapZoom(!1, a.currItem), b, 333)
+            }), l("preventDragEvent", function(a, b, c) {
+                var d = a.target || a.srcElement;
+                d && d.className && a.type.indexOf("mouse") > -1 && (d.className.indexOf("__caption") > 0 || /(SMALL|STRONG|EM)/i.test(d.tagName)) && (c.prevent = !1)
+            }), l("bindEvents", function() {
+                b.bind(d, "pswpTap click", A), b.bind(a.scrollWrap, "pswpTap", v.onGlobalTap), a.likelyTouchDevice || b.bind(a.scrollWrap, "mouseover", v.onMouseOver)
+            }), l("unbindEvents", function() {
+                y || F(), t && clearInterval(t), b.unbind(document, "mouseout", L), b.unbind(document, "mousemove", K), b.unbind(d, "pswpTap click", A), b.unbind(a.scrollWrap, "pswpTap", v.onGlobalTap), b.unbind(a.scrollWrap, "mouseover", v.onMouseOver), c && (b.unbind(document, c.eventK, v.updateFullscreen), c.isFullscreen() && (q.hideAnimationDuration = 0, c.exit()), c = null)
+            }), l("destroy", function() {
+                q.captionEl && (f && d.removeChild(f), b.removeClass(e, "pswp__caption--empty")), i && (i.children[0].onclick = null), b.removeClass(d, "pswp__ui--over-close"), b.addClass(d, "pswp__ui--hidden"), v.setIdle(!1)
+            }), q.showAnimationDuration || b.removeClass(d, "pswp__ui--hidden"), l("initialZoomIn", function() {
+                q.showAnimationDuration && b.removeClass(d, "pswp__ui--hidden")
+            }), l("initialZoomOut", function() {
+                b.addClass(d, "pswp__ui--hidden")
+            }), l("parseVerticalMargin", P), T(), q.shareEl && h && i && (y = !0), D(), Q(), M(), N()
+        }, v.setIdle = function(a) {
+            k = a, C(d, "ui--idle", a)
+        }, v.update = function() {
+            x && a.currItem ? (v.updateIndexIndicator(), q.captionEl && (q.addCaptionHTMLFn(a.currItem, e), C(e, "caption--empty", !a.currItem.title)), w = !0) : w = !1, y || F(), D()
+        }, v.updateFullscreen = function() {
+            C(a.template, "fs", c.isFullscreen())
+        }, v.updateIndexIndicator = function() {
+            q.counterEl && (g.innerHTML = a.getCurrentIndex() + 1 + q.indexIndicatorSep + q.getNumItemsFn())
+        }, v.onGlobalTap = function(c) {
+            var d = c.target || c.srcElement;
+            if (!r)
+                if (c.detail && "mouse" === c.detail.pointerType) {
+                    if (I(d)) return void a.close();
+                    b.hasClass(d, "pswp__img") && (1 === a.getZoomLevel() && a.getZoomLevel() <= a.currItem.fitRatio ? q.clickToCloseNonZoomable && a.close() : a.toggleDesktopZoom(c.detail.releasePoint))
+                } else if (q.tapToToggleControls && (x ? v.hideControls() : v.showControls()), q.tapToClose && (b.hasClass(d, "pswp__img") || I(d))) return void a.close()
+        }, v.onMouseOver = function(a) {
+            var b = a.target || a.srcElement;
+            C(d, "ui--over-close", I(b))
+        }, v.hideControls = function() {
+            b.addClass(d, "pswp__ui--hidden"), x = !1
+        }, v.showControls = function() {
+            x = !0, w || v.update(), b.removeClass(d, "pswp__ui--hidden")
+        }, v.supportsFullscreen = function() {
+            return !!(a.exitFullscreen || a.mozCancelFullScreen || a.webkitExitFullscreen || a.msExitFullscreen)
+        }, v.getFullscreenAPI = function() {
+                d = "fullscreenchange";
+            return c.requestFullscreen ? b = {
+                enterK: "requestFullscreen",
+                exitK: "exitFullscreen",
+                elementK: "fullscreenElement",
+                eventK: d
+            } : c.mozRequestFullScreen ? b = {
+                enterK: "mozRequestFullScreen",
+                exitK: "mozCancelFullScreen",
+                elementK: "mozFullScreenElement",
+                eventK: "moz" + d
+            } : c.webkitRequestFullscreen ? b = {
+                enterK: "webkitRequestFullscreen",
+                exitK: "webkitExitFullscreen",
+                elementK: "webkitFullscreenElement",
+                eventK: "webkit" + d
+            } : c.msRequestFullscreen && (b = {
+                enterK: "msRequestFullscreen",
+                exitK: "msExitFullscreen",
+                elementK: "msFullscreenElement",
+                eventK: "MSFullscreenChange"
+            }), b && (b.enter = function() {
+            }, b.exit = function() {
+            }, b.isFullscreen = function() {
+            }), b
+        }
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    

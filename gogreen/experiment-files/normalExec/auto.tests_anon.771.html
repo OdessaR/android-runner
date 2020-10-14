@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "771", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "\n", "    function body_0(chk, ctx) {\n", "        return chk.w(\"<div class=\\\"message-container \").f(ctx.get([\"messageClass\"], false), ctx, \"h\").w(\"\\\"><div class=\\\"icon\\\"></div><div class=\\\"close-x\\\"></div><div class=\\\"message\\\">\").s(ctx.get([\"messageTextHeadline\"], false), ctx, {\n", "        }, {}).f(ctx.get([\"messageText\"], false), ctx, \"h\", [\"s\"]).s(ctx.get([\"links\"], false), ctx, {\n", "        }, {}).w(\"</div></div>\");\n", "    }\n", "\n", "    function body_1(chk, ctx) {\n", "        return chk.w(\"<strong>\").f(ctx.getPath(true, []), ctx, \"h\", [\"s\"]).w(\"</strong>\").s(ctx.get([\"messageText\"], false), ctx, {\n", "        }, {});\n", "    }\n", "\n", "    function body_2(chk, ctx) {\n", "        return chk.w(\"<br/>\");\n", "    }\n", "\n", "    function body_3(chk, ctx) {\n", "        return chk.h(\"ne\", ctx, {\n", "        }, {\n", "            \"key\": ctx.get([\"$idx\"], false),\n", "            \"value\": 0,\n", "            \"type\": \"number\"\n", "        }).w(\"<a href='\").f(ctx.get([\"url\"], false), ctx, \"h\").w(\"'>\").f(ctx.get([\"text\"], false), ctx, \"h\", [\"s\"]).w(\"</a>\");\n", "    }\n", "\n", "    function body_4(chk, ctx) {\n", "        return chk.w(\"<br>\");\n", "    }\n", "\n", "    function body_5(chk, ctx) {\n", "        return chk.w(\" | \");\n", "    }\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+
+    function body_0(chk, ctx) {
+        return chk.w("<div class=\"message-container ").f(ctx.get(["messageClass"], false), ctx, "h").w("\"><div class=\"icon\"></div><div class=\"close-x\"></div><div class=\"message\">").s(ctx.get(["messageTextHeadline"], false), ctx, {
+        }, {}).f(ctx.get(["messageText"], false), ctx, "h", ["s"]).s(ctx.get(["links"], false), ctx, {
+        }, {}).w("</div></div>");
+    }
+
+    function body_1(chk, ctx) {
+        return chk.w("<strong>").f(ctx.getPath(true, []), ctx, "h", ["s"]).w("</strong>").s(ctx.get(["messageText"], false), ctx, {
+        }, {});
+    }
+
+    function body_2(chk, ctx) {
+        return chk.w("<br/>");
+    }
+
+    function body_3(chk, ctx) {
+        return chk.h("ne", ctx, {
+        }, {
+            "key": ctx.get(["$idx"], false),
+            "value": 0,
+            "type": "number"
+        }).w("<a href='").f(ctx.get(["url"], false), ctx, "h").w("'>").f(ctx.get(["text"], false), ctx, "h", ["s"]).w("</a>");
+    }
+
+    function body_4(chk, ctx) {
+        return chk.w("<br>");
+    }
+
+    function body_5(chk, ctx) {
+        return chk.w(" | ");
+    }
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    

@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "209", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    var h = \"https://c212.net/c/etag/\";\n", "    var a = \"\";\n", "    var g = \"1\";\n", "    var j = [];\n", "    for (var e = 1; e <= 50; e++) {\n", "        var b = {};\n", "        b[\"e\" + e] = \"-1\";\n", "        j.push(b)\n", "    }\n", "    var f = function() {\n", "        var i = Object.keys(j).reduce(function(k, l) {\n", "            if (j[l][Object.keys(j[l])] != \"-1\") {\n", "                k.push(l)\n", "            }\n", "            return k\n", "        }, []).map(function(k) {\n", "            return Object.keys(j[k]) + \"=\" + j[k][Object.keys(j[k])]\n", "        }).join(\"&\");\n", "        if (i.length > 0) {\n", "            i = \"&\" + i\n", "        }\n", "        return h + \"?clientId=\" + a + \"&pixel=0&dmp=\" + g + i\n", "    };\n", "    var c = function(k) {\n", "        i.type = \"text/javascript\";\n", "        i.src = k;\n", "    };\n", "    var d = {};\n", "    d.setClientId = function(i) {\n", "        a = (i ? i : \"\")\n", "    };\n", "    d.addEvent = function(i, l) {\n", "        for (var k in j) {\n", "            if (Object.keys(j[k]) == i) {\n", "                j[k][i] = (l ? l : 0)\n", "            }\n", "        }\n", "    };\n", "    d.sendEvents = function() {\n", "        c(f())\n", "    };\n", "    return d\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    var h = "https://c212.net/c/etag/";
+    var a = "";
+    var g = "1";
+    var j = [];
+    for (var e = 1; e <= 50; e++) {
+        var b = {};
+        b["e" + e] = "-1";
+        j.push(b)
+    }
+    var f = function() {
+        var i = Object.keys(j).reduce(function(k, l) {
+            if (j[l][Object.keys(j[l])] != "-1") {
+                k.push(l)
+            }
+            return k
+        }, []).map(function(k) {
+            return Object.keys(j[k]) + "=" + j[k][Object.keys(j[k])]
+        }).join("&");
+        if (i.length > 0) {
+            i = "&" + i
+        }
+        return h + "?clientId=" + a + "&pixel=0&dmp=" + g + i
+    };
+    var c = function(k) {
+        i.type = "text/javascript";
+        i.src = k;
+    };
+    var d = {};
+    d.setClientId = function(i) {
+        a = (i ? i : "")
+    };
+    d.addEvent = function(i, l) {
+        for (var k in j) {
+            if (Object.keys(j[k]) == i) {
+                j[k][i] = (l ? l : 0)
+            }
+        }
+    };
+    d.sendEvents = function() {
+        c(f())
+    };
+    return d
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    

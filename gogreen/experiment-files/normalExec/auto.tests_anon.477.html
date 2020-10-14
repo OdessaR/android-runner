@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "477", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    return {\n", "        on: n(\"on\"),\n", "        addSlot: n(\"addSlot\"),\n", "        fetch: n(\"fetch\"),\n", "        vidEvent: n(\"vidEvent\"),\n", "        uaEvent: n(\"uaEvent\"),\n", "        onloadHandler: n(\"onloadHandler\"),\n", "        showAd: n(\"showAd\"),\n", "        addKeyword: function(n) {\n", "            try {\n", "                e(function(e) {\n", "                    e.addKeyword(n)\n", "                })\n", "            } catch (n) {}\n", "        },\n", "        setKeyvalues: function(n, t) {\n", "            e(function(e) {\n", "            })\n", "        },\n", "        removeKeyword: function(n) {\n", "            try {\n", "                e(function(e) {\n", "                    e.$remove(e.keywords, n)\n", "                })\n", "            } catch (n) {}\n", "        },\n", "    };\n", "\n", "    function n(n) {\n", "        return function() {\n", "            ! function(n, e) {\n", "                try {\n", "                    var t = Array.prototype.slice.call(e);\n", "                } catch (n) {}\n", "            }(n, arguments)\n", "        }\n", "    }\n", "\n", "    function e(n) {\n", "        n(onetAds)\n", "    }\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    return {
+        on: n("on"),
+        addSlot: n("addSlot"),
+        fetch: n("fetch"),
+        vidEvent: n("vidEvent"),
+        uaEvent: n("uaEvent"),
+        onloadHandler: n("onloadHandler"),
+        showAd: n("showAd"),
+        addKeyword: function(n) {
+            try {
+                e(function(e) {
+                    e.addKeyword(n)
+                })
+            } catch (n) {}
+        },
+        setKeyvalues: function(n, t) {
+            e(function(e) {
+            })
+        },
+        removeKeyword: function(n) {
+            try {
+                e(function(e) {
+                    e.$remove(e.keywords, n)
+                })
+            } catch (n) {}
+        },
+    };
+
+    function n(n) {
+        return function() {
+            ! function(n, e) {
+                try {
+                    var t = Array.prototype.slice.call(e);
+                } catch (n) {}
+            }(n, arguments)
+        }
+    }
+
+    function e(n) {
+        n(onetAds)
+    }
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    

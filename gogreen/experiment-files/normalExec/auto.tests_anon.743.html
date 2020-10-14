@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "743", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "        function ul(src, a, b) {\n", "            a.getElementsByTagName('head')[0].appendChild(b);\n", "        };\n", "    }\n"]} -->
+    <script>
+        var testFunc = function() {
+        function ul(src, a, b) {
+            a.getElementsByTagName('head')[0].appendChild(b);
+        };
+    }
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    

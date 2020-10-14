@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "2", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "\n", "    function body_0(chk, ctx) {\n", "        return chk.s(ctx.get([\"locations\"], false), ctx, {\n", "        }, {});\n", "    }\n", "\n", "    function body_1(chk, ctx) {\n", "        return chk.w(\"<li data-loc-id=\\\"\").f(ctx.get([\"locId\"], false), ctx, \"h\").w(\"\\\" class=\\\"\").f(ctx.get([\"locClasses\"], false), ctx, \"h\").w(\"\\\"><a href=\\\"\").f(ctx.get([\"locUrl\"], false), ctx, \"h\").w(\"\\\">\").f(ctx.get([\"locName\"], false), ctx, \"h\").w(\"</a></li>\");\n", "    }\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+
+    function body_0(chk, ctx) {
+        return chk.s(ctx.get(["locations"], false), ctx, {
+        }, {});
+    }
+
+    function body_1(chk, ctx) {
+        return chk.w("<li data-loc-id=\"").f(ctx.get(["locId"], false), ctx, "h").w("\" class=\"").f(ctx.get(["locClasses"], false), ctx, "h").w("\"><a href=\"").f(ctx.get(["locUrl"], false), ctx, "h").w("\">").f(ctx.get(["locName"], false), ctx, "h").w("</a></li>");
+    }
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    

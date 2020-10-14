@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "55", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "                \"use strict\";\n", "                var p = {}.hasOwnProperty;\n", "\n", "                function u() {\n", "                    for (var o = [], t = 0; t < arguments.length; t++) {\n", "                        var r = arguments[t];\n", "                        if (r) {\n", "                            var f = typeof r;\n", "                            if (\"string\" === f || \"number\" === f) o.push(r);\n", "                            else if (Array.isArray(r) && r.length) {\n", "                                i && o.push(i)\n", "                            } else if (\"object\" === f)\n", "                                for (var n in r) p.call(r, n) && r[n] && o.push(n)\n", "                        }\n", "                    }\n", "                    return o.join(\" \")\n", "                }\n", "            }\n"]} -->
+    <script>
+        var testFunc = function() {
+                "use strict";
+                var p = {}.hasOwnProperty;
+
+                function u() {
+                    for (var o = [], t = 0; t < arguments.length; t++) {
+                        var r = arguments[t];
+                        if (r) {
+                            var f = typeof r;
+                            if ("string" === f || "number" === f) o.push(r);
+                            else if (Array.isArray(r) && r.length) {
+                                i && o.push(i)
+                            } else if ("object" === f)
+                                for (var n in r) p.call(r, n) && r[n] && o.push(n)
+                        }
+                    }
+                    return o.join(" ")
+                }
+            }
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    
