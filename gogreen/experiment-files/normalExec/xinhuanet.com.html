@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/xinhuanet.com/global-cfg.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        var set = [
+        "",
+        "a",
+        ".",
+        "a.a",
+        " .a",
+        "a. ",
+        "a.rec",
+        "a.com",
+        "a.nl",
+        "a.com.uk",
+        "a.com.uk/dsa",
+        ];
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            for (i = 0; i < set.length; i++) {
+                // memo
+                window._xh_st_global_obj.get_top_domain_fn(set[i]);
+            }
+
+        }
+    </script>
+</body>
+</html>

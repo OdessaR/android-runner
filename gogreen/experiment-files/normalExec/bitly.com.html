@@ -7,23 +7,21 @@
 
 <body>
     <!-- ==> CONF: WEBSITE -->
-    <script src="../websites/welt.de/calcX.js"></script>
+    <script src="../websites/bitly.com/unauth.js"></script>
 
     <!-- exectution -->
     <script type="text/javascript">
-        // welt.de.calcX.js.calcX
+
         var set = [
-        "",
-        "a",
-        ".",
-        "a.a",
-        " .a",
-        "a. ",
-        "a.rec",
-        "a.com",
-        "a.nl",
-        "a.com.uk",
-        "a.com.uk/dsa",
+            'RATE_LIMIT_EXCEEDED',
+            'INVALID_ARG_URL',
+            'ALREADY_A_BITLY_LINK',
+            'MISSING_ARG_URL',
+            'UNKNOWN_ERROR',
+            'DEFAULT',
+            null,
+            '',
+            1,
         ];
 
         while (true) {
@@ -32,9 +30,8 @@
             var i;
             for (i = 0; i < set.length; i++) {
                 // memo
-                console.log(ASCDP.adS.calcX({"parentNode":{"tagName":"div"}},i));
+                getFriendlyError(set[i]);
             }
-            break;
 
         }
     </script>

@@ -6,8 +6,15 @@
 </head>
 
 <body>
+    <script>
+        var jQuery = {extend:(a)=>{
+            for (let k in a) {
+                jQuery[k] = a[k];
+            }
+        }};
+    </script>
     <!-- ==> CONF: WEBSITE -->
-    <script src="../websites/buydomains.com/urlParams.js"></script>
+    <script src="../websites/cnki2.net/jquery_003.js"></script>
 
     <!-- exectution -->
     <script type="text/javascript">
@@ -34,9 +41,8 @@
             for (i = 0; i < set.length; i++) {
                 queryString = set[i];
                 // memo
-                console.log(getAllUrlParams(i));
+                jQuery.md5(set[i]);
             }
-            break;
 
         }
     </script>

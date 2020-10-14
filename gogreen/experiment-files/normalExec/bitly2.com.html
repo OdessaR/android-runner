@@ -6,28 +6,8 @@
 </head>
 
 <body>
-    <script>
-        var jQuery = {"ajaxSetup":()=>{}};
-        var _xsrf = "";
-        var cookieValue = "";
-        var shortlinks =  []
-
-        function getHash(shortLink) {
-            return shortLink.split("/").pop();
-        }
-
-        function getShortLink(hash) {
-            var shortlink;
-            for (var i = 0; i < shortlinks.length; i++) {
-                if (getHash(shortlinks[i]) === hash) {
-                    shortlink = shortlinks[i];
-                }
-            }
-            return shortlink;
-        }
-    </script>
     <!-- ==> CONF: WEBSITE -->
-    <script src="../websites/bitly.com/unauth.js"></script>
+    <script src="../websites/bitly2.com/unauth.js"></script>
 
     <!-- exectution -->
     <script type="text/javascript">
@@ -53,10 +33,8 @@
             var i;
             for (i = 0; i < set.length; i++) {
                 // memo
-                
-                console.log(getShortLink(set[i]));
+                getShortLink(set[i]);
             }
-            break;
 
         }
     </script>
