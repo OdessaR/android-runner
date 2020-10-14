@@ -3,7 +3,7 @@
   "devices": {
     "nexusLab": {}
   },
-  "repetitions": 15,
+  "repetitions": 5,
   "duration": 60000,
   "randomization": false,
   "browsers": [
