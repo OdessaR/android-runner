@@ -1,0 +1,75 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                try {
+                    n.wasAutorefresh() && e.setEventStats("vidEvent", "action", "sg_autorefresh", 0, 0)
+                } catch (e) {}
+            }, 3e3);
+            var s = function() {
+                    var e = u("https://ocdn.eu/images/pulscms/N2U7MDA_/55fade2068e7503eae8d7ddf5eb6bd09.gif", 2e3, function() {
+                        return "?antycache=" + (+new Date + "").substr(0, 9)
+                    });
+                    return function() {
+                        return e
+                    }
+                }(),
+                c = new Date,
+                d = c,
+                m = 1,
+                f = 0,
+                v = 0,
+                l = !0,
+                g = function(e) {
+                    try {
+                        (e.pageX - f) * (e.pageX - f) + (e.pageY - v) * (e.pageY - v) > 10 && (f = e.pageX, v = e.pageY, c = new Date, l && (l = !1, r.domBuilder.removeEvent(document, "mousemove", g), setTimeout(function() {
+                            l = !0, r.domBuilder.addEvent(document, "mousemove", g)
+                        }, 5e3)))
+                    } catch (e) {}
+                };
+
+            function h() {
+                c = new Date
+            }
+            r.domBuilder.addEvent(document, "mousemove", g), r.domBuilder.addEvent(document, "keydown", h), r.domBuilder.addEvent(document, "click", h), r.domBuilder.addEvent(document, "touchend", h);
+            var p = function(o) {
+                if (!1 === n.isAllowAutorefresh() || !0 === (r.phxLayer.layerIsOpened() || r.phxLayer.layerIsStatic())) return !1;
+                var i = function(e) {
+                        r = {
+                            visibleBegin: t,
+                            visibleEnd: t + n
+                        };
+                    r.visibleBegin > e ? r.visibleBegin -= e : r.visibleBegin = 0;
+                    return r.visibleEnd += e, r
+                }(0);
+                if (i.visibleBegin && i.visibleBegin > 6500) try {
+                    e.setEventStats("vidEvent", "action", "sg_autorefreshcanceled", 0, 0)
+                } catch (e) {} else s().test(function(e) {
+                })
+            };
+            setInterval(function() {
+                    t = new Date;
+                e ? (t.getTime() - i > c.getTime() ? (p({
+                    refreshType: "wasFocus"
+                }), c = t) : t.getTime() - a > Math.max(d, r.phxLayer.getCloseTime()) && p({
+                    refreshType: "refreshAfterBack"
+                }), d = t, m = 1) : (c = t, t.getTime() - a * m > d && m++)
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

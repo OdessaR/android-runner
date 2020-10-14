@@ -1,0 +1,40 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    $("html").on("playerInitialized", function(f, d, e) {
+        if (d && e) {
+            b(d)
+        }
+    });
+
+    function b(d) {
+        var e = videojs(d);
+        e.on("pause", c);
+        e.on("play", a)
+    }
+
+    function c() {
+    }
+
+    function a() {
+    }
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

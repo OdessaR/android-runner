@@ -1,0 +1,29 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    var a, e = m()(t);
+                    if (n) {
+                        var i = m()(this).constructor;
+                        a = r()(e, arguments, i)
+                    } else a = e.apply(this, arguments);
+                    return d()(this, a)
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var _scrollToShow = _urlParams.has('sts');
+    var _count = 0,
+        _iframe, _code = "",
+        _refresh, _align = "center",
+        _refreshTimer;
+    var _css = '.reklamup-sticky-footer{background-color: #fff; z-index: 999999999;position: fixed;bottom: -120px;}';
+    _css += '.reklamup-sticky-footer .reklamup-sticky-footer-slot{background-color: #fff;display: flex;justify-content: center;padding: 2px;}';
+    _css += '.reklamup-sticky-footer .reklamup-sticky-footer-close-button{width: 20px;height: 20px;cursor: pointer;position: absolute;right: 0px;top: -20px;border-radius: 2px 2px 0px 0px;background-color: #FFF;background-size: contain;}';
+    _css += '.reklamup-sticky-footer .reklamup-sticky-footer-logo{width: 20px;height: 20px;cursor: pointer;position: absolute;left: 0px;top: -20px;border-radius: 2px 2px 0px 0px;background-color: #FFF;background-size: contain;}';
+    _css += '.reklamup-sticky-footer .reklamup-sticky-footer-slot::before, .reklamup-sticky-footer .reklamup-sticky-footer-close-button::before, .reklamup-sticky-footer .reklamup-sticky-footer-logo::before{content: "";position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: -1;box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);}'
+
+    _css += '.reklamup-sticky-footer .reklamup-sticky-footer-close-button{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABJ0lEQVRYhe2WwXGDMBBF/4ZCnBIyUEBcQjqwM4zUj6/oYFxCOkgKQJN04FRCLiGDCUirleG072bWO3qzO3wEKIqiKMrm1HW926IHAB5SG6y1h6Iortbaw5o9A0WqHID29+dLVVXXruu+7t0zhrh/NMY8E9H7TOnYNM2FIfdH3/d759wH51z2BL3332VZPhLR06Q0O5WAXOucO3HPTVqx9/6NIxmRe005k73iMcaYMxEdZ0rDs3ZakMgBQkEgKPkPqRyQuOIxgXXfkCMHZAgCcclcOUAQ1FMWoida45I1waW3dURyME8RCzLkBrIkRYKhnAPwyQ3zVQRjIcwN81UEuV+Ie0pmXxZCUbIU5ptdFmI5NzfJzS4L3BCW9GQjuRlLehRFURQlnx/Sq+XbK9pPPwAAAABJRU5ErkJggg==)}';
+
+    _css += '.reklamup-sticky-footer .reklamup-sticky-footer-logo{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjcwNjU1RDYxQUM5RjExRUFBRTI3QjJGNkFCMDZCNjlEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjcwNjU1RDYyQUM5RjExRUFBRTI3QjJGNkFCMDZCNjlEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzA2NTVENUZBQzlGMTFFQUFFMjdCMkY2QUIwNkI2OUQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzA2NTVENjBBQzlGMTFFQUFFMjdCMkY2QUIwNkI2OUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7YkCAZAAACzklEQVR42uyYTUwTQRSA543Slmq0xEQ8kBDRixIN3RoFWiQknoSDBzBR6s2bmpiILfFgelGgjfFgtJJIQjRe/IvEgN40YPlJQTTKEcXoSQ9oSVfozz7f1hIbod11S9ea7Es225md2fftm/czU0BEVszCWZGLAWgAGoD/OyCT82Cuq1DimPRZHSFvs5L+9Xoao+1e27rZiqpDHCQ3xsQjCKyfugdzzdEF0DF2XkDk7vcMjwHDbUhkqdXjyaDSXFBaRgDQBGUPnasEztsBeTuh7F7xXsaGJ+v9jUr619SCNc/P2rjZdJSUu6npYihzZAFACKp5Z96A1TM+kzkitgACQeFh6jKrmPblh630UeEAyTL2UW8D5+hm38VW6inLaqnVpW+m2hdbc0BhzLMLkJ1gY+w4eW8l05aFJAmTvQVJ1JzxcrptpcuWh1c8nXZe+ah2sKYo3jl0xmzbbGlBSEVoM3WZ1LsHtEw5ewYzC0VB08yekc6yEo6tANhFzS0KeHNTddYdDHySWsC8a/Hbhu55+oaoCjj5c3sz4XTZLAjjnQ6ywy0VQ2NSgvfpups5MH6hHCTpMf0szehOkKUiqwx/OH2w66tugHKCjksJOdlWZOTHT5xBI3l2/4rYkDCoRY9mQMs38TqFT/3v2opPTBCvCdf3jKLEB/4Y/u6VKzCiRY+mSrJv1HOaYu9kuhmnCPZO1gWuLj/fFLMML5jF+V8VJlV4buq2o3a89DQR3DLMB47cmQkny4smX4KohtLNaAkX7+gCuH+iYzvNuJ+2/ANmAnvY2R3OkmEH0tuquxO11yJaAVUv8d43HRuS0ZRvbSTrnJpy+m/k9FEJni1ytkSVIJhPplBnQXIiU5TflvVyxFolOFlCLv8CTbwcdgZeFxxQGPdcpCPM4uKSVfgbhVWf5y4V/FQnbwyEkNf9r06VYPz9ZgAagAagAVjc8lOAAQDxMVD6WerlBAAAAABJRU5ErkJggg==)}';
+
+    _stickyContainer.className = "reklamup-sticky-footer";
+    _parent.appendChild(_stickyContainer);
+
+    _slot.className = "reklamup-sticky-footer-slot";
+    _stickyContainer.appendChild(_slot);
+
+    _closeButton.className = "reklamup-sticky-footer-close-button";
+    _closeButton.addEventListener("click", closeButtonHHandler);
+    _stickyContainer.appendChild(_closeButton);
+
+    _logoButton.className = "reklamup-sticky-footer-logo";
+    _logoButton.addEventListener("click", logoButtonHHandler);
+    _stickyContainer.appendChild(_logoButton);
+
+    function closeButtonHHandler(e) {
+        _parent.removeChild(_stickyContainer);
+        clearInterval(_refreshTimer);
+    }
+
+    function logoButtonHHandler(e) {
+    }
+
+    function checkTime() {
+        if (_count >= _refresh) {
+            _count = 0;
+            showAd(_code);
+        }
+    }
+
+    function iframeLoadCompleteHandler(e) {
+        try {
+            _target.googletag.pubads().addEventListener("slotRenderEnded", slotRenderEndedHandler);
+        } catch (e) {
+        }
+    }
+
+    function slotRenderEndedHandler(e) {
+        if (!e.isEmpty) {
+            _iframe.style['width'] = _iframe.contentWindow.document.body.scrollWidth + "px";
+            _iframe.style['height'] = _iframe.contentWindow.document.body.scrollHeight + "px";
+            _stickyContainer.style["bottom"] = "0px";
+        }
+    }
+
+    function loadAd() {
+        _adRequest.send();
+    }
+
+    function showAd(code) {
+        _stickyContainer.style["bottom"] = "-120px";
+        if (_slot.contains(_iframe)) _slot.removeChild(_iframe);
+        _iframe.width = 1;
+        _iframe.height = 1;
+        _iframe.setAttribute("title", "reklam");
+        _iframe.setAttribute('scrolling', 'no');
+        _iframe.setAttribute('frameBorder', 0);
+        _iframe.style['overflow'] = 'hidden';
+        _iframe.style['border'] = '0px';
+        _slot.appendChild(_iframe);
+        var _content = '<html><head><style>body{margin:0px;padding:0px;background-color:#fff;}</style></head><body><div id="container" style="width:100%">' + code + '</div></body></html>';
+        var _target = _iframe.contentWindow || _iframe.contentDocument.document || _iframe.contentDocument;
+        _target.document.open();
+        _target.document.write(_content);
+        _target.document.close();
+        _iframe.addEventListener("load", iframeLoadCompleteHandler);
+    }
+
+    _adRequest.addEventListener("load", adLoadCompleteHandler);
+    _adRequest.addEventListener("error", adLoadErrorHandler);
+
+    function adLoadCompleteHandler(e) {
+        try {
+            var _response = JSON.parse(_adRequest.response);
+            _code = _response.code;
+            _refresh = _response.refresh;
+            _align = _response.align;
+            switch (_align) {
+                case "center":
+                    _css += '.reklamup-sticky-footer{width: 100%;max-width: 980px;left: 50%;transform: translate(-50%);}';
+                    break;
+                case "left":
+                    _css += '.reklamup-sticky-footer{width: auto;left: 0px;}';
+                    break;
+                case "right":
+                    _css += '.reklamup-sticky-footer{width: auto;right: 0px;}';
+                    break;
+            }
+            if (_code) {
+                _style.innerHTML = _css;
+                _parent.appendChild(_style);
+                showAd(_code);
+            }
+        } catch (e) {
+        }
+    }
+
+    function adLoadErrorHandler(e) {
+        _parent.removeChild(_stickyContainer);
+    }
+
+    function scrollHandler(e) {
+        loadAd();
+    }
+
+    if (_scrollToShow) {
+    } else {
+        loadAd();
+    }
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

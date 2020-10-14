@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    expand(e);
+                    $('.goog-te-combo').focus();
+
+                });
+            } else {
+                $('#global-language-selection').slideUp('fast', function() {
+                    collapse(e);
+                    $('.goog-te-combo').blur();
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

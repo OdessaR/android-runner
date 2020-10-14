@@ -1,0 +1,34 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    hm.src = "//hm.baidu.com/hm.js?aecc9715b0f5d5f7f34fba48a3c511d6";
+    s.parentNode.insertBefore(hm, s)
+}(),
+function() {
+    bp.src = "https" === curProtocol ? "https://zz.bdstatic.com/linksubmit/push.js" : "http://push.zhanzhang.baidu.com/push.js";
+    s.parentNode.insertBefore(bp, s)
+}(), $((function() {
+}));
+var html = '<li ><a href="//my.chinaz.com/ToolMember/Member/Account" target="_blank">工具中心</a></li><li ><a href="//my.chinaz.com/ChinazAPI/DataCenter/MyDataApi" target="_blank">API中心</a></li><li ><a href="//zj.chinaz.com" target="_blank">SEO中介</a></li><li ><a href="//mt.chinaz.com/" target="_blank">媒介中心</a></li><li ><a href="http://down.chinaz.com/member/" target="_blank">下载中心</a></li><li ><a href="http://search.top.chinaz.com/usercenter/" target="_blank">排行榜中心</a></li>';
+$(".userbar").find("span").html("用户中心"), $(".userbar").show(), $(".userbar").hover((function() {
+    $(".menu-setting-list").html(html), $(".menu-setting-list").removeClass("clearfix")
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

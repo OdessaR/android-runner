@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                                var l, d, s, f, b;
+                                return Object(o.d)(this, (function(o) {
+                                    switch (o.label) {
+                                        case 0:
+                                            return u ? [4, u.getInstance()] : [2];
+                                        case 1:
+                                            return l = o.sent(), [4, i];
+                                        case 2:
+                                            return o.sent(), s = (d = "mobile" === t) ? "Quint.easeOut" : "Sine.easeInOut", f = function(e, n, t) {
+                                                var o = Math.abs(n - e);
+                                                return a[t ? "mobile" : "desktop"](o)
+                                            }(n.pageYOffset, r, d), b = m(e, c), [2, new Promise((function(e) {
+                                                l.runAnimationOnElements("BaseScroll", [b], f, 0, {
+                                                    y: r,
+                                                    ease: s,
+                                                    callbacks: {
+                                                        onComplete: function() {
+                                                            return e()
+                                                        }
+                                                    }
+                                                })
+                                            }))]
+                                    }
+                                }))
+                            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

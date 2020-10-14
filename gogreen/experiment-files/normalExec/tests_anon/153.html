@@ -1,0 +1,44 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    $(".stat-slider").owlCarousel({
+        dots: !1,
+        items: 1,
+        autoplay: !0,
+        autoplayHoverPause: !0,
+        autoWidth: !0,
+        loop: !0
+    })
+}), $(window).on("load", function() {
+    $(".testimonial-slider").owlCarousel({
+        dots: !0,
+        items: 1,
+        autoplay: !0,
+        autoplayTimeout: 5e3,
+        loop: !0,
+        rewind: !0,
+        nav: !0
+    }), $(".owl-dot span").on("mouseover", function(e) {
+        $(".testimonial-slider").trigger("stop.owl.autoplay")
+    }), $(".owl-dot span").on("mouseleave", function(e) {
+        $(".testimonial-slider").trigger("play.owl.autoplay")
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

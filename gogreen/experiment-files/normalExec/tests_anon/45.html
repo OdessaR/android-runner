@@ -1,0 +1,34 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                            Object(c.a)(this, e), Object(d.a)({
+                                eventKey: "navigation_click",
+                                GA_event_label: "Sign in / register"
+                            }), a()
+                        }.bind(this), [a]);
+                    return i.a.createElement(r.a, {
+                        invert: !0,
+                        "data-test-id": "header-button-sign-in",
+                        rootClassName: b.a.signInButton,
+                        size: "small",
+                        onClick: n
+                    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

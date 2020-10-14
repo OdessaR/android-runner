@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/express.co.uk/quantcast20200813.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    loadTcfV2();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

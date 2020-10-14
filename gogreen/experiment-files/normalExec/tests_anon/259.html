@@ -1,0 +1,24 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                            r.config.elementId = o.props.flexComponent.id, r.config.heading.fixedTitle = o.props.flexComponent.model.fixedLobTitle, r.config.lastSearch.useLastSearchForSingleLOB = o.props.flexComponent.model.useLastSearchForSingleLOB, r.config.heading.lobSubtitleBreakPoint = o.props.flexComponent.model.lobSubtitleBreakPoint, r.config.heading.hideLobTitle = o.props.flexComponent.model.hideLobTitle, r.config.heading.visibleLobSubtitle = null != c ? c : r.config.heading.visibleLobSubtitle
+                        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                                    o.id && (Object(d.a)() ? Object(r.b)("/wishlists/".concat(o.id)) : (u(j(o.id, e, i, n)), u(C(a, e, i, n)), u(J({
+                                        newToastVisible: !1
+                                    }))))
+                                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

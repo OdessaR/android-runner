@@ -1,0 +1,84 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            var $nav = $('.carousel--filmstrip__nav', this).detach();
+            $(this).append($nav);
+        })
+        .slick({
+            'appendArrows': '.carousel--filmstrip__nav',
+            'prevArrow': '<div class="carousel--filmstrip__prev">&laquo;</div>',
+            'nextArrow': '<div class="carousel--filmstrip__next">&raquo;</div>',
+            'slide': '.media',
+            'slidesToShow': 5,
+            'slidesToScroll': 5,
+            'responsive': [{
+                    'breakpoint': 1100,
+                    'settings': {
+                        'slidesToShow': 5,
+                        'slidesToScroll': 5
+                    }
+                },
+                {
+                    'breakpoint': 1025,
+                    'settings': {
+                        'slidesToShow': 4,
+                        'slidesToScroll': 4
+                    }
+                },
+                {
+                    'breakpoint': 768,
+                    'settings': {
+                        'slidesToShow': 3,
+                        'slidesToScroll': 3
+                    }
+                },
+                {
+                    'breakpoint': 600,
+                    'settings': {
+                        'slidesToShow': 2,
+                        'slidesToScroll': 2
+                    }
+                },
+                {
+                    'breakpoint': 450,
+                    'settings': {
+                        'slidesToShow': 1,
+                        'slidesToScroll': 1
+                    }
+                }
+            ]
+        })
+        .on('breakpoint', function(event, slick, breakpoint) {
+            var $nav = $('.carousel--filmstrip__nav', this).detach();
+            $(this).append($nav);
+        });
+
+    $('.carousel--media')
+        .append('<div class="carousel--media__nav">')
+        .slick({
+            'autoplay': false,
+            'appendArrows': '.carousel--media__nav',
+            'prevArrow': '<div class="carousel--media__prev">&lsaquo;</div>',
+            'nextArrow': '<div class="carousel--media__next">&rsaquo;</div>',
+            'dots': false,
+            'slide': 'figure.figure'
+        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    return {
+        on: n("on"),
+        addSlot: n("addSlot"),
+        fetch: n("fetch"),
+        vidEvent: n("vidEvent"),
+        uaEvent: n("uaEvent"),
+        onloadHandler: n("onloadHandler"),
+        showAd: n("showAd"),
+        addKeyword: function(n) {
+            try {
+                e(function(e) {
+                    e.addKeyword(n)
+                })
+            } catch (n) {}
+        },
+        setKeyvalues: function(n, t) {
+            e(function(e) {
+            })
+        },
+        removeKeyword: function(n) {
+            try {
+                e(function(e) {
+                    e.$remove(e.keywords, n)
+                })
+            } catch (n) {}
+        },
+    };
+
+    function n(n) {
+        return function() {
+            ! function(n, e) {
+                try {
+                    var t = Array.prototype.slice.call(e);
+                } catch (n) {}
+            }(n, arguments)
+        }
+    }
+
+    function e(n) {
+        n(onetAds)
+    }
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

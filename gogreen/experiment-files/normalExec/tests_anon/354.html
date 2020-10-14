@@ -1,0 +1,34 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                            return d.forEach((function(r) {
+                                var n = r.message,
+                                    o = r.crcCode,
+                                    d = r.code;
+                                return e(Object(m.onFetchFailure)({
+                                    service: t,
+                                    error: new Error(n),
+                                    code: d,
+                                    crcCode: o,
+                                    data: s
+                                }))
+                            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

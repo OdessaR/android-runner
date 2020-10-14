@@ -1,0 +1,82 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var i = n("ERkP"),
+                o = n.n(i),
+                r = n("9e7o"),
+                c = n("eB27"),
+                a = n("uDfI"),
+                u = n("G5Zb"),
+                s = n("2FHh"),
+                d = n("dRmo"),
+                l = n("29el"),
+                p = n("omit"),
+                b = n("xpQu"),
+                f = n("j/s1"),
+                m = o.a.createElement,
+                g = f.e.img.withConfig({
+                    componentId: "sc-1v5lwt8-0"
+                })(["padding:1px;"]),
+                h = Object(f.e)(c.a).attrs((function(t) {
+                    return {
+                        activeFill: t.theme.danger
+                    }
+                })).withConfig({
+                    componentId: "sc-1v5lwt8-1"
+                })([""]);
+
+            function j(t) {
+                var e = t.post,
+                    n = t.position,
+                    i = Object(r.a)((function(t) {
+                        return e && t.reaction.data[e.reacted || ""]
+                    })),
+                    o = Object(a.d)(),
+                    c = Object(b.a)(),
+                    f = Object(r.a)(d.a),
+                    j = Object(l.a)(e.forumAlias);
+                return m(h, {
+                    onClick: function(t) {
+                        t.stopPropagation();
+                        var i = f ? f.id : "";
+                        j(p.c.canReact) ? c.bilanx.enqueue({
+                            event: "postLiked",
+                            payload: {
+                                action: "short_press",
+                                reactionId: i,
+                                position: n,
+                                success: !1,
+                                postId: +e.id,
+                                positive: !0
+                            }
+                        }) : o(Object(u.p)({
+                            id: e.id,
+                            reactionId: i,
+                            position: n
+                        }))
+                    },
+                    title: "\u611b\u5fc3"
+                }, i && i.url ? m(g, {
+                    src: i.url
+                }) : m(s.a, null))
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

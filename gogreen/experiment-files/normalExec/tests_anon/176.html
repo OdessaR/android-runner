@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    $(window).scroll(function() {
+        var scrollpos = $(window).scrollTop();
+        var hblock = $('.header').outerHeight();
+
+        // scroll header
+        if (scrollpos > hblock + 20) {
+            $('#js-radio').addClass('radio--show');
+        } else {
+            $('#js-radio').removeClass('radio--show');
+        }
+    });
+
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

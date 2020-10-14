@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/comcast.net/satellite-5a2ea0b564746d3f4e00e094.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    gtag();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

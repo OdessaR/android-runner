@@ -1,0 +1,64 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var a = $(".window-register");
+    a.find("form").riaForm({
+        errorInput: true,
+        errorLabel: true,
+        errorMessage: false,
+        errorAlert: true,
+        alert: ".window-register .error-message",
+        rules: {
+            login: "email",
+            nickName: "empty",
+            captcha: "empty",
+            password: "empty",
+            password_confirmation: "empty",
+            confirm: "checked"
+        },
+        messages: {
+            nickName: {
+            },
+            login: {
+            },
+            password: {
+            }
+        },
+        alerts: {
+            nickName: {
+            },
+            login: {
+            },
+            password: {
+            },
+            captcha: {
+            }
+        },
+        successCallback: function(c) {
+            var b = a.find("input[name=login]").val();
+            a.find(".success").show().find(".message a.email").html(b);
+            a.find(".error-message, form").hide();
+        },
+        errorCallback: function() {
+        }
+    })
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        /* Mobile-friendly clone of the subnav widget */
+        var mobileSidebar = $('#content-above-mobile'),
+            mobileMenus = $('.widget_categories, .advanced-sidebar-menu', mobileSidebar);
+        mobileMenus.each(function(index, subnav) {
+            var subnavTitle = $(subnav).children('.widget-title');
+            subnavTitle.on('click.cc_dynamic_subnav', function() {
+                $(subnav).toggleClass('expanded');
+            });
+        });
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        if (0 < $(this).find(".carousel-box .list-box .items .item").length) $(this).find(".carousel-box .list-box .items").slick({
+            infinite: !1,
+            listStyle: !0,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            arrows: !0,
+            dots: !1,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    autoplay: !1,
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    arrows: !0
+                }
+            }, {
+                breakpoint: 992,
+                settings: {
+                    autoplay: !1,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    arrows: !0
+                }
+            }, {
+                breakpoint: 768,
+                settings: {
+                    autoplay: !1,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: !0,
+                    arrows: !1
+                }
+            }],
+        })
+    });
+    var t = 0;
+    i.find(".items .item").each(function() {
+        var i;
+        $(this).find(".caption") && !$(this).find(".caption").is(":empty") && (i = $(this).find(".caption")), i && (i.attr("id", "waGPC0047_" + t), $(this).find("a.btn").attr("aria-describedby", "waGPC0047_" + t), $(this).find("a.link-text").attr("aria-describedby", "waGPC0047_" + t), t++)
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                return c
+            })), r.d(t, "onInitCart", (function() {
+                return i
+            })), r.d(t, "onFetchSuccess", (function() {
+                return u
+            })), r.d(t, "onFetchFailure", (function() {
+                return l
+            })), r.d(t, "setBucket", (function() {
+                return m
+            })), r.d(t, "setConfig", (function() {
+                return v
+            })), r.d(t, "clearCartErrors", (function() {
+                return f
+            })), r.d(t, "clearCartState", (function() {
+                return p
+            }));
+            var n = r("../../node_modules/@babel/runtime/helpers/objectSpread.js"),
+                o = r.n(n),
+                d = r("../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js"),
+                a = r.n(d),
+                s = r("../cart-constants/es/index.js"),
+                c = function onFetchStart(e) {
+                    var t = e.service,
+                        r = a()(e, ["service"]);
+                    return {
+                        type: s.ON_FETCH_START,
+                        meta: {
+                            service: t
+                        },
+                        payload: r
+                    }
+                },
+                i = function onInitCart(e) {
+                    var t = e.appId,
+                        r = e.service,
+                        n = e.country,
+                        d = e.langLocale,
+                        c = e.language,
+                        i = e.merchGroup,
+                        u = e.token,
+                        l = e.localeForCurrency,
+                        m = a()(e, ["appId", "service", "country", "langLocale", "language", "merchGroup", "token", "localeForCurrency"]);
+                    return {
+                        type: s.ON_INIT_CART,
+                        meta: {
+                            appId: t,
+                            langLocale: d,
+                            language: c,
+                            merchGroup: i,
+                            service: r,
+                            token: u,
+                            localeForCurrency: l
+                        },
+                        payload: o()({
+                            country: n
+                        }, m)
+                    }
+                },
+                u = function onFetchSuccess(e) {
+                    var t = e.errors,
+                        r = e.service,
+                        n = e.items,
+                        d = e.totals,
+                        c = e.id,
+                        i = e.promotionCodes,
+                        u = void 0 === i ? [] : i,
+                        l = e.warnings,
+                        m = e.brand,
+                        v = e.channel,
+                        f = e.country,
+                        p = e.currency,
+                        h = a()(e, ["errors", "service", "items", "totals", "id", "promotionCodes", "warnings", "brand", "channel", "country", "currency"]);
+                    return {
+                        type: s.CART_SERVICE_SUCCESS[r] || s.ON_FETCH_SUCCESS,
+                        meta: {
+                            service: r
+                        },
+                        payload: {
+                            errors: t,
+                            warnings: l,
+                            data: o()({
+                                brand: m,
+                                channel: v,
+                                country: f,
+                                currency: p,
+                                id: c,
+                                items: n,
+                                totals: d,
+                                promotionCodes: u
+                            }, h)
+                        }
+                    }
+                },
+                l = function onFetchFailure(e) {
+                    var t = e.service,
+                        r = e.error,
+                        n = e.crcCode,
+                        o = e.data,
+                        d = e.code;
+                    return {
+                        type: s.CART_SERVICE_ERROR[t] || s.ON_FETCH_FAILURE,
+                        meta: {
+                            service: t
+                        },
+                        error: !0,
+                        payload: {
+                            error: r,
+                            crcCode: n,
+                            data: o,
+                            code: d
+                        }
+                    }
+                },
+                m = function setBucket(e, t, r) {
+                    return {
+                        type: s.SET_CART_BUCKET,
+                        meta: {
+                            reason: t,
+                            merge: r
+                        },
+                        payload: {
+                            bucket: e
+                        }
+                    }
+                },
+                v = function setConfig(e) {
+                    return {
+                        type: s.FETCH_CART_CONFIG_SUCCESS,
+                        payload: e
+                    }
+                },
+                f = function clearCartErrors() {
+                    return {
+                        type: s.CLEAR_ERRORS
+                    }
+                },
+                p = function clearCartState() {
+                    return {
+                        type: s.CLEAR_CART_STATE
+                    }
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

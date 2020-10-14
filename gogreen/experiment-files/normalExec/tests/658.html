@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/bing.com/7m655Ud2BRXxznIYtGVzYp1pj8s.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    t.onreadystatechange();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

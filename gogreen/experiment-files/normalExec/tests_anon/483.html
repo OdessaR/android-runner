@@ -1,0 +1,71 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                return i
+            })), e.d(o, "a", (function() {
+                return g
+            }));
+            var i, a = e("q1tI"),
+                r = e.n(a),
+                n = e("xDnR"),
+                l = e.n(n),
+                p = e("IhPL"),
+                _ = e("kqkn"),
+                d = {
+                    toolTipWrapper: "toolTipWrapper__WOszgSx4g_h8YgEUeJa0z",
+                    targetContainer: "targetContainer__PZq_Eqomj3qtxAlWkI_qj",
+                    toolTipContainer: "toolTipContainer__1_UVqYxS6hgVWH-5rEpd7B",
+                    toolTipContainerDark: "toolTipContainerDark__ygIHx_I4LWxf5Wsct45i6",
+                    "top-left": "top-left__1rRUjwI23cYa1UNxnsqIUY",
+                    "top-right": "top-right__3lYgVexwZxKChHiKTvD-ys",
+                    toolTipBody: "toolTipBody__3lXfITu17VUSLc1JCRl4dX",
+                    "bottom-left": "bottom-left__3zsaFnCrgqMYgCIoBeNQON",
+                    "bottom-right": "bottom-right__rviXWdEeeXH0DATV8u2F8",
+                    toolTipContainerLight: "toolTipContainerLight__2oePTEPtwvc6ZGzONfG7Zu"
+                };
+            ! function(t) {
+            }(i || (i = {}));
+            var g = function ToolTip(t) {
+                var o = t.children,
+                    e = t.focusable,
+                    a = t.id,
+                    n = t.position,
+                    g = void 0 === n ? i.TopRight : n,
+                    c = t.target,
+                    s = t.theme,
+                    T = void 0 === s ? _.a.LightMode : s,
+                    h = t.tipClassName,
+                    m = t.wrapperClassName;
+                return r.a.createElement("div", {
+                    className: l()(d.toolTipWrapper, m)
+                }, r.a.createElement("div", {
+                    "aria-labelledby": a,
+                    className: d.targetContainer,
+                    tabIndex: e ? 0 : void 0
+                }, c), r.a.createElement("div", {
+                    className: l()(d.toolTipContainer, d[g], T === _.a.DarkMode ? d.toolTipContainerDark : d.toolTipContainerLight, h),
+                    role: "tooltip",
+                    id: a
+                }, r.a.createElement(p.a, {
+                    className: d.toolTipBody
+                }, o)))
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    t.setAttribute("ec-api-script", "true");
+    t.type = "text/javascript", t.async = !0, t.src = "https://cdn.arkoselabs.com/fc/js/4c706ee3318caa6f8fde4c297bc97d8a/standard/funcaptcha_api.js";
+    e.parentNode.insertBefore(t, e)
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

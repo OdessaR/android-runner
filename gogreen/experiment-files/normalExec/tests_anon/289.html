@@ -1,0 +1,63 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var ensightenOptions = Bootstrapper.ensightenOptions;
+    (function(tagList) {
+        function insertTag(src, type, cat, ord, num) {
+            function replaceValueOrRandom(template, name, value) {
+                var random = (Math.random() + "") * 1E13,
+                    tmp = value.toLowerCase().indexOf("\x3crandom\x3e") !== -1 ? random : value;
+                return template.replace(name, tmp)
+            }
+            var srcTemplate = "https://###SRC###.fls.doubleclick.net/activityi;src\x3d###SRC###;type\x3d###TYPE###;cat\x3d###CAT###;ord\x3d###ORD###;?",
+                url = srcTemplate.replace("###SRC###", src).replace("###TYPE###", type).replace("###CAT###", cat).replace("###SRC###", src);
+            url = replaceValueOrRandom(url, "###ORD###", ord || "");
+            url = replaceValueOrRandom(url, "###NUM###", num || "");
+            iframe.style.display = "none";
+            iframe.src = url;
+        }
+        for (var i = 0; i < tagList.length; i++) {
+            var tag = tagList[i];
+        }
+    })([{
+        "url": "http://www8.hp.com/de/de/ads/instant-ink/overview.html",
+        "isValid": true,
+        "src": "2326416",
+        "type": "ipsin0",
+        "cat": "de_ip0",
+        "ord": "\x3crandom\x3e"
+    }, {
+        "url": "http://www8.hp.com/fr/fr/ads/instant-ink/overview.html",
+        "isValid": true,
+        "src": "2326416",
+        "type": "ipsin0",
+        "cat": "fr_ip0",
+        "ord": "\x3crandom\x3e"
+    }, {
+        "url": "http://www8.hp.com/uk/en/ads/instant-ink/overview.html",
+        "isValid": true,
+        "src": "2326416",
+        "type": "ipsin0",
+        "cat": "uk_ip0",
+        "ord": "\x3crandom\x3e"
+    }])
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

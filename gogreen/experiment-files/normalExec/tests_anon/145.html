@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                focusState = true;
+                body.addClass(tabFocusClass);
+                element.off();
+            });
+            element.on('focusout.emulateTabFocus', function() {
+                focusState = false;
+                body.removeClass(tabFocusClass);
+                element.off();
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

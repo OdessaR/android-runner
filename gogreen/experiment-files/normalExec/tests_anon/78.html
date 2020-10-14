@@ -1,0 +1,84 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            n(37);
+            var a = n(4),
+                r = n.n(a),
+                c = (n(48), n(255)),
+                s = n.n(c),
+                o = n(6),
+                p = n(23),
+                u = n(844),
+                i = n(825),
+                b = n(816),
+                w = r.a.mark(x);
+
+            function x() {
+                var e, t, n, a, c;
+                return r.a.wrap((function(r) {
+                    for (;;) switch (r.prev = r.next) {
+                        case 0:
+                            return e = new Date((new Date).getTime() + 18e5), t = new Date(e.setSeconds(0, 0)), n = Object(p.createLogger)("Ads - MiscCustParams"), r.next = 6, Object(o.i)(i.n);
+                        case 6:
+                            if (a = r.sent, r.prev = 7, !(a >= 0 && a < 3)) {
+                                r.next = 13;
+                                break
+                            }
+                            return r.next = 11, Object(o.c)(s.a.set, "fv", "" + (a + 1), {
+                                path: "/",
+                                domain: ".weather.com",
+                                expires: t
+                            });
+                        case 11:
+                            r.next = 15;
+                            break;
+                        case 13:
+                            return r.next = 15, Object(o.c)(s.a.set, "fv", "-1", {
+                                path: "/",
+                                domain: ".weather.com",
+                                expires: t
+                            });
+                        case 15:
+                            return r.next = 17, Object(o.i)(i.u);
+                        case 17:
+                            return c = r.sent, r.next = 20, Object(o.h)({
+                                type: b.t
+                            });
+                        case 20:
+                            return r.next = 22, Object(o.h)({
+                                type: b.w,
+                                payload: c
+                            });
+                        case 22:
+                            Object(u.b)(n, "SET-MISC-CUST_PARAMS"), r.next = 28;
+                            break;
+                        case 25:
+                            r.prev = 25, r.t0 = r.catch(7), n.error(r.t0, "Unable to fetch miscCustParams: " + r.t0.message);
+                        case 28:
+                        case "end":
+                            return r.stop()
+                    }
+                }), w, null, [
+                    [7, 25]
+                ])
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

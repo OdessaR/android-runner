@@ -1,0 +1,34 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    if (t("case")) return;
+                    if (t("gdpr")) return;
+                    if (t("pro-checkout")) return;
+                    i > a && !s(i) ? function() {
+                        if (!n) return;
+                        o()(".static-page-nav").addClass("static-page-nav-hidden"), n = !1
+                    }() : function() {
+                        if (n) return;
+                        o()(".static-page-nav").removeClass("static-page-nav-hidden"), n = !0
+                    }();
+                    a = i, e()
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                return c
+            }));
+            var c = function(n) {
+                var a = Object(t.a)(n),
+                    e = a.fraction,
+                    c = a.separator,
+                    i = Object(o.a)(a, ["fraction", "separator"]),
+                    l = "00" === e;
+                return function(n) {
+                    var a = n.prefix,
+                        e = void 0 === a ? "" : a,
+                        r = n.decimal,
+                        o = void 0 === r ? "" : r,
+                        t = n.separator,
+                        c = void 0 === t ? "" : t,
+                        i = n.fraction,
+                        l = void 0 === i ? "" : i,
+                        s = n.postfix,
+                        u = void 0 === s ? "" : s;
+                    return "".concat(e).concat(o).concat(c).concat(l).concat(u)
+                }(Object(r.a)({}, i, {
+                    fraction: l ? "" : e,
+                    separator: l ? "" : c
+                }))
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

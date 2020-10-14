@@ -1,0 +1,33 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        $("#sindonewsiframe").append('<iframe src="https://index.sindonews.com/widget" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#inewsiframe").append('<iframe src="https://sindikasi.okezone.com/widget/inews" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#mnctrijayaiframe").append('<iframe src="https://sindikasi.okezone.com/widget/mnctrijaya"scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#mncnowiframe").append('<iframe src="https://okezone.visionplus.id/widget-dark.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="625"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#rctiplusiframe").append('<iframe src="https://embed.rctiplus.com/newswidget/okezone"scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#sindonewsiframe").addClass(" widget-mobile other-widget ");
+        $("#inewsiframe").addClass(" widget-mobile other-widget ");
+        $("#mncnowiframe").addClass(" widget-mobile other-widget ");
+        $("#rctiplusiframe").addClass(" widget-mobile other-widget ");
+        $("#mnctrijayaiframe").addClass(" widget-mobile other-widget ");
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

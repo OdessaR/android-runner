@@ -1,0 +1,78 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var ensightenOptions = Bootstrapper.ensightenOptions;
+    (function(jQuery) {
+        var clientObj = {};
+        clientObj.mboxJs = function(clientMBox) {
+            _ensdiv.id = "conversion_mbox";
+            _ensdiv.style.display = "none";
+            mboxDefine("conversion_mbox", clientMBox.name);
+            mboxUpdate(clientMBox.name, "orderId\x3d" + $data("tntDefaultData", "tntDefaultOrderID"), "productPurchasedId\x3d" + $data("tntDefaultData",
+                "tntDefaultProductID"), "orderTotal\x3d" + (clientMBox.isCustomValue ? clientMBox.value : $data("tntDefaultData", "tntDefaultOrderTotal")))
+        };
+        clientObj.data = [{
+            "mbox": {
+                "name": "PI_PHP_Login_Button",
+                "value": "",
+                "isCustomValue": false
+            },
+            "event": {
+                "name": "Page Element Clicked",
+                "data": {
+                    "match": "selector",
+                    "value": "a[href*\x3d'/ftgw/Fas/Fidelity/RtlCust/Login/Init']:contains('Log In')"
+                }
+            },
+            "eventJs": function(clientObj, clientItem) {
+                var eventData = clientItem.event.data;
+                var element_selector = eventData.value;
+                switch (eventData.match) {
+                    case "id":
+                        element_selector =
+                            "#" + element_selector;
+                        break;
+                    case "class":
+                        element_selector = "." + element_selector;
+                        break
+                }
+                Bootstrapper.bindDOMParsed(function() {
+                    if (typeof jQuery === "function") {
+                        var $matched = jQuery(element_selector);
+                        var onevent = function() {
+                            clientObj.mboxJs(clientItem.mbox)
+                        };
+                        if (typeof jQuery.fn.mousedown === "function") $matched.mousedown(onevent);
+                        else if (typeof jQuery.each === "function") $matched.each(function() {
+                            Bootstrapper.unobtrusiveAddEvent(this, "onmousedown", onevent)
+                        })
+                    }
+                })
+            }
+        }];
+        clientObj.init = function() {
+            for (var i = 0; i < clientObj.data.length; i++) clientObj.data[i].eventJs(clientObj,
+                clientObj.data[i])
+        };
+        clientObj.init()
+    })(jQuery)
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

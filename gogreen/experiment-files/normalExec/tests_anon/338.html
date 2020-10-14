@@ -1,0 +1,74 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var n = r("../../node_modules/@babel/runtime/helpers/objectSpread.js"),
+                o = r.n(n),
+                d = r("../../node_modules/@nike/ux-tread-cart/es/api/add-promotion-code.js"),
+                a = r("../cart-constants/es/index.js"),
+                s = r("../../node_modules/@nike/ux-tread-dotcom-constants/es/index.js"),
+                c = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/handle-cart-errors.js"),
+                i = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/action-creators.js");
+
+            function addPromotionCode(e) {
+                var t = e.appId,
+                    r = void 0 === t ? s.DOTCOM_UX_ID : t,
+                    n = e.brand,
+                    u = void 0 === n ? s.NIKE_BRAND : n,
+                    l = e.channel,
+                    m = void 0 === l ? s.NIKECOM_CHANNEL : l,
+                    v = e.country,
+                    f = e.token,
+                    p = e.promotionCode,
+                    h = e.visitId,
+                    j = e.visitorId,
+                    _ = e.cloudStack,
+                    I = e.host;
+                return function(e) {
+                    var t = {
+                            cloudStack: _,
+                            token: f,
+                            visitId: h,
+                            visitorId: j,
+                            appId: r,
+                            brand: u,
+                            channel: m,
+                            country: v,
+                            host: I,
+                            items: [p]
+                        },
+                        n = a.SERVICE_ADD_PROMOTION;
+                    return e(Object(i.onFetchStart)(o()({
+                        service: n
+                    }, t))), Object(d.default)(t).then((function(t) {
+                        return e(Object(i.onFetchSuccess)(o()({
+                            service: n
+                        }, t)))
+                    }), (function(r) {
+                        return e(Object(c.default)({
+                            service: n,
+                            params: t,
+                            error: r
+                        }))
+                    }))
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

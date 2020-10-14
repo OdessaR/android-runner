@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/sitescout.com/autoptimize_single_7f8dd884aa4b8905a047d72c938331ba.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    setupVideoHeight();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

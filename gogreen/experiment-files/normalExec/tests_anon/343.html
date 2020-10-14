@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                        return e({
+                            type: d.MISSING_VALUES,
+                            payload: {
+                                visitId: y,
+                                visitorId: g,
+                                token: S,
+                                country: m,
+                                langLocale: f
+                            }
+                        })
+                    }));
+                    var a = r(),
+                        _ = Object(s.isConfigSet)(a),
+                        C = Promise.resolve();
+                    return _ || (C = e(Object(u.default)({
+                        s3env: t,
+                        country: m
+                    }))), C.then((function() {
+                        var t = {
+                            host: l,
+                            token: S,
+                            visitId: y,
+                            visitorId: g,
+                            brand: I,
+                            channel: b,
+                            designViewIds: j,
+                            appId: n,
+                            country: m,
+                            items: O,
+                            cloudStack: x,
+                            language: v,
+                            id: k
+                        };
+                        if (E) {
+                            var r = t.items && t.items[0];
+                            r.giftCard = {
+                                amount: E
+                            }, r.shippingMethod = L, r.shippingAddress = {
+                                country: m
+                            }, r.recipient = {
+                                firstName: w,
+                                lastName: P
+                            }, V ? (r.shippingAddress.email = V, r.quantity = 1) : (r.shippingAddress = o()({}, r.shippingAddress, {
+                                address1: T,
+                                address2: A,
+                                city: N,
+                                state: F,
+                                postalCode: D,
+                                country: R || m
+                            }), r.quantity = parseInt(M, 10) || 1)
+                        }
+                        return e(Object(c.onInitCart)(o()({
+                            service: d.SERVICE_ATC_CARTS,
+                            country: m,
+                            langLocale: f,
+                            language: v,
+                            merchGroup: h,
+                            appId: n,
+                            localeForCurrency: p
+                        }, t))), e(Object(i.default)(t))
+                    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

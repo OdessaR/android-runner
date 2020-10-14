@@ -1,0 +1,52 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            // Cancel both timers, then start the closetimer again.
+            clearTimeout(closetimer);
+            clearTimeout(opentimer);
+        });
+
+
+        // Set up the +/- elements on the submenus.
+        $('.dropdown-submenu .dropdown-toggle-split').on('click', function() {
+            var opener = $(this);
+            var submenu = $(this).siblings('.dropdown-menu');
+
+            // Each time the user clicks an opener, toggle the +/- class and the visibility of the submenu.
+            opener.find('.oi').toggleClass('oi-plus').toggleClass('oi-minus');
+            submenu.toggleClass('show');
+
+            // When the parent menu is finished hiding itself after being dismissed, also hide the submenus inside it
+            // and set the openers back to +.
+            $(this).parents('.dropdown.show').on('hidden.bs.dropdown', function() {
+                $('.dropdown-submenu .dropdown-menu').removeClass('show');
+                opener.find('.oi').removeClass('oi-minus').addClass('oi-plus');
+            });
+
+            // Prevent the click from triggering its default action, which would cause the parent dropdown to close.
+            return false;
+        });
+
+        // Make clicks on Level 2 menu-only elements trigger their associated opener.
+        $('.js-level-2-menu-only').on('click', function() {
+            $(this).siblings('.dropdown-toggle-split').trigger('click');
+        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

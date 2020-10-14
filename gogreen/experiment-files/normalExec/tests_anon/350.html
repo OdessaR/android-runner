@@ -1,0 +1,45 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var n = r("../cart-bucketing/es/index.js"),
+                o = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/action-creators.js"),
+                d = {
+                    s3env: "prod"
+                };
+
+            function setCartConfigs() {
+                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : d,
+                    t = e.s3env,
+                    r = void 0 === t ? d.s3env : t,
+                    a = e.country;
+                return function(e) {
+                    return Object(n.getCartConfigs)({
+                        s3env: r,
+                        country: a
+                    }).then((function(t) {
+                        return e(Object(o.setConfig)(t))
+                    }), (function() {
+                        return e(Object(o.setConfig)({}))
+                    }))
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

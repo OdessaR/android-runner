@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/fastly.net/form_functions-2bcdaca2c69990a665163d684448d886b42021569fddb0.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    v();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

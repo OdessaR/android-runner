@@ -1,0 +1,99 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var n = r("../../node_modules/@babel/runtime/helpers/objectSpread.js"),
+                o = r.n(n),
+                d = r("../../node_modules/@nike/ux-tread-cart/es/api/replace-items-by-params.js"),
+                a = r("../cart-constants/es/index.js"),
+                s = r("../../node_modules/@nike/ux-tread-dotcom-constants/es/index.js"),
+                c = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/action-creators.js"),
+                i = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/handle-cart-errors.js"),
+                u = r("../../node_modules/@nike/ux-tread-cart-redux/es/utils.js"),
+                l = r("../../node_modules/@nike/ux-tread-cart-redux/es/selectors.js");
+
+            function updateCartItem(e) {
+                var t = e.appId,
+                    r = void 0 === t ? s.DOTCOM_UX_ID : t,
+                    n = e.brand,
+                    m = void 0 === n ? s.NIKE_BRAND : n,
+                    v = e.channel,
+                    f = void 0 === v ? s.NIKECOM_CHANNEL : v,
+                    p = e.cloudStack,
+                    h = e.country,
+                    j = e.giftCard,
+                    _ = e.host,
+                    I = e.id,
+                    C = e.items,
+                    b = e.offer,
+                    x = e.quantity,
+                    k = e.recipient,
+                    O = e.shippingAddress,
+                    S = e.shippingMethod,
+                    y = e.skuId,
+                    g = e.token,
+                    E = e.valueAddedServices,
+                    T = e.visitId,
+                    A = e.visitorId;
+                return function(e, t) {
+                    var n = a.SERVICE_UPDATE_ITEM,
+                        s = Object(l.getMetaConfig)(t()),
+                        v = Object(u.createItemData)(s),
+                        N = {
+                            host: _,
+                            cloudStack: p,
+                            token: g,
+                            visitId: T,
+                            visitorId: A,
+                            appId: r,
+                            brand: m,
+                            channel: f,
+                            country: h,
+                            items: C ? C.map((function(e) {
+                                return o()({}, v, e)
+                            })) : [o()({
+                                giftCard: j,
+                                id: I,
+                                offer: b,
+                                quantity: x,
+                                recipient: k,
+                                shippingAddress: O,
+                                shippingMethod: S,
+                                skuId: y,
+                                valueAddedServices: E
+                            }, v)]
+                        };
+                    return e(Object(c.onFetchStart)(o()({
+                        service: n
+                    }, N))), Object(d.default)(N).then((function(t) {
+                        return e(Object(c.onFetchSuccess)(o()({
+                            service: n
+                        }, t)))
+                    }), (function(t) {
+                        return e(Object(i.default)({
+                            service: n,
+                            params: N,
+                            error: t
+                        }))
+                    }))
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

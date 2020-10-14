@@ -1,0 +1,73 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var a = $(".window-password-recovery");
+    a.find("form").riaForm({
+        errorInput: true,
+        errorLabel: true,
+        errorMessage: false,
+        errorAlert: true,
+        alert: ".window-restore .error-message",
+        rules: {
+            login: "email",
+            captcha: "empty"
+        },
+        alerts: {
+            login: {
+            },
+            captcha: {
+            }
+        },
+        successCallback: function(b) {
+            var c = $("#passwordRecoveryModalLogin").val();
+            if (b.status === "success") {
+                a.find(".success ").show().find(".email").html(c);
+                a.find(".body").hide();
+                a.find(".error-message").hide()
+            }
+        },
+        errorCallback: function() {
+        }
+    });
+    $(".password-recovery form").riaForm({
+        errorInput: true,
+        errorLabel: true,
+        errorAlert: true,
+        alert: ".password-recovery .error-message",
+        rules: {
+            password: "empty",
+            password_confirmation: "empty"
+        },
+        alerts: {
+            password: {
+            },
+            user: {
+            }
+        },
+        successCallback: function(b) {
+            if (b.status === "success") {
+                $(".password-recovery form").hide();
+                $(".password-recovery .success").show()
+            }
+        }
+    })
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

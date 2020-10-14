@@ -1,0 +1,36 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        Bootstrapper.data.define({
+            extract: function() {
+                return Bootstrapper.ensightenOptions.publishPath + " - " + Bootstrapper.ensightenOptions.generatedOn
+            },
+            load: "instance",
+            trigger: Bootstrapper.data.immediateTrigger,
+            dataDefName: "ADBP - codeversion",
+            collection: "ADBP",
+            source: "Manage",
+            priv: "false"
+        }, {
+            id: "8909"
+        })
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

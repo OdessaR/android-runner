@@ -1,0 +1,32 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var ensightenOptions = Bootstrapper.ensightenOptions;
+    newFrame.src = "//insight.adsrvr.org/tags/q15ceyc/lm6dwau/iframe";
+    newFrame.width = newFrame.height = "1px";
+    newFrame.style.display = "none";
+    var rand = parseInt(1E5 * 1E4 * Math.random() * Math.random(), 0);
+    Bootstrapper["appendFrame" + rand] = setInterval(function(a, b) {
+        return function() {
+        }
+    }(newFrame, rand), 250)
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

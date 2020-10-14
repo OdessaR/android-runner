@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    return n("svg", {
+                        attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 14 14",
+                            "aria-hidden": "true",
+                            role: "img"
+                        }
+                    }, [n("polygon", {
+                        attrs: {
+                            points: "7 3 0 10.433 1.476 12 7 6.134 12.524 12 14 10.433"
+                        }
+                    })])
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

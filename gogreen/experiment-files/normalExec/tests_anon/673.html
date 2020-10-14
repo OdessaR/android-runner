@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var c = t("ERkP"),
+                o = t.n(c),
+                a = t("cxan"),
+                i = t("pcOi"),
+                r = t("K3fg"),
+                u = t("uDfI"),
+                f = t("0/0r"),
+                s = t("j/s1"),
+                l = o.a.createElement,
+                p = Object(s.e)(r.default).withConfig({
+                    componentId: "sc-1iiy4lw-0"
+                })(["width:550px !important;"]);
+
+            function O(e) {
+                var n = Object(a.a)({}, e),
+                    t = Object(i.a)(),
+                    c = Object(u.d)();
+                return l(p, Object(a.a)({
+                    title: "\u60a8\u5373\u5c07\u9032\u5165\u4e4b\u770b\u677f\u5167\u5bb9\u9700\u6eff\u5341\u516b\u6b72\u65b9\u53ef\u700f\u89bd",
+                    cancelText: "\u96e2\u958b",
+                    confirmText: "\u662f\uff0c\u6211\u5df2\u6eff\u5341\u516b\u6b72\u3002",
+                    closeOnCancel: !0,
+                    onCancel: function() {
+                        return t.pushRoute("/f")
+                    },
+                    closeOnConfirm: !0,
+                    showCloseButton: !1,
+                    onConfirm: function() {
+                        c(f.a.actions.patch({
+                            agreeRegulation: !0
+                        }))
+                    },
+                    description: "\u6839\u64da\u300c\u5152\u7ae5\u53ca\u5c11\u5e74\u798f\u5229\u8207\u6b0a\u76ca\u4fdd\u969c\u6cd5\u300d\u898f\u5b9a\uff0c\u672c\u7db2\u7ad9\u5df2\u65bc\u975e\u95d4\u5bb6\u7686\u5b9c\u4e4b\u770b\u677f\u52a0\u4ee5\u6a19\u793a\u3002\u82e5\u60a8\u5c1a\u672a\u5e74\u6eff\u5341\u516b\u6b72\uff0c\u8acb\u9ede\u9078\u96e2\u958b\u3002\u82e5\u60a8\u5df2\u6eff\u5341\u516b\u6b72\uff0c\u4ea6\u4e0d\u53ef\u5c07\u672c\u5340\u4e4b\u5167\u5bb9\u6d3e\u767c\u3001\u50b3\u95b1\u3001\u51fa\u552e\u3001\u51fa\u79df\u3001\u4ea4\u7d66\u6216\u501f\u4e88\u5e74\u9f61\u672a\u6eff18\u6b72\u7684\u4eba\u58eb\u700f\u89bd\uff0c\u6216\u5c07\u672c\u7db2\u7ad9\u5167\u5bb9\u5411\u8a72\u4eba\u58eb\u51fa\u793a\u3001\u64ad\u653e\u6216\u653e\u6620\u3002"
+                }, n))
+            }
+            var b = t("9e7o"),
+                j = t("2zbF"),
+                w = o.a.createElement;
+
+            function d(e) {
+                var n = e.nsfw,
+                    t = Object(b.a)((function(e) {
+                        return e.app.data.agreeRegulation
+                    })),
+                    o = Object(b.a)(j.a),
+                    a = Object(c.useMemo)((function() {
+                        return n && !t && !o
+                    }), [n, t, o]),
+                    i = Object(c.useState)(!1),
+                    r = i[0],
+                    u = i[1];
+                return Object(c.useEffect)((function() {
+                    a && u(!0)
+                }), [a]), w(O, {
+                    isOpen: r,
+                    onClose: function() {
+                        return u(!1)
+                    }
+                })
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

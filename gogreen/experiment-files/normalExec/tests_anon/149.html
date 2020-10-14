@@ -1,0 +1,39 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    $(this);
+                    if ($(this).hasClass("thumb")) {
+                        if ("" !== $(this).find("img").length) {
+                            var globalAttr = $(this).find("img").attr(global.dataAttribute);
+                            if (void 0 !== globalAttr) {
+                                var src = globalAttr.replace("1920v", getThumnbSize($(this).innerWidth()));
+                                $(this).find("img").attr("src", src)
+                            }
+                        }
+                    } else if ($(this).hasClass("background-image")) {
+                        var dataAttr = $(this).attr(global.dataAttribute);
+                        if (void 0 !== dataAttr) {
+                            var newUrl = dataAttr.replace("1920v", getThumnbSize($(this).innerWidth()));
+                            $(this).css("background-image", "url(" + newUrl + ")"), $(this).hasClass("background-image--medium") ? (newUrl = dataAttr.replace("1024v", getThumnbSize($(this).innerWidth())), $(this).css("background-image", "url(" + newUrl + ")")) : $(this).hasClass("background-image--small") && (newUrl = dataAttr.replace("768v", getThumnbSize($(this).innerWidth())), $(this).css("background-image", "url(" + newUrl + ")"))
+                        }
+                    }
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

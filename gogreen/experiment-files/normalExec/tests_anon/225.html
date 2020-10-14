@@ -1,0 +1,33 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    var changed;
+                    if (!self._loop && !self.st.loopRewind) {
+                        changed = true;
+                        self.st.loopRewind = true;
+                    }
+                    self.next(true);
+                    if (changed) {
+                        changed = false;
+                        self.st.loopRewind = false;
+                    }
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>
