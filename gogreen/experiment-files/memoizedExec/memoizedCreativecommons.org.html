@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/creativecommons.org/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(arrayAverage);
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var d = [23,77,43,25,66,14,62,11,15,5,28,73,99,83,45,9,2];
+            for (x = -40; x < 0; x++) {
+                // memo
+                memoFunc(d)
+            }
+
+        }
+    </script>
+</body>
+</html>

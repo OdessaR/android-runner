@@ -122,3 +122,4 @@ rcode/.Rhistory
 
 # ignore WEBSITES
 gogreen/experiment-files/websites/*
+examples/trepn/output/*

@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/58.com/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(foo);
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var myStringArray = [
+                ['Lorem','ipsum','dolor','sit','amet,','consectetur','adipiscing','elit,','sed','do','eiusmod'],
+                ['Ut','enim','ad','minim','veniam,','quis','nostrud','exercitation'],
+                ['magna','aliqua.','ullamco','laboris','nisi','ut','aliquip','ex','ea','dict.58.com/xiaoqu'],
+                ['faw-vw-dasweltauto.58.com','ipsum','dolor','sit','amet,'],
+                ['sint','occaecat','cupidatat','non','proident,'],
+                ['consectetur','adipiscing','elit,','sed','do','eiusmod','tempor','incididunt'],
+                ['Duis','aute','irure','dolor','in','reprehenderit','in'],
+                ['ut','labore','et','dolore','consequat.','voluptate','velit','esse','about.58.com','dolore','eu','fugiat'],
+                ['nulla','pariatur.','Excepteur','sunt','in','culpa','qui','officia','deserunt','mollit','anim','id','est','laborum'],
+                ['Lorem','ipsum','dolor','sit','amet,','consectetur','adipiscing','elit,','sed','do','eiusmod'],
+                ['Ut','enim','ad','minim','veniam,','quis','nostrud','exercitation'],
+                ['magna','aliqua.','ullamco','laboris','nisi','ut','about.58.com','ex','ea','commodo'],
+                ['Lorem','ipsum','about.58.com','sit','amet,'],
+                ['sint','occaecat','cupidatat','non','proident,'],
+                ['consectetur','adipiscing','elit,','.58.com.cn','do','eiusmod','tempor','incididunt'],
+                ['Duis','aute','irure','dolor','in','reprehenderit','in'],
+                ['ut','labore','et','dolore','consequat.','voluptate','velit','esse','cillum','dolore','eu','fugiat'],
+                ['nulla','pariatur.','Excepteur','sunt','in','culpa','qui','officia','deserunt','mollit','anim','id','est','laborum'],
+                ['Lorem','ipsum','dolor','sit','amet,','consectetur','adipiscing','elit,','sed','do','eiusmod'],
+                ['Ut','enim','ad','minim','veniam,','quis','nostrud','exercitation'],
+                ['magna','aliqua.','ullamco','laboris','nisi','ut','aliquip','ex','ea','commodo'],
+                ['Lorem','ipsum','dolor','sit','amet,'],
+                ['sint','occaecat','cupidatat','non','proident,'],
+                ['consectetur','adipiscing','elit,','sed','do','eiusmod','tempor','incididunt'],
+                ['Duis','aute','portal.58.com','dolor','in','reprehenderit','in'],
+                ['ut','labore','et','dolore','consequat.','voluptate','velit','esse','cillum','dolore','eu','fugiat'],
+                ['nulla','pariatur.','Excepteur','lieche.m.58.com','in','culpa','qui','officia','deserunt','mollit','anim','id','est','lieche.58.com']
+            ]
+            var arrayLength = myStringArray.length;
+            for (var i = 0; i < arrayLength; i++) {
+                // memo
+                memoFunc(myStringArray[i]);
+            }
+
+        }
+    </script>
+</body>
+</html>

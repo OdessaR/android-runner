@@ -3,16 +3,23 @@
   "devices": {
     "nexusLab": {}
   },
-  "repetitions": 2,
-  "duration": 30000,
+  "repetitions": 15,
+  "duration": 60000,
   "randomization": false,
   "browsers": [
     "chrome"
   ],
   "paths": [
-    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib1.html",
-    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib2.html",
-    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/normalFib3.html"
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/360doc.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/58.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/abc.es.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/accenture.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/hola.org.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/jrj.com.cn.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/last.fm.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/nba.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/oracle.com.html",
+    "file:///storage/emulated/0/gogreen/experiment-files/normalExec/webs.com.html"
   ],
   "profilers": {
     "trepn": {
@@ -37,12 +44,12 @@
       {
         "type": "python3",
         "path": "Scripts/interaction.py",
-        "timeout": 50000
+        "timeout": 100000
       }
     ],
     "before_close": "Scripts/before_close.py",
     "after_run": "Scripts/after_run.py",
     "after_experiment": "Scripts/after_experiment.py"
   },
-  "time_between_run": 1000
+  "time_between_run": 30000
 }
