@@ -14,16 +14,16 @@
 
     <!-- exectution -->
     <script type="text/javascript">
-        var t = {}, f = {}, a = 0;
-        for (let i = 0; i < 100; i++) {
-            t[i] = Math.sin(i*0.01);
-        }
-        for (let i = 1; i < 100; i++) {
-            f[i] = Math.sin((i)*0.02);
-        }
-        function A(t) {
-            return t[n] >= f[n] || t[n] === a
-        }
+    var t = {}, f = {}, a = 0;
+    for (let i = 0; i < 100; i++) {
+        t[i] = Math.sin(i*0.01);
+    }
+    for (let i = 1; i < 100; i++) {
+        f[i] = Math.sin((i)*0.02);
+    }
+    function m(t) {
+        return t[n] === a
+    }
 
         while (true) {
             var n = 0;
@@ -32,9 +32,8 @@
             for (i = 0; i < 100; i++) {
                 n = i;
                 // memo
-                console.log(A(t));
+                m(t);
             }
-            break;
 
         }
     </script>
