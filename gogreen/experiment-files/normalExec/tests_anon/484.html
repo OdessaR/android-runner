@@ -1,0 +1,62 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    discover.dmp_scripts = (function() {
+
+        var scripts = {};
+
+        //CR170203-04  WT  3_2016_DMP_5 Percent 2Q_2017_Pre-Enroll
+        $(document).on("click tap", ".left-box", function() {
+            $(this).parent().find("a")[0].click();
+        });
+        $(document).on("click tap", ".dmp-img-link", function() {
+            $(this).parent().find(".dmp-link")[0].click();
+        });
+        //CR170203-04  WT  3_2016_DMP_5 Percent 2Q_2017_Pre-Enroll
+
+        //CR170404-04 : DMP  NCD239_DSL_Cross-Sell_2017_LOG_OFF & D.Com - MAY
+        scripts.CR170404_04_ImageToLink = function() {
+            //console.log("inside CR170404_04_ImageToLink");
+            $("#middleBox").click(function() {
+                var href = $(this).parent().find("a").attr("href");
+            });
+        }
+        //CR170404-04 : DMP  NCD239_DSL_Cross-Sell_2017_LOG_OFF & D.Com - MAY
+
+        /* End placement specific functions */
+
+        /*Do not modify below this line */
+        function init() {
+            // console.log("in init");
+            //find all elements that has a script defined
+            $("[data-omu-script]").each(function() {
+                //console.log("identified " + fnName);
+                if (fnName && fnName !== "" && scripts[fnName]) {
+                    scripts[fnName]();
+                };
+            })
+        }
+
+        return {
+        };
+    })();
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

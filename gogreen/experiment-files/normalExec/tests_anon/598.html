@@ -1,0 +1,36 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var etLogoRightNow = new Date();
+
+    //中秋節
+    var etLogoStartTime1 = new Date(2020, 9 - 1, 28, 0, 0, 0); // 結束時間 (年,月(0-11),日,時,分,秒)
+    var etLogoEndTime1 = new Date(2020, 10 - 1, 4, 23, 59, 59); // 結束時間 (年,月(0-11),日,時,分,秒)
+    // var etLogoSrc1 = "./images/logo/moon_2020.gif"; //圖檔路徑
+    var etLogoSrc1 = "https://static.ettoday.net/style/ettoday2017/images/logo/moon_2020.gif";
+
+    if (etLogoRightNow > etLogoStartTime1 && etLogoRightNow < etLogoEndTime1) {
+    } else {
+        //下檔期間-預設Logo
+    }
+
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

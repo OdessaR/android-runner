@@ -1,0 +1,30 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var text = "Maintenance Alert!  Due to maintenance, you may experience some intermittent issues on www.itu.int";
+    $('#status_preview_body').html(text);
+
+    // remove the empty blocks after page load:
+    /* 1.2.20016 kazu has moved from itu-functions.js */
+    removeEmptyBlocks();
+
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

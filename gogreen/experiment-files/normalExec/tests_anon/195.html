@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                                var t = setTimeout(function() {
+                                        n("timeout")
+                                    }, 1e4),
+                                    e = Object(i.b)(),
+                                    c = e.getState();
+                                !c.appConfig.mobile && c.appConfig.loggedIn ? (clearTimeout(t), n("loggedIn")) : c.appConfig.mobile || e.subscribe(function() {
+                                    e.getState().appConfig.loggedIn && (clearTimeout(t), n("loggedIn"))
+                                })
+                            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    return findTargetFrame(this, function($form, $frame) {
+                        var action = $form.attr('action'),
+                            extraFormData = $frame.attr('data-extra-form-data'),
+                            clicked = $.data($form[0], 'frame-clicked'),
+                            clickedName,
+                            clickedValue;
+
+                        if (clicked) {
+                            clickedName = $(clicked).prop('name');
+                            clickedValue = $(clicked).prop('value');
+
+                            if (clickedName && clickedValue) {
+                                action += (action.indexOf('?') > -1 ? '&' : '?') + encodeURIComponent(clickedName) + '=' + encodeURIComponent(clickedValue);
+                            }
+                        }
+
+                        if ($form.attr('enctype') !== 'multipart/form-data') {
+                            loadPage($frame, $form, $form.attr('method'), action, $form.serialize());
+                            return false;
+                        }
+
+                        $form.attr('action', action + (action.indexOf('?') < 0 ? '?' : '&') + extraFormData);
+
+                        if ($form.find('input[type="hidden"][name="_frame"]').length === 0) {
+                            $form.prepend($('<input/>', {
+                                'name': '_frame',
+                                'type': 'hidden',
+                                'value': 'true'
+                            }));
+                        }
+
+                        // Add a target for $submitFrame later in case one doesn't exist.
+                        var target = $form.attr('target');
+                        var hasTarget = true;
+                        if (!target) {
+                            formTargetIndex += 1;
+                            target = 'frameTarget' + formTargetIndex + (+new Date());
+                            $form.attr('target', target);
+                            hasTarget = false;
+                        }
+
+                        var $submitFrame = $('iframe[name=' + target + ']');
+                        if ($submitFrame.length === 0) {
+                            $submitFrame = $('<iframe/>', {
+                                'name': target
+                            });
+                            $submitFrame.hide();
+                            $(doc.body).append($submitFrame);
+                        }
+
+                        var version = beginLoad($frame, $form);
+                        $submitFrame.unbind('.frame');
+                        $submitFrame.bind('load.frame', function() {
+                            $form.attr('action', action);
+                            endLoad($frame, version, $submitFrame.contents().find('textarea#frameBody').val() || $submitFrame.contents().find('body').html());
+                            if (!hasTarget) {
+                                $form.removeAttr('target');
+                                setTimeout(function() {
+                                    $submitFrame.remove();
+                                }, 0);
+                            }
+                        });
+
+                        return true;
+                    });
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

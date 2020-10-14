@@ -1,0 +1,50 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    $(this).prev("label").animate({
+        top: "-6px",
+        "font-size": "11px"
+    })
+}).blur(function() {
+    if ($(this).val() === "") {
+        $(this).prev("label").animate({
+            top: "10px",
+            "font-size": "15px"
+        })
+    }
+});
+$(document).ready(function() {
+    var e = (c === null) ? "" : c[1];
+    var d = $("form#login-form-content input#userid-content");
+    var a = $("form#login-form-content input#password-content");
+    var b = $("form#login-form-content input#userid-content").val();
+    if (d.length !== 0 && a.length !== 0) {
+        var f = $("form#login-form-content input#userid-content").val().length;
+        if (f !== 0) {
+            a.focus()
+        } else {
+            if (e === "***CLEARED***") {
+                d.focus()
+            }
+        }
+    }
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/khanacademy.org/1d98b6a9fc42d53264bd3fb2b545faa5.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    e();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

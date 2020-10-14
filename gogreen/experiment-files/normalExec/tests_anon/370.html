@@ -1,0 +1,156 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var n = r("../../node_modules/@babel/runtime/helpers/objectSpread.js"),
+                o = r.n(n),
+                d = r("../../node_modules/@nike/ux-tread-cart/es/api/replace-items-by-params.js"),
+                a = r("../../node_modules/@nike/ux-tread-cart/es/api/add-items-by-params.js"),
+                s = r("../cart-constants/es/index.js"),
+                c = r("../grand-whitelisted-hashes/es/index.js"),
+                i = r("../../node_modules/@nike/ux-tread-dotcom-constants/es/index.js"),
+                u = r("../../node_modules/@nike/fetch-client/es/fetch-client.js"),
+                l = r("../graphql-fetch/es/index.js"),
+                m = r.n(l),
+                v = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/handle-cart-errors.js"),
+                f = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/action-creators.js"),
+                p = r("../../node_modules/@nike/ux-tread-cart-redux/es/selectors.js"),
+                h = r("../../node_modules/@nike/ux-tread-cart-redux/es/utils.js");
+
+            function updateCart(e) {
+                var t = e.token,
+                    r = e.visitId,
+                    n = e.visitorId,
+                    l = e.brand,
+                    j = void 0 === l ? i.NIKE_BRAND : l,
+                    _ = e.channel,
+                    I = void 0 === _ ? i.NIKECOM_CHANNEL : _,
+                    C = e.country,
+                    b = e.cloudStack,
+                    x = e.host,
+                    k = e.id,
+                    O = e.items,
+                    S = void 0 === O ? [] : O,
+                    y = e.appId,
+                    g = void 0 === y ? i.DOTCOM_UX_ID : y,
+                    E = e.promotionCodes,
+                    T = void 0 === E ? [] : E,
+                    A = e.designViewIds;
+                return function(e, i) {
+                    var l = Object(p.getMetaConfig)(i()),
+                        _ = Object(h.createItemData)(l),
+                        O = {
+                            host: x,
+                            cloudStack: b,
+                            token: t,
+                            visitId: r,
+                            visitorId: n,
+                            appId: g,
+                            brand: j,
+                            channel: I,
+                            country: C,
+                            items: S.map((function(e) {
+                                return o()({}, _, e)
+                            }))
+                        },
+                        y = s.SERVICE_ATC_CARTS;
+                    if (T.length && (O.promotionCodes = T), e(Object(f.onFetchStart)(o()({
+                            service: y
+                        }, O))), null == A ? void 0 : A.length) {
+                        var E = k ? d.default : a.default,
+                            N = Object(p.getShouldIncludeCredentials)(i()) ? {
+                                credentials: "include"
+                            } : {};
+                        return m()({
+                            appId: g,
+                            fetchClient: u.default,
+                            cloudStack: b,
+                            hash: c.designViewsByIds,
+                            variables: {
+                                designViewIds: A,
+                                country: C
+                            },
+                            fetchOptions: N
+                        }).then((function(t) {
+                            var r, n = (null === (r = t.data) || void 0 === r ? void 0 : r.designViews) || [],
+                                d = A.reduce((function(e, t, r) {
+                                    return e.push(o()({
+                                        designViewId: String(t)
+                                    }, n[r])), e
+                                }), []);
+                            return O.items = d.map((function(e) {
+                                var t, r, n, d, a = null == e ? void 0 : null === (t = e.product) || void 0 === t ? void 0 : null === (r = t.valueAddedServices) || void 0 === r ? void 0 : null === (n = r[0]) || void 0 === n ? void 0 : n.vasType;
+                                return o()({}, _, {
+                                    id: k,
+                                    skuId: e.skuId,
+                                    quantity: 1,
+                                    valueAddedServices: [{
+                                        id: null == e ? void 0 : null === (d = e.designVasIds) || void 0 === d ? void 0 : d[0],
+                                        instruction: {
+                                            id: e.designViewId,
+                                            type: s.VAS_INSTRUCTION_TYPE_MAP[a]
+                                        }
+                                    }]
+                                })
+                            })), E(O).then((function(t) {
+                                return e({
+                                    type: s.ADD_TO_CARTS_SUCCESS,
+                                    meta: {
+                                        service: y
+                                    },
+                                    payload: {
+                                        data: t
+                                    }
+                                })
+                            }), (function(t) {
+                                return e(Object(v.default)({
+                                    service: y,
+                                    params: O,
+                                    error: t
+                                }))
+                            }))
+                        }))
+                    }
+                    return Object(a.default)(O).then((function(t) {
+                        return e({
+                            type: s.ADD_TO_CARTS_SUCCESS,
+                            meta: {
+                                service: y
+                            },
+                            payload: {
+                                data: t
+                            }
+                        })
+                    }), (function(t) {
+                        var r, n = (null == t ? void 0 : t.data) || {};
+                        return (null == t ? void 0 : null === (r = t.data) || void 0 === r ? void 0 : r.items) || (n = o()({}, (null == t ? void 0 : t.data) || {}, {
+                            items: Object(p.getCartItems)(i())
+                        })), e(Object(v.default)({
+                            service: y,
+                            params: O,
+                            error: o()({}, t, {
+                                data: n
+                            })
+                        }))
+                    }))
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

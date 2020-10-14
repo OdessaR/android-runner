@@ -1,0 +1,53 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var i = e("7xIC"),
+                o = e.n(i),
+                c = e("ERkP"),
+                a = e("uDfI"),
+                r = e("pcOi"),
+                u = e("9e7o"),
+                l = e("0/0r");
+
+            function s() {
+                var t = Object(a.d)(),
+                    n = Object(u.a)((function(t) {
+                        return t.app.data.loginRedirectPath
+                    })),
+                    e = Object(r.a)().asPath,
+                    i = Object(c.useRef)(e);
+                return Object(c.useEffect)((function() {
+                    i.current = e
+                }), [e]), [n, Object(c.useCallback)((function() {
+                    var n = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                        e = n.target,
+                        c = n.goLogin,
+                        a = void 0 === c || c,
+                        r = e || i.current;
+                    t(l.a.actions.patch({
+                        loginRedirectPath: r
+                    })), a && setTimeout((function() {
+                        o.a.push("/signup")
+                    }))
+                }), [t])]
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

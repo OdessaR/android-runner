@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        var i;
+        $(this).find(".caption") && !$(this).find(".caption").is(":empty") && (i = $(this).find(".caption")), i && (i.attr("id", "waGPC0047_" + t), $(this).find("a.btn").attr("aria-describedby", "waGPC0047_" + t), $(this).find("a.link-text").attr("aria-describedby", "waGPC0047_" + t), t++)
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    jQuery(window).on("resize scroll", function() {
+    }), jQuery("body").scrollspy({
+        target: ".fusion-menu",
+        offset: parseInt(a + b + 1, 10)
+    }), jQuery(window).load(function() {
+        jQuery("body").data()["bs.scrollspy"].options.offset = parseInt(a + b + 1, 10)
+    })
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

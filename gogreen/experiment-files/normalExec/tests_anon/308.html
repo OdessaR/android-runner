@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+
+    function setCookie(name, value) {
+        var Days = 365;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+    }
+
+    function getCookie(name) {
+        var result = null;
+        var searchName = "" + name + "=";
+        var startOfCookie = myCookie.indexOf(searchName);
+        var endOfCookie;
+        if (startOfCookie != -1) {
+            startOfCookie += searchName.length;
+            endOfCookie = myCookie.indexOf(";", startOfCookie);
+            result = (myCookie.substring(startOfCookie, endOfCookie));
+        }
+        return result;
+    }
+
+    var reg = /[#|\?|&].*/g;
+    cnsservice_u = cnsservice_u.replace(reg, "");
+    r = r.replace(reg, "");
+    var pid = 0;
+    var tid = 0;
+    var did = 0;
+
+    var uid = "cnsuuid";
+    var hostworkname = getCookie(uid);
+
+    var nowday = new Date();
+
+    if (hostworkname == null) {
+        var guid = "";
+        for (var i = 1; i <= 32; i++) {
+            var n = Math.floor(Math.random() * 16.0).toString(16);
+            guid += n;
+            if ((i == 8) || (i == 12) || (i == 16) || (i == 20))
+                guid += "-";
+        }
+        guid += Math.random() * 16000 + "_" + (new Date().getTime());
+        guid += "";
+        hostworkname = guid;
+        setCookie(uid, hostworkname);
+    }
+
+    var cnsservice_url = 'http://lc.chinanews.com:8090/rpc/p.jsp?';
+    cnsservice_url = cnsservice_url + "pid=" + pid;
+    cnsservice_url = cnsservice_url + "&did=" + did;
+    cnsservice_url = cnsservice_url + "&t=" + encodeURIComponent(t);
+    //cnsservice_url = cnsservice_url + "&t=" + encodeURIComponent(encodeURIComponent(t));
+    cnsservice_url = cnsservice_url + "&u=" + cnsservice_u;
+    cnsservice_url = cnsservice_url + "&r=" + r;
+    cnsservice_url = cnsservice_url + "&hostworkname=" + hostworkname;
+    cnsservice_url = cnsservice_url + "&aj=" + encodeURI(Math.random() + (new Date()));
+    var s2;
+    s2.type = "text/javascript";
+    s2.src = cnsservice_url;
+    //var cnsservice_head = document.getElementsByTagName('script')[0];
+    //cnsservice_head.parentNode.insertBefore(s2,cnsservice_head);
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

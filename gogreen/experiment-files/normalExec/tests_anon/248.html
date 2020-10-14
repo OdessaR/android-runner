@@ -1,0 +1,54 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+
+            var isVisible = $(standingsModule).is(':visible');
+
+            if (!isVisible) {
+                return;
+            }
+
+            var standingsOptions = {
+                container: standingsModule,
+                css: 'standings-module--' + standingsModule.dataset.cid,
+                i18n: pageMeta.locale,
+                contextURL: pageMeta['context-url-prefix'],
+                standingsType: standingsModule.dataset.standingsType,
+                standingsView: standingsModule.dataset.standingsView,
+                legendView: standingsModule.dataset.legendView,
+                season: standingsModule.dataset.currentSeason,
+                currentSeason: standingsModule.dataset.currentSeason,
+                team: standingsModule.dataset.team,
+                colorPalette: pageMeta.colorPalette,
+                useNav: standingsModule.dataset.useNav === 'Y',
+                miniSelectedConference: standingsModule.dataset.miniSelectedConference || undefined,
+                miniSelectedDivision: standingsModule.dataset.miniSelectedDivision || undefined,
+                inRightRail: standingsModule.dataset.inRightRail === 'Y',
+                divisionSeparation: standingsModule.dataset.divisionSeparation || false,
+                moment: moment
+            };
+
+            var standingsComponent = fedComponentStandings(standingsOptions);
+
+            standingsComponent.init();
+            scrollWatcher.destroy();
+        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

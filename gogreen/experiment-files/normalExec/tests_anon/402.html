@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    return e("svg", {
+                        attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 14 14",
+                            "aria-hidden": "true",
+                            role: "img"
+                        }
+                    }, [e("path", {
+                        attrs: {
+                            d: "M10.92 2.24H8.75c-.28 0-.63.07-.63.56v2.24h2.8v2.24h-2.8V14H5.88V7.28h-2.8V5.04h2.8V3.08C5.88 1.05 6.86 0 8.75 0h2.17v2.24z"
+                        }
+                    })])
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

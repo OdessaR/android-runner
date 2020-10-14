@@ -1,0 +1,59 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        var winHeight = $(window).height(),
+            docHeight = $(document).height();
+        var max = docHeight - winHeight;
+        $('.readingProgressbar').attr('max', max);
+        var progressForeground = $('.readingProgressbar').attr('data-foreground');
+        var progressBackground = $('.readingProgressbar').attr('data-background');
+        var progressHeight = $('.readingProgressbar').attr('data-height');
+        var progressPosition = $('.readingProgressbar').attr('data-position');
+        var progressCustomPosition = $('.readingProgressbar').attr('data-custom-position');
+        var progressFixedOrAbsolute = 'fixed';
+        if (progressPosition == 'custom') {
+            $('.readingProgressbar').appendTo(progressCustomPosition);
+            progressPosition = 'bottom';
+            progressFixedOrAbsolute = 'absolute';
+        }
+        if (progressPosition == 'top') {
+            var progressTop = '0';
+            var progressBottom = 'auto';
+        } else {
+            var progressTop = 'auto';
+            var progressBottom = '0';
+        }
+        $('.readingProgressbar').css({
+            'background-color': progressBackground,
+            'color': progressForeground,
+            'height': progressHeight + 'px',
+            'position': progressFixedOrAbsolute,
+            'display': 'block'
+        });
+        $('<style>.readingProgressbar::-webkit-progress-bar { background-color: transparent } .readingProgressbar::-webkit-progress-value { background-color: ' + progressForeground + ' } .readingProgressbar::-moz-progress-bar { background-color: ' + progressForeground + ' }</style>').appendTo('head');
+        var value = $(window).scrollTop();
+        $('.readingProgressbar').attr('value', value);
+        $(document).on('scroll', function() {
+            value = $(window).scrollTop();
+            $('.readingProgressbar').attr('value', value);
+        });
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

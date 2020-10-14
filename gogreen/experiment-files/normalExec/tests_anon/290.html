@@ -1,0 +1,37 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        var $this = $(this);
+
+        var options = {
+            component: 'g5-component--mlb-player-leaderboard',
+            container: $this.get(0),
+            leaderCategories: $this.data('leaderCategories'),
+            leaderGameTypes: $this.data('leaderGameTypes'),
+            path: statsapi + '/api/v1/',
+            season: $this.data('season'),
+            teamId: teamId,
+            device: device
+        };
+
+        fedComponentMlbPlayerLeaderboard(options).init();
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

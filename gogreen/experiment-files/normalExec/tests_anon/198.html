@@ -1,0 +1,27 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                        var n = Object(u.a)();
+                        Object(o.a)("LazyTopNav", d, function(n) {
+                            p.removeEventListener("click", b), "click" === n && p.click()
+                        }, null, n.topnav)
+                    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

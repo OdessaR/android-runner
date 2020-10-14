@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/discover.com/dmp-scripts.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    scripts.CR170404_04_ImageToLink();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

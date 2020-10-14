@@ -1,0 +1,34 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var a = jQuery(".gform_wrapper select");
+    jQuery(a).each(function() {
+        jQuery(this).hasClass("chzn-done") && jQuery(this).parent().hasClass("gravity-select-parent") && (jQuery(this).parent().find(".select-arrow").remove(), jQuery(this).unwrap('<div class="gravity-select-parent"></div>'))
+    })
+}), recursiveGFormSubmissionHandler(), jQuery(window).load(function() {
+    jQuery(".gform_wrapper").each(function() {
+        jQuery(this).removeClass("gf_browser_ie")
+        "show" !== b || e || setTimeout(function() {
+            calcSelectArrowDimensions(), wrapGravitySelects()
+        }, 50)
+    })
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

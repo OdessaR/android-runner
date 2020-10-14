@@ -1,0 +1,4371 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+
+    var integrationSetting = {
+        config_ver: '202001150641',
+        integration_type: 'gpt_and_prebid',
+        prebid_integration_version: confiantGlobal.prebid_integration_version || '202001101133',
+        gpt_integration_version: confiantGlobal.gpt_integration_version || '202001101133',
+        c_integration_version: confiantGlobal.c_integration_version || '201912051121',
+        exec_test_ver: null,
+    };
+
+    function defaultCallback() {
+    };
+    var settings = {
+        propertyId: 'FweKGjiHLqfggeqFdwry3XtYBpI',
+        adServer: 'https://protected-by.clarium.io',
+        confiantCdn: 'confiant-integrations.global.ssl.fastly.net',
+        mapping: 'W3siaSI6MiwidCI6Int7b319Ont7d319eHt7aH19IiwicCI6MCwiRCI6MSwiciI6W119LHsiaSI6NiwidCI6Int7Y299fTp7e3d9fXh7e2h9fSIsInAiOjUwLCJEIjowLCJyIjpbeyJ0IjoiZXgiLCJzIjpudWxsLCJ2IjoiY28ifV19XQ==',
+        rules: {
+            "du": 0,
+            "rs": 1,
+            "v": 6,
+            "m": [{
+                "r": [{
+                    "d": "go.ad2up.com",
+                    "l": [{
+                        "oi": "e2",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "filmfanatic.com",
+                    "l": [{
+                        "oi": "n8",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ilividnewtab.com",
+                    "l": [{
+                        "oi": "o9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "yahlabs.com",
+                    "l": [{
+                        "oi": "fs",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "www.mapsgalaxy.com",
+                    "l": [{
+                        "oi": "nv1",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "download.televisionfanatic.com",
+                    "l": [{
+                        "oi": "ew1",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ulinkths.com",
+                    "l": [{
+                        "oi": "nw1",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "track.hexcan.com",
+                    "l": [{
+                        "oi": "s52",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "codeadnetwork.com",
+                    "l": [{
+                        "oi": "m72",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "searchtabnew.com",
+                    "l": [{
+                        "oi": "tc2",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "shorto.xyz",
+                    "l": [{
+                        "oi": "tf2",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "startappexchange.com",
+                    "l": [{
+                        "oi": "0j2",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "news18.com",
+                    "l": [{
+                        "oi": "063",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "performancearea.com",
+                    "l": [{
+                        "oi": "zi3",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "algoperformance.com",
+                    "l": [{
+                        "oi": "xn3",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "almongkingstory.com",
+                    "l": [{
+                        "oi": "404",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "frashserver.com",
+                    "l": [{
+                        "oi": "c14",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "howdoesin.net",
+                    "l": [{
+                        "oi": "e34",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sevmob.com",
+                    "l": [{
+                        "oi": "254",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "7bam.com",
+                    "l": [{
+                        "oi": "7o4",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "clou.im",
+                    "l": [{
+                        "oi": "8o4",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adhunter.media",
+                    "l": [{
+                        "oi": "ts4",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adlook.me",
+                    "l": [{
+                        "oi": "d15",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tippshero.de",
+                    "l": [{
+                        "oi": "w45",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "hegek7.com",
+                    "l": [{
+                        "oi": "4a5",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "search-goo.com",
+                    "l": [{
+                        "oi": "hb5",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "chrome.java-api-update.com",
+                    "l": [{
+                        "oi": "g86",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "oceanpj.com",
+                    "l": [{
+                        "oi": "9l6",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "smartoffer.site",
+                    "l": [{
+                        "oi": "6t6",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "a2gw.com",
+                    "l": [{
+                        "oi": "et6",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "my-app-analytics.com",
+                    "l": [{
+                        "oi": "pa7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "theappexplorer.com",
+                    "l": [{
+                        "oi": "gc7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "serving-technology002.com",
+                    "l": [{
+                        "oi": "sh7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "mybestfeed.com",
+                    "l": [{
+                        "oi": "9m7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "cpi-offers.com",
+                    "l": [{
+                        "oi": "am7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "stats-ex-serving.com",
+                    "l": [{
+                        "oi": "0n7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "highratedads.com",
+                    "l": [{
+                        "oi": "ho7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "connectignite.com",
+                    "l": [{
+                        "oi": "1s7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rbnt.org",
+                    "l": [{
+                        "oi": "rw7",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "trackuhub.com",
+                    "l": [{
+                        "oi": "f38",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "blueadsrv.com",
+                    "l": [{
+                        "oi": "mf8",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pubpanda.com",
+                    "l": [{
+                        "oi": "io8",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "swishswish.se",
+                    "l": [{
+                        "oi": "2q8",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "admmart.com",
+                    "l": [{
+                        "oi": "av8",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sync-srv.com",
+                    "l": [{
+                        "oi": "bz8",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "advivify.com",
+                    "l": [{
+                        "oi": "y49",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "googiegames.com",
+                    "l": [{
+                        "oi": "2b9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "roctag.com",
+                    "l": [{
+                        "oi": "mb9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "todosobrenuevayork.com",
+                    "l": [{
+                        "oi": "4j9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "digitalstara.com",
+                    "l": [{
+                        "oi": "5o9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tramonserver23.com",
+                    "l": [{
+                        "oi": "po9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tjsiilw.online",
+                    "l": [{
+                        "oi": "5r9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "clamter.com",
+                    "l": [{
+                        "oi": "xr9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "digicart4u.com",
+                    "l": [{
+                        "oi": "uw9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "go2offer.link",
+                    "l": [{
+                        "oi": "wz9",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "colextidapp.com",
+                    "l": [{
+                        "oi": "d1a",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "smartvibes.be",
+                    "l": [{
+                        "oi": "w4a",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "firsthitpixel.com",
+                    "l": [{
+                        "oi": "x5a",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "competitoor.com",
+                    "l": [{
+                        "oi": "d6a",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "serverreply.com",
+                    "l": [{
+                        "oi": "b7a",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tarkmedia.com",
+                    "l": [{
+                        "oi": "f7a",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "customer-alliance.com",
+                    "l": [{
+                        "oi": "daa",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "inbenta.io",
+                    "l": [{
+                        "oi": "6ba",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "omnidatasolution.com",
+                    "l": [{
+                        "oi": "nfa",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "denomatic.com",
+                    "l": [{
+                        "oi": "fga",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "cdn-sitegainer.com",
+                    "l": [{
+                        "oi": "nha",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "mobginx.com",
+                    "l": [{
+                        "oi": "5ia",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adxfactory.com",
+                    "l": [{
+                        "oi": "xja",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "worksrc.cool",
+                    "l": [{
+                        "oi": "tka",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sourcelog.cool",
+                    "l": [{
+                        "oi": "uka",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "singtraff.cool",
+                    "l": [{
+                        "oi": "wka",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "higedev.cool",
+                    "l": [{
+                        "oi": "zka",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "countsource.cool",
+                    "l": [{
+                        "oi": "0la",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "statsrc.cool",
+                    "l": [{
+                        "oi": "1la",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pagescr.cool",
+                    "l": [{
+                        "oi": "hla",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "datapro.website",
+                    "l": [{
+                        "oi": "yla",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "experitalket.com",
+                    "l": [{
+                        "oi": "ama",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rofrads.com",
+                    "l": [{
+                        "oi": "jma",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aqugenrtb.com",
+                    "l": [{
+                        "oi": "rpa",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "onwardinated.com",
+                    "l": [{
+                        "oi": "9qa",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "mobid-serve.com",
+                    "l": [{
+                        "oi": "sqa",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rdtrck2.com",
+                    "l": [{
+                        "oi": "iva",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ads3-adnow.com",
+                    "l": [{
+                        "oi": "zya",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ads1-adnow.com",
+                    "l": [{
+                        "oi": "0za",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crrepo.com",
+                    "l": [{
+                        "oi": "80b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "waynedupree.com",
+                    "l": [{
+                        "oi": "k0b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "brookereviews.com",
+                    "l": [{
+                        "oi": "61b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "4kavica.net",
+                    "l": [{
+                        "oi": "q1b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "wowmobilead.com",
+                    "l": [{
+                        "oi": "a3b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "engageadx.com",
+                    "l": [{
+                        "oi": "h4b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "qvyrerhog.com",
+                    "l": [{
+                        "oi": "k4b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tarhanad.com",
+                    "l": [{
+                        "oi": "86b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "freebieforyou.xyz",
+                    "l": [{
+                        "oi": "a6b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "srvagm.de",
+                    "l": [{
+                        "oi": "n6b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aj1807.online",
+                    "l": [{
+                        "oi": "y7b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adsrvx.com",
+                    "l": [{
+                        "oi": "68b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aj1788.online",
+                    "l": [{
+                        "oi": "a8b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "trackingfestival.com",
+                    "l": [{
+                        "oi": "n8b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "toparticlehub.com",
+                    "l": [{
+                        "oi": "a9b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pronivydigital.com",
+                    "l": [{
+                        "oi": "o9b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "hueadsortb.com",
+                    "l": [{
+                        "oi": "p9b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adoptadx.com",
+                    "l": [{
+                        "oi": "u9b",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "eyfresearch.com",
+                    "l": [{
+                        "oi": "3ab",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "chicksonright.com",
+                    "l": [{
+                        "oi": "fab",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "2xi2k81ntbkx2j9ds82y9vmz-wpengine.netdna-ssl.com",
+                    "l": [{
+                        "oi": "gab",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "admidadsp.com",
+                    "l": [{
+                        "oi": "hab",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "slickadvertisements.com",
+                    "l": [{
+                        "oi": "yab",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ad-source.com",
+                    "l": [{
+                        "oi": "nbb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "smartworldtraffic.com",
+                    "l": [{
+                        "oi": "zbb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "joulesnetwork.com",
+                    "l": [{
+                        "oi": "ccb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "houseofpubs.com",
+                    "l": [{
+                        "oi": "dcb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "scoobyads.com",
+                    "l": [{
+                        "oi": "fcb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rtbidhost.com",
+                    "l": [{
+                        "oi": "jcb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "nazreps.com",
+                    "l": [{
+                        "oi": "mcb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rtbdemand.com",
+                    "l": [{
+                        "oi": "pcb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rtbplatform.net",
+                    "l": [{
+                        "oi": "scb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "iavatarz.com",
+                    "l": [{
+                        "oi": "vcb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "prmad.com",
+                    "l": [{
+                        "oi": "zcb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "revlift.io",
+                    "l": [{
+                        "oi": "1db",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "deceowinnul.xyz",
+                    "l": [{
+                        "oi": "ddb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "certismedia.com",
+                    "l": [{
+                        "oi": "wdb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adstacks.in",
+                    "l": [{
+                        "oi": "8eb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "admobileservices.com",
+                    "l": [{
+                        "oi": "jeb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "jforum.eu",
+                    "l": [{
+                        "oi": "reb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "cgnl.io",
+                    "l": [{
+                        "oi": "seb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "alefcdn.com",
+                    "l": [{
+                        "oi": "4fb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "naturalbid.com",
+                    "l": [{
+                        "oi": "ffb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "cognitiveadscience.com",
+                    "l": [{
+                        "oi": "5gb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dlinkaa.com",
+                    "l": [{
+                        "oi": "zgb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "supercsync.com",
+                    "l": [{
+                        "oi": "1hb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "donewrork.org",
+                    "l": [{
+                        "oi": "whb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rtbadzesto.com",
+                    "l": [{
+                        "oi": "5ib",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sp.comics.mecha.cc",
+                    "l": [{
+                        "oi": "9ib",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "xelgstyd.com",
+                    "l": [{
+                        "oi": "0jb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "iconpeak2trk.com",
+                    "l": [{
+                        "oi": "fjb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "onlymediaahead.com",
+                    "l": [{
+                        "oi": "kjb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bannercompany.net",
+                    "l": [{
+                        "oi": "qkb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "cocochino.net",
+                    "l": [{
+                        "oi": "skb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "free.couponxplorer.com",
+                    "l": [{
+                        "oi": "ukb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "www.videoconverterhd.com",
+                    "l": [{
+                        "oi": "hlb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "regularimptracker.xyz",
+                    "l": [{
+                        "oi": "tlb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aqua-adserver.com",
+                    "l": [{
+                        "oi": "ulb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tknpm.com",
+                    "l": [{
+                        "oi": "vlb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "vwmeasures.com",
+                    "l": [{
+                        "oi": "enb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dailytrendyoffers.com",
+                    "l": [{
+                        "oi": "knb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "deloplen.com",
+                    "l": [{
+                        "oi": "vnb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sasstreg.com",
+                    "l": [{
+                        "oi": "kob",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "clever-web.net",
+                    "l": [{
+                        "oi": "mob",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adkom.advertserve.com",
+                    "l": [{
+                        "oi": "qob",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "traffic-xchange.com",
+                    "l": [{
+                        "oi": "sob",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "vmobonus.com",
+                    "l": [{
+                        "oi": "xob",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "theplatformbk.com",
+                    "l": [{
+                        "oi": "yob",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "koikoo.com",
+                    "l": [{
+                        "oi": "zob",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adrival.cc",
+                    "l": [{
+                        "oi": "2pb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "trk42.net",
+                    "l": [{
+                        "oi": "gpb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "trdme.com",
+                    "l": [{
+                        "oi": "hpb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "enjoycpi.com",
+                    "l": [{
+                        "oi": "5qb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "jewelmobile.com",
+                    "l": [{
+                        "oi": "9qb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "payperclickadz.com",
+                    "l": [{
+                        "oi": "iqb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tracking22.com",
+                    "l": [{
+                        "oi": "nqb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "roiadvice.com",
+                    "l": [{
+                        "oi": "oqb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "admitad.com",
+                    "l": [{
+                        "oi": "sqb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "standardisplay.com",
+                    "l": [{
+                        "oi": "wqb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adcannyads.com",
+                    "l": [{
+                        "oi": "0rb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "srv3.media",
+                    "l": [{
+                        "oi": "brb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adchub.advertserve.com",
+                    "l": [{
+                        "oi": "4sb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adchub2.advertserve.com",
+                    "l": [{
+                        "oi": "rsb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aceex.io",
+                    "l": [{
+                        "oi": "ssb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gadsbee.com",
+                    "l": [{
+                        "oi": "tsb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "hulu-netflix.com",
+                    "l": [{
+                        "oi": "usb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "openxserver.com",
+                    "l": [{
+                        "oi": "ftb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bcloudhost.com",
+                    "l": [{
+                        "oi": "htb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "wonderlamprey.com",
+                    "l": [{
+                        "oi": "ltb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "acckworld.com",
+                    "l": [{
+                        "oi": "utb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adsrvus.com",
+                    "l": [{
+                        "oi": "vtb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "yulder.com",
+                    "l": [{
+                        "oi": "3ub",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "avz1e-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "dub",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "cosmopolitads.com",
+                    "l": [{
+                        "oi": "iub",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "caposecond.com",
+                    "l": [{
+                        "oi": "kub",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "machinelearning.download",
+                    "l": [{
+                        "oi": "rub",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "auplugin.com",
+                    "l": [{
+                        "oi": "vub",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "supergeniemobile.com",
+                    "l": [{
+                        "oi": "yub",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "realtimewebanalytics.net",
+                    "l": [{
+                        "oi": "bvb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "frenkoid.com",
+                    "l": [{
+                        "oi": "pvb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "amurege.com",
+                    "l": [{
+                        "oi": "qvb",
+                        "ot": 3,
+                        "rs": 1
+                    }, {
+                        "oi": "bd4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "daktela.com",
+                    "l": [{
+                        "oi": "vvb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aaxplugin.com",
+                    "l": [{
+                        "oi": "0wb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sisterfractal.com",
+                    "l": [{
+                        "oi": "1wb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "collectivecontribution.com",
+                    "l": [{
+                        "oi": "2wb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tubularmodular.com",
+                    "l": [{
+                        "oi": "3wb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "w3trackqwerty.club",
+                    "l": [{
+                        "oi": "7wb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "solutionstech.net",
+                    "l": [{
+                        "oi": "8wb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adsonlinesite.com",
+                    "l": [{
+                        "oi": "ewb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adserv.online",
+                    "l": [{
+                        "oi": "lwb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1e-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "nwb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1f-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "swb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "superitlab.com",
+                    "l": [{
+                        "oi": "zwb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "cfidp.com",
+                    "l": [{
+                        "oi": "0xb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "zyxxyzyxz.xyz",
+                    "l": [{
+                        "oi": "7xb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dottrkapen.net",
+                    "l": [{
+                        "oi": "8xb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1i-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "exb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "supersupplyshop.com",
+                    "l": [{
+                        "oi": "hxb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "m51g-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "sxb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "griffindigitalmedia.com",
+                    "l": [{
+                        "oi": "vxb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d38g8ai8tpq877.cloudfront.net",
+                    "l": [{
+                        "oi": "wxb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "treadlight.mobi",
+                    "l": [{
+                        "oi": "xxb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "mediaarkadserver.com",
+                    "l": [{
+                        "oi": "0yb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "znk1b-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "4yb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "znk1e-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "8yb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dalob0mug0w9i.cloudfront.net",
+                    "l": [{
+                        "oi": "byb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adokutrtb.com",
+                    "l": [{
+                        "oi": "eyb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "hotrtb.com",
+                    "l": [{
+                        "oi": "lyb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tim-exchange.com",
+                    "l": [{
+                        "oi": "myb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pokemoncenter.gcdn.co",
+                    "l": [{
+                        "oi": "zyb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "backtrt.com",
+                    "l": [{
+                        "oi": "7zb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2fmaejqnnzixx.cloudfront.net",
+                    "l": [{
+                        "oi": "8zb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "trippyclip.com",
+                    "l": [{
+                        "oi": "9zb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "searchandprint.recipes",
+                    "l": [{
+                        "oi": "bzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adferns.com",
+                    "l": [{
+                        "oi": "hzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "thebrainsbox.com",
+                    "l": [{
+                        "oi": "izb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "roqoon.com",
+                    "l": [{
+                        "oi": "jzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "germaniavid.com",
+                    "l": [{
+                        "oi": "kzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dle0xvquwgf2.cloudfront.net",
+                    "l": [{
+                        "oi": "pzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dq26cc8gx3aey.cloudfront.net",
+                    "l": [{
+                        "oi": "qzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d1dzematfzej6q.cloudfront.net",
+                    "l": [{
+                        "oi": "rzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d14s6jczrnob4l.cloudfront.net",
+                    "l": [{
+                        "oi": "szb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d21ew8k42n1k3h.cloudfront.net",
+                    "l": [{
+                        "oi": "vzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d3je0gwt0xfeu4.cloudfront.net",
+                    "l": [{
+                        "oi": "zzb",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d1h3n2vipmssph.cloudfront.net",
+                    "l": [{
+                        "oi": "00c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d16t4cp5pa9dvk.cloudfront.net",
+                    "l": [{
+                        "oi": "50c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dodz833pap9ho.cloudfront.net",
+                    "l": [{
+                        "oi": "60c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ad-volt.com",
+                    "l": [{
+                        "oi": "70c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d1hfk6co995q9h.cloudfront.net",
+                    "l": [{
+                        "oi": "a0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d3dnff7e8ib4o3.cloudfront.net",
+                    "l": [{
+                        "oi": "f0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2izrbklp8w1c4.cloudfront.net",
+                    "l": [{
+                        "oi": "h0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dfgidi1m6iqqr.cloudfront.net",
+                    "l": [{
+                        "oi": "i0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d3j8bozub9mmu2.cloudfront.net",
+                    "l": [{
+                        "oi": "k0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2xsj44di26y8u.cloudfront.net",
+                    "l": [{
+                        "oi": "l0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2zql7bbv1kbyi.cloudfront.net",
+                    "l": [{
+                        "oi": "m0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dxqwfgq9s64v.cloudfront.net",
+                    "l": [{
+                        "oi": "n0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2i452yrqgt1zo.cloudfront.net",
+                    "l": [{
+                        "oi": "o0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2hv6nzylk13l1.cloudfront.net",
+                    "l": [{
+                        "oi": "p0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2bam7odw6zv0o.cloudfront.net",
+                    "l": [{
+                        "oi": "q0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "shifubun.com",
+                    "l": [{
+                        "oi": "r0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d2x0brvgp8b6x6.cloudfront.net",
+                    "l": [{
+                        "oi": "s0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d33h7xk5j9hmpr.cloudfront.net",
+                    "l": [{
+                        "oi": "u0c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d31fguytuzvp98.cloudfront.net",
+                    "l": [{
+                        "oi": "41c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "di6flbbaknm02.cloudfront.net",
+                    "l": [{
+                        "oi": "51c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d26cfdn3796j9t.cloudfront.net",
+                    "l": [{
+                        "oi": "61c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d28zxck59erm56.cloudfront.net",
+                    "l": [{
+                        "oi": "e1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dongyinghuyu.com",
+                    "l": [{
+                        "oi": "g1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "findmyfashionstyle.com",
+                    "l": [{
+                        "oi": "k1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1a-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "m1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "geospotfile.s3.us-east-2.amazonaws.com",
+                    "l": [{
+                        "oi": "p1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "falayons.com",
+                    "l": [{
+                        "oi": "q1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1p-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "r1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "plappada.com",
+                    "l": [{
+                        "oi": "s1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1r-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "t1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1s-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "u1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1d-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "v1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1e-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "w1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1f-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "y1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1h-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "z1c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1u-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "02c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "armandomei.com",
+                    "l": [{
+                        "oi": "12c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "free-and-easy-hosting.co.uk",
+                    "l": [{
+                        "oi": "22c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gggeo-mco.s3.us-east-2.amazonaws.com",
+                    "l": [{
+                        "oi": "32c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gegege-caca.s3.us-east-2.amazonaws.com",
+                    "l": [{
+                        "oi": "42c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sololaindependencia.com",
+                    "l": [{
+                        "oi": "52c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "umkmnews.com",
+                    "l": [{
+                        "oi": "62c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sekayudecking.com",
+                    "l": [{
+                        "oi": "72c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "infinitierp.com",
+                    "l": [{
+                        "oi": "82c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "eggg-usususu.s3.us-east-2.amazonaws.com",
+                    "l": [{
+                        "oi": "92c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "agrzm.com",
+                    "l": [{
+                        "oi": "a2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gohientam.com",
+                    "l": [{
+                        "oi": "b2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "madykart.com",
+                    "l": [{
+                        "oi": "c2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gc-recrutement.com",
+                    "l": [{
+                        "oi": "d2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "nielbarbershop.com",
+                    "l": [{
+                        "oi": "e2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "yalandra.com",
+                    "l": [{
+                        "oi": "f2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "xaydunganna.com",
+                    "l": [{
+                        "oi": "g2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zb-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "h2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zc-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "i2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zd-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "j2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "generaleauto.com",
+                    "l": [{
+                        "oi": "k2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "itlafevsotero.com",
+                    "l": [{
+                        "oi": "l2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1t-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "m2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1u-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "n2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1v-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "o2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1w-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "p2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1x-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "q2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ronyi.fun",
+                    "l": [{
+                        "oi": "r2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "msgoodwill.com",
+                    "l": [{
+                        "oi": "s2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "masmusicos.com",
+                    "l": [{
+                        "oi": "t2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "engtat.com",
+                    "l": [{
+                        "oi": "u2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gotoyshop.com",
+                    "l": [{
+                        "oi": "v2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zk-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "w2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zl-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "x2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zm-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "y2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zn-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "z2c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zo-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "03c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "toppgdm.com",
+                    "l": [{
+                        "oi": "13c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "mlkanqa.com",
+                    "l": [{
+                        "oi": "23c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1z-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "33c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "zsddkln.vip",
+                    "l": [{
+                        "oi": "43c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zp-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "53c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "emafitriyani.com",
+                    "l": [{
+                        "oi": "63c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zq-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "73c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "eplakaci.com",
+                    "l": [{
+                        "oi": "83c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "mobileappleader.com",
+                    "l": [{
+                        "oi": "a3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ideariga.lv",
+                    "l": [{
+                        "oi": "b3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zt-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "c3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zu-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "d3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zl-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "e3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zzb-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "f3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "chooseboss.com",
+                    "l": [{
+                        "oi": "g3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "xgdrive.com",
+                    "l": [{
+                        "oi": "h3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bat-ads.com",
+                    "l": [{
+                        "oi": "i3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zm-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "j3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zn-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "k3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zo-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "l3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zp-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "m3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zq-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "n3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zr-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "o3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "4armn.com",
+                    "l": [{
+                        "oi": "p3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d3jfndw0khde1w.cloudfront.net",
+                    "l": [{
+                        "oi": "q3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "yuanzhizhi.top",
+                    "l": [{
+                        "oi": "s3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lists4you.com",
+                    "l": [{
+                        "oi": "t3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zu-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "u3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ginospizzacourtice.com",
+                    "l": [{
+                        "oi": "v3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zw-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "w3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zx-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "x3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bnsrvc.ru",
+                    "l": [{
+                        "oi": "y3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zy-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "z3c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "lqm1zz-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "04c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zzf-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "14c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bs1zzk-bws.global.ssl.fastly.net",
+                    "l": [{
+                        "oi": "24c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d173xkm7kdo7ao.cloudfront.net",
+                    "l": [{
+                        "oi": "44c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dhg2ypbw5miqg.cloudfront.net",
+                    "l": [{
+                        "oi": "94c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "wongtop.com",
+                    "l": [{
+                        "oi": "a4c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rebakhashop.com",
+                    "l": [{
+                        "oi": "b4c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "masibnu.com",
+                    "l": [{
+                        "oi": "c4c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "whatisabraxas.com",
+                    "l": [{
+                        "oi": "d4c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rowenta.ru",
+                    "l": [{
+                        "oi": "e4c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "tsisapp.com",
+                    "l": [{
+                        "oi": "f4c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "murphable.com",
+                    "l": [{
+                        "oi": "g4c",
+                        "ot": 3,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ZG9nYW5jYW5rYXI",
+                    "l": [{
+                        "oi": "4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dyn/3.0/5546.1/",
+                    "l": [{
+                        "oi": "3r1",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ws.com/jscache/",
+                    "l": [{
+                        "oi": "et2",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "htzz='decenter",
+                    "l": [{
+                        "oi": "sz2",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "\\x74\\x42'+ '\\x79\\x49\\x64",
+                    "l": [{
+                        "oi": "iq3",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "/2a679/intel_",
+                    "l": [{
+                        "oi": "9s3",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=32568934",
+                    "l": [{
+                        "oi": "zu3",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=32569172",
+                    "l": [{
+                        "oi": "0v3",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "t/dfp/1726342/4805111939",
+                    "l": [{
+                        "oi": "j44",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=33815103",
+                    "l": [{
+                        "oi": "y44",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "dAd(5043008);",
+                    "l": [{
+                        "oi": "z44",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "&buyerid=0155&he",
+                    "l": [{
+                        "oi": "g54",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "/21636979139/",
+                    "l": [{
+                        "oi": "g64",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34005812",
+                    "l": [{
+                        "oi": "994",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34006036",
+                    "l": [{
+                        "oi": "b94",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=33985188",
+                    "l": [{
+                        "oi": "l94",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34060934",
+                    "l": [{
+                        "oi": "s94",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34060892",
+                    "l": [{
+                        "oi": "v94",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34024057",
+                    "l": [{
+                        "oi": "1a4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34024357",
+                    "l": [{
+                        "oi": "ba4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34111636",
+                    "l": [{
+                        "oi": "fa4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34073134",
+                    "l": [{
+                        "oi": "ha4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34119004",
+                    "l": [{
+                        "oi": "la4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29182863",
+                    "l": [{
+                        "oi": "wb4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29182860",
+                    "l": [{
+                        "oi": "xb4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "a.si=6482&a.t",
+                    "l": [{
+                        "oi": "7c4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "eb/3/2b631/sabic",
+                    "l": [{
+                        "oi": "ed4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "eb/3/2b65b/cred",
+                    "l": [{
+                        "oi": "hd4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "P0Dqz47H61AcQ8Hp19g2eVxdJakxh8rI",
+                    "l": [{
+                        "oi": "yd4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "Jdsp_RVoluum_J",
+                    "l": [{
+                        "oi": "we4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sid=4502812&kid",
+                    "l": [{
+                        "oi": "2f4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sid=4502811&kid",
+                    "l": [{
+                        "oi": "8f4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sid=4502670&kid",
+                    "l": [{
+                        "oi": "9f4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sid=4502671&kid",
+                    "l": [{
+                        "oi": "rf4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "campaignId=139350&",
+                    "l": [{
+                        "oi": "uf4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "campaignId=139351&",
+                    "l": [{
+                        "oi": "vf4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sid=4502813&kid",
+                    "l": [{
+                        "oi": "wf4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sid=4502814&kid",
+                    "l": [{
+                        "oi": "xf4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=32720202",
+                    "l": [{
+                        "oi": "yf4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=32720212",
+                    "l": [{
+                        "oi": "zf4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "c?ssp=sonobi&dsp_id=290&",
+                    "l": [{
+                        "oi": "0g4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=p1lzvq3x",
+                    "l": [{
+                        "oi": "kg4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=9nw6h61u",
+                    "l": [{
+                        "oi": "lg4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=5ujf3glf",
+                    "l": [{
+                        "oi": "mg4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=u2sv1q95",
+                    "l": [{
+                        "oi": "ng4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "d38g8ai8tpq877",
+                    "l": [{
+                        "oi": "og4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=ec2jb151",
+                    "l": [{
+                        "oi": "pg4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=ui8735tr",
+                    "l": [{
+                        "oi": "tg4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=fr96s4qa",
+                    "l": [{
+                        "oi": "ug4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "sid=4505904&kid",
+                    "l": [{
+                        "oi": "3h4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "a.si=7501&a.t",
+                    "l": [{
+                        "oi": "kh4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "t/dfp/1913117/4823556700/",
+                    "l": [{
+                        "oi": "th4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075167180",
+                    "l": [{
+                        "oi": "uh4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075167181",
+                    "l": [{
+                        "oi": "vh4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34795452",
+                    "l": [{
+                        "oi": "xh4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34795447",
+                    "l": [{
+                        "oi": "yh4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=9o9wtqd8",
+                    "l": [{
+                        "oi": "4i4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=bbdl00ic",
+                    "l": [{
+                        "oi": "5i4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "\"\\x67\\x30\",\"\\x35\\x2F\",\"\\x34\"",
+                    "l": [{
+                        "oi": "7i4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "5b4e6179ba2e5404c0142d1f",
+                    "l": [{
+                        "oi": "ai4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "'; ab= ab.replace(/[A",
+                    "l": [{
+                        "oi": "di4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200068239",
+                    "l": [{
+                        "oi": "fi4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "eb/3/2bd1c/shaw_",
+                    "l": [{
+                        "oi": "li4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "&cid=7438228&",
+                    "l": [{
+                        "oi": "qi4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "&cid=7438233&",
+                    "l": [{
+                        "oi": "si4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gn_id=200062858",
+                    "l": [{
+                        "oi": "ti4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "com/1Xm4Hpl.png",
+                    "l": [{
+                        "oi": "ui4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aqid=\"3848:290_",
+                    "l": [{
+                        "oi": "zi4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200068242",
+                    "l": [{
+                        "oi": "1j4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "'; ab = ab.replace(/[A",
+                    "l": [{
+                        "oi": "6j4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "f187471f207621",
+                    "l": [{
+                        "oi": "7j4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "\";ab= ab.replace(/[A",
+                    "l": [{
+                        "oi": "8j4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "N1116285.275231PALLACANESTROVARE",
+                    "l": [{
+                        "oi": "9j4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200068703",
+                    "l": [{
+                        "oi": "aj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "N1149640.3330988ADRIANRADBM",
+                    "l": [{
+                        "oi": "cj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "e2a86b99-0845-4b35-ae8d-06157e3060b8",
+                    "l": [{
+                        "oi": "dj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "/15953654605404464508/",
+                    "l": [{
+                        "oi": "hj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=0yarzzw3",
+                    "l": [{
+                        "oi": "lj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=vgdx67bc",
+                    "l": [{
+                        "oi": "mj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "nwid=3496&",
+                    "l": [{
+                        "oi": "oj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=27749217",
+                    "l": [{
+                        "oi": "pj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29422731",
+                    "l": [{
+                        "oi": "qj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29422374",
+                    "l": [{
+                        "oi": "rj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "GTM-MN8ZXBR",
+                    "l": [{
+                        "oi": "sj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "w.voniblan.com",
+                    "l": [{
+                        "oi": "tj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "4174:espn-us",
+                    "l": [{
+                        "oi": "uj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29426352",
+                    "l": [{
+                        "oi": "vj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "uGRPWcpP5ZFfDLn0D6FtKbqCFd59",
+                    "l": [{
+                        "oi": "wj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29426319",
+                    "l": [{
+                        "oi": "xj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29426355",
+                    "l": [{
+                        "oi": "yj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29426356",
+                    "l": [{
+                        "oi": "zj4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=27665881",
+                    "l": [{
+                        "oi": "0k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=u75kv1tg",
+                    "l": [{
+                        "oi": "1k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 201360341 se",
+                    "l": [{
+                        "oi": "2k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 201360175 se",
+                    "l": [{
+                        "oi": "3k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 201360294 se",
+                    "l": [{
+                        "oi": "4k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 201360228 se",
+                    "l": [{
+                        "oi": "5k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=wf29ly6l",
+                    "l": [{
+                        "oi": "6k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "jpkeepvovonn",
+                    "l": [{
+                        "oi": "7k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "';ab = ab.replace(/[A",
+                    "l": [{
+                        "oi": "8k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431345",
+                    "l": [{
+                        "oi": "9k4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431340",
+                    "l": [{
+                        "oi": "ak4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "4174:espn-ca",
+                    "l": [{
+                        "oi": "bk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "4174:cr213.8ea5c993",
+                    "l": [{
+                        "oi": "ck4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "iYsNt='IOS",
+                    "l": [{
+                        "oi": "dk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431704",
+                    "l": [{
+                        "oi": "ek4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431705",
+                    "l": [{
+                        "oi": "fk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431706",
+                    "l": [{
+                        "oi": "gk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431707",
+                    "l": [{
+                        "oi": "hk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "a2bbdb29-0e7c-41f2-bee1-0f2a7adc5bee",
+                    "l": [{
+                        "oi": "ik4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ent?(addEventListener(\"mes",
+                    "l": [{
+                        "oi": "jk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "t/dfp/1915316/4825665522/",
+                    "l": [{
+                        "oi": "kk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075234475",
+                    "l": [{
+                        "oi": "lk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431708",
+                    "l": [{
+                        "oi": "mk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431709",
+                    "l": [{
+                        "oi": "nk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "campaign_id=200070029",
+                    "l": [{
+                        "oi": "ok4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=19917602&",
+                    "l": [{
+                        "oi": "qk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "t/dfp/1906064/4823458937/",
+                    "l": [{
+                        "oi": "rk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075235902",
+                    "l": [{
+                        "oi": "sk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "\";if(window.parent!==w",
+                    "l": [{
+                        "oi": "tk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ai=4511773&",
+                    "l": [{
+                        "oi": "uk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "adId=4511773;",
+                    "l": [{
+                        "oi": "vk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075237443",
+                    "l": [{
+                        "oi": "wk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070180",
+                    "l": [{
+                        "oi": "xk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "4174:agud013t",
+                    "l": [{
+                        "oi": "yk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=u1zaz53h",
+                    "l": [{
+                        "oi": "zk4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=bdtezpve",
+                    "l": [{
+                        "oi": "0l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=x26st921",
+                    "l": [{
+                        "oi": "1l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=1sksgl9i",
+                    "l": [{
+                        "oi": "2l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431711",
+                    "l": [{
+                        "oi": "3l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431710",
+                    "l": [{
+                        "oi": "4l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "2130f1ff-00a1-43a3-88f1-9c2aa38036f7",
+                    "l": [{
+                        "oi": "5l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "buyerid_R0155",
+                    "l": [{
+                        "oi": "6l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48231600&",
+                    "l": [{
+                        "oi": "7l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48134110&",
+                    "l": [{
+                        "oi": "8l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "livery.cann\");",
+                    "l": [{
+                        "oi": "9l4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "/delivery.filkas",
+                    "l": [{
+                        "oi": "al4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ywncmlkPTAxNTUmaG",
+                    "l": [{
+                        "oi": "bl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "CdyaWQ9MDE1NSZoZ",
+                    "l": [{
+                        "oi": "cl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070329",
+                    "l": [{
+                        "oi": "dl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075239559",
+                    "l": [{
+                        "oi": "el4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "t/t21ed8ef2/i",
+                    "l": [{
+                        "oi": "fl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431713",
+                    "l": [{
+                        "oi": "gl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431712",
+                    "l": [{
+                        "oi": "hl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070331",
+                    "l": [{
+                        "oi": "il4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075157216",
+                    "l": [{
+                        "oi": "jl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48235804&",
+                    "l": [{
+                        "oi": "kl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48235803&",
+                    "l": [{
+                        "oi": "ll4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48235805&",
+                    "l": [{
+                        "oi": "ml4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202176151 se",
+                    "l": [{
+                        "oi": "nl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431714",
+                    "l": [{
+                        "oi": "ol4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "1Svan8dsnB32wzlQ",
+                    "l": [{
+                        "oi": "pl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "DjkWfXjl1QlE2js4",
+                    "l": [{
+                        "oi": "ql4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431715",
+                    "l": [{
+                        "oi": "rl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070328",
+                    "l": [{
+                        "oi": "sl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "gad/6409333366583848331",
+                    "l": [{
+                        "oi": "tl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070333",
+                    "l": [{
+                        "oi": "ul4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48236291&",
+                    "l": [{
+                        "oi": "vl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48236392&",
+                    "l": [{
+                        "oi": "wl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48236302&",
+                    "l": [{
+                        "oi": "xl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48236295&",
+                    "l": [{
+                        "oi": "yl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "aid=48236297&",
+                    "l": [{
+                        "oi": "zl4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "4174:gamespot-",
+                    "l": [{
+                        "oi": "0m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "rp-aqid=\\\"4174:",
+                    "l": [{
+                        "oi": "1m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "te(\"ery.can\");",
+                    "l": [{
+                        "oi": "2m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34828841",
+                    "l": [{
+                        "oi": "3m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34783140",
+                    "l": [{
+                        "oi": "4m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34773718",
+                    "l": [{
+                        "oi": "5m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34829336",
+                    "l": [{
+                        "oi": "6m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34827497",
+                    "l": [{
+                        "oi": "7m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34822110",
+                    "l": [{
+                        "oi": "8m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34775768",
+                    "l": [{
+                        "oi": "9m4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34827394",
+                    "l": [{
+                        "oi": "am4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34828969",
+                    "l": [{
+                        "oi": "bm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34830053",
+                    "l": [{
+                        "oi": "cm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "bn=34783438",
+                    "l": [{
+                        "oi": "dm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "/delivery.cannedba",
+                    "l": [{
+                        "oi": "em4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=zpz95qkv",
+                    "l": [{
+                        "oi": "fm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "crid=gkhb5z1y",
+                    "l": [{
+                        "oi": "gm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202197581 se",
+                    "l": [{
+                        "oi": "hm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202194385 se",
+                    "l": [{
+                        "oi": "im4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431717",
+                    "l": [{
+                        "oi": "jm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431716",
+                    "l": [{
+                        "oi": "km4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070518",
+                    "l": [{
+                        "oi": "lm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431718",
+                    "l": [{
+                        "oi": "mm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431719",
+                    "l": [{
+                        "oi": "nm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431720",
+                    "l": [{
+                        "oi": "om4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202564343 se",
+                    "l": [{
+                        "oi": "pm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29431721",
+                    "l": [{
+                        "oi": "qm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29437034",
+                    "l": [{
+                        "oi": "rm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29437018",
+                    "l": [{
+                        "oi": "sm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202497906 se",
+                    "l": [{
+                        "oi": "tm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202498278 se",
+                    "l": [{
+                        "oi": "um4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075242419",
+                    "l": [{
+                        "oi": "vm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202502108 se",
+                    "l": [{
+                        "oi": "wm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "a.si=7475&a.t",
+                    "l": [{
+                        "oi": "ym4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202556507 se",
+                    "l": [{
+                        "oi": "zm4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202568102 se",
+                    "l": [{
+                        "oi": "0n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202558293 se",
+                    "l": [{
+                        "oi": "1n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202565996 se",
+                    "l": [{
+                        "oi": "2n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202568061 se",
+                    "l": [{
+                        "oi": "3n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202556550 se",
+                    "l": [{
+                        "oi": "4n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202558378 se",
+                    "l": [{
+                        "oi": "5n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 202565969 se",
+                    "l": [{
+                        "oi": "6n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070683",
+                    "l": [{
+                        "oi": "7n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29450166",
+                    "l": [{
+                        "oi": "8n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29450167",
+                    "l": [{
+                        "oi": "9n4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29450208",
+                    "l": [{
+                        "oi": "an4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29450207",
+                    "l": [{
+                        "oi": "bn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": ",e.data.origion);",
+                    "l": [{
+                        "oi": "cn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "279_nginad_",
+                    "l": [{
+                        "oi": "dn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29450209",
+                    "l": [{
+                        "oi": "fn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200070965",
+                    "l": [{
+                        "oi": "gn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29450210",
+                    "l": [{
+                        "oi": "hn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29452580",
+                    "l": [{
+                        "oi": "in4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=29452581",
+                    "l": [{
+                        "oi": "jn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200071108",
+                    "l": [{
+                        "oi": "kn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200071109",
+                    "l": [{
+                        "oi": "ln4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200071106",
+                    "l": [{
+                        "oi": "mn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "paign_id=200071104",
+                    "l": [{
+                        "oi": "nn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075235661",
+                    "l": [{
+                        "oi": "on4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "pli=1075235660",
+                    "l": [{
+                        "oi": "pn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "EAAYACogrDIvUTIy5giO-UZgbamWgVliBLO00qxa.TnwVp7WuO4yBKnHIwM_",
+                    "l": [{
+                        "oi": "rn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 201971526 se",
+                    "l": [{
+                        "oi": "sn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 201971521 se",
+                    "l": [{
+                        "oi": "tn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "EAAYACog-hJ2hS7T1096dPu7q9UcHYQfnz5veV2ioesqpR8y5HAyBLyKWR8_",
+                    "l": [{
+                        "oi": "un4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "EAAYACoQTT4NnJcMv3hiEioSqv-hdDIE5xSP-w__",
+                    "l": [{
+                        "oi": "vn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 199024301 se",
+                    "l": [{
+                        "oi": "wn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 199024296 se",
+                    "l": [{
+                        "oi": "xn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 199031647 se",
+                    "l": [{
+                        "oi": "yn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "ve 199031675 se",
+                    "l": [{
+                        "oi": "zn4",
+                        "ot": 6,
+                        "rs": 1
+                    }]
+                }, {
+                    "d": "avazutracking.net",
+                    "l": [{
+                        "oi": "3",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "bidsopt.com",
+                    "l": [{
+                        "oi": "5",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "cdn.dsptr.com",
+                    "l": [{
+                        "oi": "a",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "envisionx.co",
+                    "l": [{
+                        "oi": "b",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "ecads2.mediasmart.io",
+                    "l": [{
+                        "oi": "e",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "notify.nuviad.com",
+                    "l": [{
+                        "oi": "g",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "vashoot.com",
+                    "l": [{
+                        "oi": "m",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "waardex.com",
+                    "l": [{
+                        "oi": "n",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "xapads.com",
+                    "l": [{
+                        "oi": "o",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "ato.mx",
+                    "l": [{
+                        "oi": "11",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "adp3.net",
+                    "l": [{
+                        "oi": "31",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "aztracking.net",
+                    "l": [{
+                        "oi": "41",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "servedbyadbutler.com",
+                    "l": [{
+                        "oi": "c1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "decenterads.com",
+                    "l": [{
+                        "oi": "e1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "wapstart.ru",
+                    "l": [{
+                        "oi": "f1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "niutux.com",
+                    "l": [{
+                        "oi": "h1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "bkserving.com",
+                    "l": [{
+                        "oi": "o1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "bucksense.io",
+                    "l": [{
+                        "oi": "p1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "pfm.ninja",
+                    "l": [{
+                        "oi": "r1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "adglobal.tech",
+                    "l": [{
+                        "oi": "s1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "media-servers.net",
+                    "l": [{
+                        "oi": "t1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "trading-rtbg.com",
+                    "l": [{
+                        "oi": "u1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "rtbsbengine.com",
+                    "l": [{
+                        "oi": "v1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "pixel.valo.ai",
+                    "l": [{
+                        "oi": "w1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "uuidksinc.net",
+                    "l": [{
+                        "oi": "x1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "rtb.reklamdsp.com",
+                    "l": [{
+                        "oi": "y1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "webtradingspot.com",
+                    "l": [{
+                        "oi": "z1",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "rtbtradein.com",
+                    "l": [{
+                        "oi": "02",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "bo-rtb.com",
+                    "l": [{
+                        "oi": "22",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "pixel.metanetwork.mobi",
+                    "l": [{
+                        "oi": "32",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "mobuppsrtb.com",
+                    "l": [{
+                        "oi": "42",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "motionspots.com",
+                    "l": [{
+                        "oi": "52",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "gadmobe.com",
+                    "l": [{
+                        "oi": "62",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }, {
+                    "d": "rtb.nativeads.com",
+                    "l": [{
+                        "oi": "72",
+                        "ot": 7,
+                        "rs": 0
+                    }]
+                }],
+                "h": "document",
+                "f": "write"
+            }]
+        },
+        activation: '',
+        prebidExcludeBidders: confiantGlobal.prebidExcludeBidders || [], //prebid bidder exclusion list
+        sandbox: confiantGlobal.sandbox || '0',
+        prebidNameSpace: confiantGlobal.prebidNameSpace || 'pbjs',
+        isMaster: true,
+        devMode: confiantGlobal.devMode,
+        enable_integrations: confiantGlobal.enable_integrations || 'prebid:true,gpt:true'
+    };
+    var scriptId = !!confiantGlobal.settings ?
+        settings.propertyId :
+        null;
+    var propertySettings = scriptId ?
+        confiantGlobal[scriptId] || (confiantGlobal[scriptId] = {}) :
+        confiantGlobal;
+
+    propertySettings.settings = settings;
+    propertySettings.settings['gpt_and_prebid'] = integrationSetting;
+
+    function injectScript(path) {
+        if (scriptId) {
+            e.id = scriptId;
+        }
+        e.async = true;
+        e.src = path;
+        s.parentNode.insertBefore(e, s);
+    }
+    var shouldAddAllIntegerations = propertySettings.settings.propertyId === 'test_account';
+
+    function isIntegrationEnabled(type) {
+        var integrations = propertySettings.settings.enable_integrations;
+        var checkType = Array.isArray(integrations) ? type : type + ':true';
+        return shouldAddAllIntegerations || (integrations && integrations.indexOf(checkType) > -1);
+    }
+    if (isIntegrationEnabled('gpt')) {
+        injectScript('//' + [propertySettings.settings.confiantCdn, 'gpt', (integrationSetting.exec_test_ver ? integrationSetting.exec_test_ver : integrationSetting.gpt_integration_version), 'wrap.js'].join('/'));
+    }
+    if (isIntegrationEnabled('prebid')) {
+        injectScript('//' + [propertySettings.settings.confiantCdn, 'prebid', (integrationSetting.exec_test_ver ? integrationSetting.exec_test_ver : integrationSetting.prebid_integration_version), 'wrap.js'].join('/'));
+    }
+
+    var isCmpSupported = !!settings.propertyId.match(/(48Jme9-R7ojHPFPQgXgdK7wR9yk)|(7oDgiTsq88US4rrBG0_Nxpafkrg)|(V1AdEkGj8ikBdWctk6hWbb2FEvQ)/);
+    if (settings.devMode === 0 || settings.devMode === 2 || (isCmpSupported && Math.random() <= 0.1)) {
+        injectScript('//' + [propertySettings.settings.confiantCdn, 'c', integrationSetting.c_integration_version, 'wrap.js'].join('/'));
+    }
+
+    if (!isIntegrationEnabled('gpt') && !isIntegrationEnabled('prebid')) {
+    }
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

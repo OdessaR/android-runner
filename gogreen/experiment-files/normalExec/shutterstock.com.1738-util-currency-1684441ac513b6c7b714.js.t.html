@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/shutterstock.com/1738-util-currency-1684441ac513b6c7b714.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        var r = {a:"EUR"},o = {
+            CHF: "EUR",
+            DKK: "EUR",
+            NOK: "EUR",
+            SEK: "EUR"
+        };
+        function t(n) {
+            var a = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {CHF: 1,
+            DKK: 1,
+            NOK: 1,
+            SEK: 1,
+            EUR: 1,},
+                e = a[n] ? n : function(n, a) {
+                    var e = o[n];
+                    return a[e] ? e : r.a
+                }(n, a);
+            return {
+                price: a[e],
+                supportedCurrency: e
+            }
+        }
+ 
+    
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            for (i = 0; i < 40; i++) {
+                // memo
+                console.log(t(i));
+            }
+            break;
+
+        }
+    </script>
+</body>
+</html>

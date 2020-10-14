@@ -1,0 +1,92 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    function e() {
+        $(".slide-progress").css({
+            width: "100%",
+            transition: "width 5000ms"
+        })
+    }
+
+    function o() {
+        $(".slide-progress").css({
+            width: 0,
+            transition: "width 0s"
+        })
+    }
+    $(".owl-carousel").owlCarousel({
+        dots: !0,
+        items: 1,
+        autoplay: !1,
+        autoplayTimeout: 5e3,
+        autoplayHoverPause: !0,
+        rewind: !0,
+        loop: !0,
+    }), $(".panel.se-blue a").on("mouseover", function(e) {
+        $(".panel.se-blue .owl-carousel").trigger("stop.owl.autoplay")
+    }), $(".panel.se-blue a").on("mouseleave", function(e) {
+        $(".panel.se-blue .owl-carousel").trigger("play.owl.autoplay")
+    }), $(".panel.se-green a").on("mouseover", function(e) {
+        $(".panel.se-green .owl-carousel").trigger("stop.owl.autoplay")
+    }), $(".panel.se-green a").on("mouseleave", function(e) {
+        $(".panel.se-green .owl-carousel").trigger("play.owl.autoplay")
+    }), $(".panel.se-white a").on("mouseover", function(e) {
+        $(".panel.se-white .owl-carousel").trigger("stop.owl.autoplay")
+    }), $(".panel.se-white a").on("mouseleave", function(e) {
+        $(".panel.se-white .owl-carousel").trigger("play.owl.autoplay")
+    }), $(".panel.se-blue").mouseenter(function() {
+        $(".panel.se-blue .owl-dots button:nth-child(1)").click()
+    }), $(".panel.se-white").mouseenter(function() {
+        $(".panel.se-white .owl-dots button:nth-child(1)").click()
+    }), $(".panel.se-green").mouseenter(function() {
+        $(".panel.se-green .owl-dots button:nth-child(1)").click()
+    }), $(".panel.se-blue").mouseenter(function() {
+        $(".panel.se-blue .owl-carousel").trigger("play.owl.autoplay")
+    }), $(".panel.se-white").mouseenter(function() {
+        $(".panel.se-white .owl-carousel").trigger("play.owl.autoplay")
+    }), $(".panel.se-green").mouseenter(function() {
+        $(".panel.se-green .owl-carousel").trigger("play.owl.autoplay")
+    })
+}), $(window).on("load", function() {
+    $(".stat-slider").owlCarousel({
+        dots: !1,
+        items: 1,
+        autoplay: !0,
+        autoplayHoverPause: !0,
+        autoWidth: !0,
+        loop: !0
+    })
+}), $(window).on("load", function() {
+    $(".testimonial-slider").owlCarousel({
+        dots: !0,
+        items: 1,
+        autoplay: !0,
+        autoplayTimeout: 5e3,
+        loop: !0,
+        rewind: !0,
+        nav: !0
+    }), $(".owl-dot span").on("mouseover", function(e) {
+        $(".testimonial-slider").trigger("stop.owl.autoplay")
+    }), $(".owl-dot span").on("mouseleave", function(e) {
+        $(".testimonial-slider").trigger("play.owl.autoplay")
+    })
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

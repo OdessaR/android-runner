@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/xfinity.com/satellite-5b194bc564746d59b4000864.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    ot_init();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

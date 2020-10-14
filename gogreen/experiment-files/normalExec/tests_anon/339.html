@@ -1,0 +1,150 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var n = r("../../node_modules/@babel/runtime/helpers/objectSpread.js"),
+                o = r.n(n),
+                d = r("../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js"),
+                a = r.n(d),
+                s = r("../graphql-fetch/es/index.js"),
+                c = r.n(s),
+                i = r("../../node_modules/@nike/fetch-client/es/fetch-client.js"),
+                u = r("../grand-whitelisted-hashes/es/index.js"),
+                l = r("../../node_modules/@nike/ux-tread-dotcom-constants/es/index.js"),
+                m = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/add-to-cart.js"),
+                v = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/update-cart.js"),
+                f = r("../../node_modules/@nike/ux-tread-cart-redux/es/selectors.js"),
+                p = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/get-set-configs.js");
+
+            function addToCartFromTesla(e) {
+                e.action;
+                var t = e.appId,
+                    r = void 0 === t ? l.DOTCOM_UX_ID : t,
+                    n = e.brand,
+                    d = void 0 === n ? l.NIKE_BRAND : n,
+                    s = e.catalogId,
+                    h = e.channel,
+                    j = void 0 === h ? l.NIKECOM_CHANNEL : h,
+                    _ = e.country,
+                    I = e.cloudStack,
+                    C = e.designVasId,
+                    b = e.displaySize,
+                    x = e.env,
+                    k = e.headers,
+                    O = e.host,
+                    S = e.id,
+                    y = e.cloudHost,
+                    g = e.isVasItem,
+                    E = e.langLocale,
+                    T = e.merchGroup,
+                    A = e.method,
+                    N = e.metricId,
+                    R = e.price,
+                    F = e.productId,
+                    D = e.s3env,
+                    M = e.skuId,
+                    V = e.token,
+                    w = e.visitId,
+                    P = e.visitorId,
+                    L = e.force,
+                    U = a()(e, ["action", "appId", "brand", "catalogId", "channel", "country", "cloudStack", "designVasId", "displaySize", "env", "headers", "host", "id", "cloudHost", "isVasItem", "langLocale", "merchGroup", "method", "metricId", "price", "productId", "s3env", "skuId", "token", "visitId", "visitorId", "force"]);
+                return function(e, t) {
+                    var n = t(),
+                        a = Object(f.isConfigSet)(n),
+                        l = o()({
+                            env: x,
+                            appId: r,
+                            brand: d,
+                            catalogId: s,
+                            channel: j,
+                            country: _,
+                            cloudHost: y,
+                            cloudStack: I,
+                            designVasId: C,
+                            headers: k,
+                            host: O,
+                            id: S,
+                            isVasItem: g,
+                            langLocale: E,
+                            merchGroup: T,
+                            designViewIds: N ? [N] : [],
+                            price: R,
+                            productId: F,
+                            s3env: D,
+                            size: b,
+                            stockKeepingUnitId: M,
+                            token: V,
+                            visitId: w,
+                            visitorId: P,
+                            method: A,
+                            force: L
+                        }, U),
+                        h = Promise.resolve(),
+                        B = Promise.resolve();
+                    return a || (B = e(Object(p.default)({
+                        s3env: D,
+                        country: _
+                    }))), B.then((function() {
+                        var n = t(),
+                            d = Object(f.getGrandCloudStack)(n),
+                            a = Object(f.getCartBucket)(n),
+                            s = Object(f.getShouldIncludeCredentials)(n),
+                            p = S ? v.default : m.default;
+                        if (g) return !1;
+                        if (M) {
+                            var j = {
+                                    country: _,
+                                    language: E,
+                                    merchGroup: T,
+                                    stockKeepingUnitIds: [M]
+                                },
+                                I = s ? {
+                                    credentials: "include"
+                                } : {};
+                            h = c()({
+                                fetchClient: i.default,
+                                cloudStack: d,
+                                hash: u.skuByStockKeepingUnitIds,
+                                variables: j,
+                                visitId: w,
+                                visitorId: P,
+                                token: V,
+                                appName: "CiCCart",
+                                appId: r,
+                                fetchOptions: I
+                            }).then((function(e) {
+                                l.items = [{
+                                    skuId: e.data.skusByStockKeepingUnitIds[0].id,
+                                    quantity: 1
+                                }]
+                            }))
+                        }
+                        return h.then((function() {
+                            return e(p(l)).then((function(e) {
+                                return o()({}, e, {
+                                    bucket: a
+                                })
+                            }))
+                        }))
+                    }))
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

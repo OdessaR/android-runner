@@ -1,0 +1,159 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            })), e.d(r, "getCurrentTheme", (function() {
+            })), e.d(r, "getThemedColor", (function() {
+            })), e.d(r, "loadTheme", (function() {
+            })), e.d(r, "restoreTheme", (function() {
+            })), e.d(r, "savedThemeName", (function() {
+            })), e.d(r, "syncTheme", (function() {
+            })), e.d(r, "getTheme", (function() {
+            })), e.d(r, "getThemeNames", (function() {
+            })), e.d(r, "getStdThemeNames", (function() {
+            })), e.d(r, "isStdThemeName", (function() {
+            })), e.d(r, "getStdTheme", (function() {
+            })), e.d(r, "getStdThemedValue", (function() {
+            })), e.d(r, "isStdThemedDefaultValue", (function() {
+            })), e.d(r, "saveTheme", (function() {
+            })), e.d(r, "removeTheme", (function() {
+            })), e.d(r, "isThemeExist", (function() {
+            })), e.d(r, "translateStdThemeName", (function() {
+            })), e.d(r, "isStdTheme", (function() {
+            })), e.d(r, "extractThemeFromModel", (function() {
+            })), e.d(r, "DEFAULT_THEME", (function() {
+                return s.a
+            })), e.d(r, "themes", (function() {
+                return m.a
+            }));
+
+            function f() {
+                Object(b.setTheme)(Object(c.getValue)("current_theme.name") || s.a)
+            }
+
+            function T() {
+                return Object(c.getValue)("current_theme.name") || null
+            }
+
+            function x() {
+                Object(c.setValue)("current_theme.name", p().name, {
+                    forceFlush: !0
+                })
+            }
+
+            function S(o) {
+                return d(o)
+            }
+
+            function k() {
+                return u || Object(n.fetch)("/themes/", {
+                    credentials: "include",
+                    method: "GET"
+                }).then((function(o) {
+                    return u = o.json()
+                }))
+            }
+
+            function w() {
+                return g.getStdThemeNames()
+            }
+
+            function O(o) {
+                return w().includes(o)
+            }
+
+            function j(o) {
+                return g.getStdChartTheme(o) || {
+                    content: void 0
+                }
+            }
+
+            function N(o, r) {
+                var e = r || p().name,
+                    t = g.getStdChartTheme(e),
+                    l = 0 !== o.length && o.split(".");
+                return t && t.content && l ? l.reduce((function(o, r) {
+                    return o[r]
+                }), t.content) : null
+            }
+
+            function P(o, r, e) {
+                var l = N(o, e);
+                return null !== l && Object(t.areEqualRgba)(Object(t.parseRgba)(l), Object(t.parseRgba)(String(r)))
+            }
+
+            function C(o, r) {
+                return function(o, r) {
+                    return e.append("content", JSON.stringify(r)), e.append("name", o), u = null,
+                        Object(n.fetch)("/save-theme/", {
+                            credentials: "include",
+                            method: "POST",
+                            body: e
+                        }).then((function(o) {
+                            return o.json()
+                        }), (function(o) {
+                            return i.logError(o)
+                        }))
+                }(o, r)
+            }
+
+            function D(o) {
+                return function(o) {
+                    return r.append("name", o), u = null, Object(n.fetch)("/remove-theme/", {
+                        credentials: "include",
+                        method: "POST",
+                        body: r
+                    }).then((function(o) {
+                        return o.json()
+                    }), (function(o) {
+                        return i.logError(o)
+                    }))
+                }(o)
+            }
+
+            function E(o) {
+                return function(o) {
+                    return d(o).then((function(o) {
+                        return Boolean(o.content)
+                    }))
+                }(o)
+            }
+
+            function M(o) {
+                return g.translateThemeName(o)
+            }
+
+            function F(o) {
+                return g.isStdTheme(o)
+            }
+
+            function J(o) {
+                return {
+                    content: {
+                        chartProperties: {
+                            paneProperties: o.model().properties().paneProperties.state(),
+                            scalesProperties: o.model().properties().scalesProperties.state()
+                        },
+                        sessions: o.model().sessions().properties().state(),
+                        mainSourceProperties: o.model().mainSeries().properties().state()
+                    }
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

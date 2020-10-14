@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            var wrap = $(this);
+            var id = wrap.attr('id').replace('-wrap', '');
+            var current = $('#' + id).find('.mkhb-navigation-resp');
+            if (bodySel.hasClass('mkhb-navigation-resp--opened-' + id)) {
+                current.removeClass('is-active').find('.mkhb-navigation-resp__container').removeClass('fullscreen-active');
+                bodySel.removeClass('mkhb-navigation-resp--opened-' + id).addClass('mkhb-navigation-resp--closed-' + id).trigger('mkhb-navigation-resp--closed-' + id);
+                wrap.hide();
+            }
+        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

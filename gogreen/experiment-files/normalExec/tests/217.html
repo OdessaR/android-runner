@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/onet.pl/helper_002.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    t.onerror();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

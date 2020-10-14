@@ -1,0 +1,42 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var r = e(789),
+                o = {
+                    CHF: "EUR",
+                    DKK: "EUR",
+                    NOK: "EUR",
+                    SEK: "EUR"
+                };
+
+            function t(n) {
+                var a = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+                    e = a[n] ? n : function(n, a) {
+                        var e = o[n];
+                        return a[e] ? e : r.a
+                    }(n, a);
+                return {
+                    price: a[e],
+                    supportedCurrency: e
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

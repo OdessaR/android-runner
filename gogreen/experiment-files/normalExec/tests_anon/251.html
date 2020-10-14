@@ -1,0 +1,57 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var r = t(4),
+                c = t.n(r),
+                a = (t(48), t(6)),
+                s = t(262),
+                u = t(12),
+                i = t(270),
+                b = c.a.mark(o);
+
+            function o() {
+                var e, n, t, r;
+                return c.a.wrap((function(c) {
+                    for (;;) switch (c.prev = c.next) {
+                        case 0:
+                            return c.next = 2, Object(a.i)(u.f);
+                        case 2:
+                            if (!c.sent) {
+                                c.next = 5;
+                                break
+                            }
+                            return c.abrupt("return");
+                        case 5:
+                            return c.next = 7, Object(a.i)(i.b);
+                        case 7:
+                            return e = c.sent, c.next = 10, Object(a.i)(i.g);
+                        case 10:
+                            return n = c.sent, c.next = 13, Object(a.i)(i.d);
+                        case 13:
+                            return t = c.sent, r = [e, n, t], c.next = 17, Object(a.c)(s.a, r);
+                        case 17:
+                        case "end":
+                            return c.stop()
+                    }
+                }), b)
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/foxnews.com/environment.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    Proto.isStaging();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

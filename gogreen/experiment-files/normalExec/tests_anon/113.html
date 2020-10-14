@@ -1,0 +1,51 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                        e(A(s[0], t, o, _.a.PLACE, a))
+                    })))) : e(function(t, e, i) {
+                        return Object(g.a)({
+                            operation: "click",
+                            sub_event: "show",
+                            place_id: e,
+                            wishlisting_from: m.a.PLACES_SEARCH
+                        }), {
+                            type: v.o,
+                            payload: {
+                                place: t,
+                                placeId: e,
+                                savingFrom: i
+                            }
+                        }
+                    }(t, o, a)) : e(function(t, e, i) {
+                        return Object(g.a)({
+                            operation: "click",
+                            sub_event: "show",
+                            place_id: e,
+                            wishlisting_from: m.a.PLACES_SEARCH
+                        }), {
+                            type: v.p,
+                            payload: {
+                                place: t,
+                                placeId: e,
+                                savingFrom: i
+                            }
+                        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

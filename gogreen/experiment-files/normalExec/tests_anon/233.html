@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    i.current = e
+                }), [e]), [n, Object(c.useCallback)((function() {
+                    var n = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                        e = n.target,
+                        c = n.goLogin,
+                        a = void 0 === c || c,
+                        r = e || i.current;
+                    t(l.a.actions.patch({
+                        loginRedirectPath: r
+                    })), a && setTimeout((function() {
+                        o.a.push("/signup")
+                    }))
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

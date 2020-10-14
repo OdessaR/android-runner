@@ -1,0 +1,33 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                        for (var n = function(n) {
+                                var t = n.nextSibling,
+                                    e = t.style.display;
+                                t.style.display = "block" === e ? "none" : "block";
+                                var c = "block" !== e;
+                                n.setAttribute("aria-expanded", c)
+                            }, t = u.getElementById("region-footer-links").getElementsByTagName("button"), e = 0; e < t.length; e += 1) {
+                            var c = t[e];
+                            c.onclick = n.bind(c, c)
+                        }
+                    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

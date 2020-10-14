@@ -1,0 +1,70 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    $(".js-hl-big").slick({
+        autoplay: !0,
+        slidesToShow: 1,
+        autoplaySpeed: 1e4,
+        pauseOnFocus: !0,
+        accessibility: !0,
+        dots: !0,
+        fade: !0,
+        arrows: !0,
+        cssEase: "ease"
+    }), $(window).scroll(function() {
+        var s = $(window).scrollTop(),
+            e = $("header").outerHeight() + $(".header__wrapper").outerHeight();
+        $(".mainmenu").outerHeight();
+        s > e + 40 ? ($(".header__wrapper").addClass("fixed"), $(".header__outer").css({
+            height: "264px",
+            background: "$cl_navy"
+        }), $(".logo__item--small").css({
+            display: "block"
+        }), $(".logo__item--big").css({
+            display: "none"
+        }), $(".logo__circle").css({
+            display: "none"
+        }), $(".js-ads-stick").addClass("ads__stick--sticky")) : ($(".header__wrapper").removeClass("fixed"), $(".header__outer").css({
+            height: "0px",
+            background: "none"
+        }), $(".logo__item--small").css({
+            display: "none"
+        }), $(".logo__item--big").css({
+            display: "block"
+        }), $(".logo__circle").css({
+            display: "block"
+        }), $(".js-ads-stick").removeClass("ads__stick--sticky"))
+    }), $(".js-ads-horizontal").click(function(s) {
+        s.stopPropagation(), s.preventDefault(), $(".ads__horizontal").hide()
+    }), $(".js-skyscraper").stick_in_parent({
+        parent: ".js-gallery",
+        inner_scrolling: !1,
+        spacer: !1,
+        offset_top: 77
+    }).on("sticky_kit:bottom", function(s) {
+        $(this).parent().parent().css("position", "static")
+    }).on("sticky_kit:unbottom", function(s) {
+        $(this).parent().parent().removeAttr("style")
+    }), $(window).scroll(function() {
+        $(window).scrollTop() > $("header").outerHeight() + $(".header__wrapper").outerHeight() + 40 ? $(".js-nkt-stick").addClass("nkt__stick--sticky") : $(".js-nkt-stick").removeClass("nkt__stick--sticky")
+    })
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

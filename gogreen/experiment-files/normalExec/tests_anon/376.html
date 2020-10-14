@@ -1,0 +1,79 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            var api_url = '/api/v1/did-you-know/random/' + $(this).data('number');
+            var html = '';
+            var root = null;
+            $.ajax({
+                url: api_url,
+                dataType: 'json'
+            }).done(function(data) {
+                root = $(this).find('.did-you-know-block__tiles');
+                var carousel = $(this).find('.carousel-inner');
+                html = '';
+                for (var i in data) {
+                    // Both the tile and the link need "d-flex flex-row justify-content-between" because the link might not be there.
+                    html += '<div class="did-you-know-block__tiles__tile d-flex flex-row justify-content-between">';
+                    if (data[i].link != null) {
+                        html += '<a class="did-you-know-block__tiles__tile__link d-flex flex-row justify-content-between" href="' + data[i].link + '">';
+                    }
+                    html += '<div class="did-you-know-block__tiles__tile__text align-self-center">';
+                    html += $('<div/>').html(data[i].text).text();
+                    html += '</div>';
+                    html += '<div class="did-you-know-block__tiles__tile__image">';
+                    html += '<img class="did-you-know-block__tiles__tile__image__crop img-fluid" src="' + data[i].crop.src + '" alt="' + data[i].crop.alt + '" height="' + data[i].crop.height + '" width="' + data[i].crop.width + '" />';
+                    html += '</div>';
+                    if (data[i].link != null) {
+                        html += '</a>';
+                    }
+                    html += '</div>';
+                }
+                $(root).html(html);
+
+                html = '';
+                // Carousel
+                for (var i in data) {
+                    html += '<div class="did-you-know-block__carousel__wrapper carousel-item">';
+                    // Both the tile and the link need "d-flex flex-row justify-content-between" because the link might not be there.
+                    html += '<div class="did-you-know-block__carousel__tile d-flex flex-row justify-content-between">';
+                    if (data[i].link != null) {
+                        html += '<a class="did-you-know-block__tiles__tile__link d-flex flex-row justify-content-between" href="' + data[i].link + '">';
+                    }
+                    html += '<div class="did-you-know-block__carousel__tile__text align-self-center">';
+                    html += $('<div/>').html(data[i].text).text();
+                    html += '</div>';
+                    html += '<div class="did-you-know-block__carousel__tile__image">';
+                    html += '<img class="did-you-know-block__carousel__tile__image__crop img-fluid" src="' + data[i].crop.src + '" alt="' + data[i].crop.alt + '" height="' + data[i].crop.height + '" width="' + data[i].crop.width + '" />';
+                    html += '</div>';
+                    if (data[i].link != null) {
+                        html += '</a>';
+                    }
+                    html += '</div>';
+                    html += '</div>';
+                }
+                $(carousel).html(html);
+                make_proper_number_of_did_you_know_items_show();
+                $(window).on('resize orientationchange', function() {
+                    make_proper_number_of_did_you_know_items_show();
+                });
+            });
+        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

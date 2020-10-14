@@ -1,0 +1,87 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            }));
+            var n = r("../../node_modules/@babel/runtime/helpers/objectSpread.js"),
+                o = r.n(n),
+                d = r("../../node_modules/@nike/ux-tread-cart/es/api/merge-carts-by-params.js"),
+                a = r("../cart-constants/es/index.js"),
+                s = r("../../node_modules/@nike/ux-tread-dotcom-constants/es/index.js"),
+                c = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/handle-cart-errors.js"),
+                i = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/action-creators.js"),
+                u = r("../../node_modules/@nike/ux-tread-cart-redux/es/actions/get-set-configs.js");
+
+            function mergeCarts(e) {
+                var t = e.s3env,
+                    r = void 0 === t ? "prod" : t,
+                    n = e.brand,
+                    l = void 0 === n ? s.NIKE_BRAND : n,
+                    m = e.channel,
+                    v = void 0 === m ? s.NIKECOM_CHANNEL : m,
+                    f = e.country,
+                    p = e.cloudStack,
+                    h = e.host,
+                    j = e.token,
+                    _ = e.visitId,
+                    I = e.visitorId,
+                    C = e.validateOnly,
+                    b = e.quantityOnly,
+                    x = e.appId,
+                    k = void 0 === x ? s.DOTCOM_UX_ID : x;
+                return function(e) {
+                    var t = a.SERVICE_MERGE_CARTS,
+                        n = {
+                            appId: k,
+                            brand: l,
+                            channel: v,
+                            country: f,
+                            token: j,
+                            visitId: _,
+                            visitorId: I,
+                            validateOnly: C,
+                            cloudStack: p,
+                            host: h
+                        };
+                    return b && (n.fields = "totals.quantity,errors,warnings"), e(Object(u.default)({
+                        s3env: r,
+                        country: f
+                    })).then((function() {
+                        return e(Object(i.onFetchStart)({
+                            service: t,
+                            country: f,
+                            token: j,
+                            visitorId: I,
+                            visitId: _
+                        })), Object(d.default)(n)
+                    })).then((function(r) {
+                        return e(Object(i.onFetchSuccess)(o()({
+                            service: t
+                        }, r)))
+                    }), (function(r) {
+                        return e(Object(c.default)({
+                            service: t,
+                            params: n,
+                            error: r
+                        }))
+                    }))
+                }
+            }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

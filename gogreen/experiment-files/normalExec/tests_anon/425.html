@@ -1,0 +1,27 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+            $('.wp-video-popup-video').each(function(i, el) {
+                var $el = $(el);
+                if ($el.hasClass('is-resizable')) $el.height($el.width() * 0.5625);
+            });
+        }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

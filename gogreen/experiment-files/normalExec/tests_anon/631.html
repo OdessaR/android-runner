@@ -1,0 +1,33 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                        if (typeof jQuery === "function") {
+                            var $matched = jQuery(element_selector);
+                            var onevent = function() {
+                                clientObj.mboxJs(clientItem.mbox)
+                            };
+                            if (typeof jQuery.fn.click === "function") $matched.click(onevent);
+                            else if (typeof jQuery.each === "function") $matched.each(function() {
+                                Bootstrapper.unobtrusiveAddEvent(this, "onclick", onevent)
+                            })
+                        }
+                    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    $('.search-value').focus(function() {
+        $('.icon-clean').show();
+    });
+
+    $('.search-value').blur(function() {
+        var val = $('.search-value').val();
+        if (!val) {
+            $('.icon-clean').hide();
+        }
+    })
+
+    $('.icon-search').on('click', function() {
+        var val = $('.search-value').val();
+        if (!val) {
+            return false;
+        } else {
+        }
+    });
+
+    $('.js-clean').on('click', function() {
+        $('.search-value').val('');
+        $(this).hide();
+    })
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    self.toggleMenu();
+                });
+                if (isMobile) {
+                    $(window).on('swiperight', function(e) {
+                        var target = $(e.target);
+                        if (e.swipestart.coords[0] < 50 && !target.parents().is('.ammenu-nav-sections') && !target.is('.ammenu-nav-sections')) {
+                            self.toggleMenu();
+                        }
+                    });
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        closeModal();
+    });
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+            closeModal();
+        }
+    });
+
+
+
+    /* --------------------------------------
+     *       Perform AJAX Login
+     *  -------------------------------------- */
+    $('form#login').on('submit', function(e) {
+        'use strict';
+        var checked = false;
+        if ($('form#login #rememberlogin').is(':checked')) {
+            checked = true;
+        }
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
+                'username': $('form#login #usernamelogin').val(),
+                'password': $('form#login #passwordlogin').val(),
+                'remember': checked,
+                'security': $('form#login #securitylogin').val()
+            },
+            success: function(data) {
+                if (data.loggedin == true) {
+                    $('form#login div.login-error').removeClass('alert-danger').addClass('alert-success');
+                    $('form#login div.login-error').text(data.message);
+                } else {
+                    $('form#login div.login-error').removeClass('alert-success').addClass('alert-danger');
+                    $('form#login div.login-error').text(data.message);
+                }
+                if ($('form#login .login-error').text() == '') {
+                    $('form#login div.login-error').hide();
+                } else {
+                    $('form#login div.login-error').show();
+                }
+            }
+        });
+        e.preventDefault();
+    });
+    if ($('form#login .login-error').text() == '') {
+        $('form#login div.login-error').hide();
+    } else {
+        $('form#login div.login-error').show();
+    }
+
+
+    /* --------------------------------------
+     *       Register New User
+     *  -------------------------------------- */
+    $('form#register').on('submit', function(e) {
+        'use strict';
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                'action': 'ajaxregister', //calls wp_ajax_nopriv_ajaxlogin
+                'username': $('form#register #username').val(),
+                'email': $('form#register #email').val(),
+                'password': $('form#register #password').val(),
+                'security': $('form#register #security').val()
+            },
+            success: function(data) {
+
+                if (data.loggedin == true) {
+                    $('form#register div.login-error').removeClass('alert-danger').addClass('alert-success');
+                    $('form#register div.login-error').text(data.message);
+                    $('form#register')[0].reset();
+                } else {
+                    $('form#register div.login-error').removeClass('alert-success').addClass('alert-danger');
+                    $('form#register div.login-error').text(data.message);
+                }
+                if ($('form#register .login-error').text() == '') {
+                    $('form#register div.login-error').hide();
+                } else {
+                    $('form#register div.login-error').show();
+                }
+            }
+        });
+        e.preventDefault();
+    });
+
+    if ($('form#register .login-error').text() == '') {
+        $('form#register div.login-error').hide();
+    } else {
+        $('form#register div.login-error').show();
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

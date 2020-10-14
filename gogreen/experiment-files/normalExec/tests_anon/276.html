@@ -1,0 +1,45 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    if (!0 === r || !1 === e.phxLayer.layerIsOpened() && !1 === e.phxLayer.layerIsStatic()) return;
+                    if (i++, !0 === u()) {
+                        if (i < 3) return;
+                        clearTimeout(t), t = setTimeout(function() {
+                            !0 === u() && (i = 0, e.phx.close(!1, "scroll"))
+                        }, 300)
+                    }
+                });
+
+            function u() {
+                var n = e.windowParams.windowSize(),
+                    t = o.getBoundingClientRect();
+                return !!(t.height && t.top < n.height && t.bottom - 50 < n.height)
+            }
+            e.domBuilder.addEvent(window, "scroll", a), e.domBuilder.addEvent(o, "click", function() {
+                var n;
+                r = !0;
+                    a = o.querySelector(".backToMainPageLayerGlass");
+                a && e.domBuilder.addClass(a, "fadeout");
+                    n || (n = l);
+                    var c, d = l - n,
+                        m = (c = Math.min(d / 3e3, 1)) < .5 ? 4 * c * c * c : (c - 1) * (2 * c - 2) * (2 * c - 2) + 1;
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var ensightenOptions = Bootstrapper.ensightenOptions;
+    Bootstrapper.insertScript("//www.googletagmanager.com/gtag/js?id\x3dUA-1304930-29");
+
+    function gtag() {
+    }
+    gtag("js", new Date);
+    gtag("config", "UA-1304930-29")
+}, 3315423, 647021);
+Bootstrapper.bindImmediate(function() {
+    var ensightenOptions = Bootstrapper.ensightenOptions;
+    style.type = "text/css";
+    var css = decodeURIComponent("body%20.ensNotifyBanner%20%7B%0A%20%20%20%20bottom%3A%2050%25%20!important%3B%3B%0A%7D%0A%23ensNotifyBanner%20%23ensCloseBanner%2C%20%23ensNotifyBanner%20.privacyCancel%20%7B%0A%20%20%20%20font-weight%3A%20bold%20!important%3B%3B%0A%7D%0A%0A");
+    if (style.styleSheet) style.styleSheet.cssText =
+        css;
+    script.parentNode.insertBefore(style, script)
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

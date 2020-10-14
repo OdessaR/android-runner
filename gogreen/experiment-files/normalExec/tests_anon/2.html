@@ -1,0 +1,32 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+
+    function body_0(chk, ctx) {
+        return chk.s(ctx.get(["locations"], false), ctx, {
+        }, {});
+    }
+
+    function body_1(chk, ctx) {
+        return chk.w("<li data-loc-id=\"").f(ctx.get(["locId"], false), ctx, "h").w("\" class=\"").f(ctx.get(["locClasses"], false), ctx, "h").w("\"><a href=\"").f(ctx.get(["locUrl"], false), ctx, "h").w("\">").f(ctx.get(["locName"], false), ctx, "h").w("</a></li>");
+    }
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        var e = {},
+            t = {
+                exports: e
+            };
+        (function() {
+            if (!(e && e.length)) return;
+            var t = e[0];
+            r.src = "https://assets.alicdn.com/g/big-brother/sentry/2.x/index.js";
+            r.crossOrigin = "anonymous";
+            r.addEventListener("load", function() {
+                if (e) {
+                    e.performance.autoReport();
+                    e.api.autoReport()
+                }
+            });
+            t.appendChild(r)
+        })();
+        return t.exports
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

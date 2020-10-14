@@ -1,0 +1,41 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+
+    function scrollToHash() {
+        if (hash != '') {
+            if (jQuery('#' + hash).length > 0 && jQuery('.sticky-nav a#' + hash).hasClass('link-anchor') === false) {
+                var hashOffset = jQuery('#' + hash).offset().top;
+                hashOffset = hashOffset - 82; // 82px is height of sticky-nav
+                jQuery('html, body').animate({
+                    scrollTop: hashOffset
+                }, 1000);
+            }
+        }
+    }
+
+    jQuery(window).on('hashchange', function() {
+        scrollToHash();
+    });
+
+    scrollToHash(); // called when the page is first loaded
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/pcworld.com/gpt_starter.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    loadGPT();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                        return (null === i || void 0 === i ? void 0 : i.isSchool) ? o >= 1e4 ? "\u6709\u8d85\u904e 10,000 \u591a\u4f4d\u5b78\u9577\u59d0\u5728".concat(i.name, "\u677f\u7b49\u8457\u56de\u7b54\u4f60\u7684\u554f\u984c") : "\u6709 ".concat(o.toLocaleString(), " \u4f4d\u5b78\u9577\u59d0\u5728").concat(i.name, "\u677f\u7b49\u8457\u56de\u7b54\u4f60\u7684\u554f\u984c") : "\u4e0a\u5927\u5b78\u3001\u51fa\u793e\u6703\u7684\u4f60\uff0c\u5feb\u4f86".concat(i ? "".concat(i.name, "\u677f") : "", "\u4e00\u8d77\u8a0e\u8ad6\uff01\u7acb\u523b\u52a0\u5165Dcard \uff01")
+                    }), [i, o]),
+                    r = Object(c.useMemo)((function() {
+                        return (null === i || void 0 === i ? void 0 : i.isSchool) ? "\u8a3b\u518a\u5f8c\u5373\u53ef\u767c\u6587\u3001\u7559\u8a00\uff0c\u4ee5\u53ca\u62bd\u5361\u8a8d\u8b58\u65b0\u540c\u5b78" : "\u5b8c\u6210\u8eab\u4efd\u9a57\u8b49\u5373\u53ef\u767c\u6587\u3001\u7559\u8a00\u8207\u62bd\u5361\u8a8d\u8b58\u65b0\u670b\u53cb"
+                    }), [i]);
+                return v(O, {
+                    forum: i,
+                    title: a,
+                    description: r,
+                    show: n
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

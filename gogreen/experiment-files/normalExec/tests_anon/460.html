@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+    var i = {
+        fbPixelId: "319443022307966",
+        domain: ".scmp.com",
+        appId: 860,
+        in_eu: !0,
+        ping_activity: !0,
+        snowplow_src: "//cdn.keywee.co/dist/sp-2.9.1.js"
+    };
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

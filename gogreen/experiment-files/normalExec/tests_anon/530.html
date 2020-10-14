@@ -1,0 +1,59 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+        $("#more_posts").on("click", function() { // When btn is pressed.
+            $("#more_posts").attr("disabled", true); // Disable the button, temp.
+            load_posts(false, term_id);
+        });
+
+        $("ul#blog_filter_list li a").on("click", function() {
+            term_id = $(this).data("id");
+            //filter is clicked reset to page 1
+            pageNumber = 1;
+            load_posts(true, term_id);
+        });
+    });
+
+    /**
+     * Generic Loader function
+     */
+    var retainCount = 0;
+    $.extend({
+        loadingSpinner: function() {
+            // add the overlay with loading image to the page
+            var over = '<div id="custom-loading-overlay">' +
+                '<i id="custom-loading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="font-size:48px; color: #000;"></i>' +
+                '</div>';
+            if (0 === retainCount) {
+                // $(over).appendTo('body');
+                $(over).appendTo($('#blog_outer_section'));
+            }
+            retainCount++;
+        },
+        removeLoadingSpinner: function() {
+            retainCount--;
+            if (retainCount <= 0) {
+                $('#custom-loading-overlay').remove();
+                retainCount = 0;
+            }
+        }
+    }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

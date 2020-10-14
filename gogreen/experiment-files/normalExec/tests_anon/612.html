@@ -1,0 +1,192 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+
+    //Create variable to find the screen width
+
+    //Add the class .parent to primary links anchors
+    jQuery(".menu li a").each(function() {
+        if (jQuery(this).next().length > 0) {
+            jQuery(this).addClass("parent");
+        };
+    });
+
+    //Set up the toggle menu on-click functionality
+    jQuery(".toggleMenu").click(function(e) {
+        e.preventDefault();
+        jQuery(this).toggleClass("active");
+    });
+
+    //Run mobile menu function
+    adjustMenu(ww);
+
+    jQuery(window).bind('resize orientationchange', function() {
+        adjustMenu(ww);
+    });
+
+    /*Tina's mobile menu --- */
+    function adjustMenu(ww) {
+        //if the screen is less than 769px, display the toggle button and hide the menu
+        if ((ww < 768) && (!jQuery("html").hasClass("lt-ie9"))) {
+            //Strip the anchor tag of the parent link and replace with href="#"
+            jQuery(".menu-block-1 .menu li a.parent").attr("href", "#");
+
+            jQuery('.region-navigation').unbind("mouseenter").unbind("mouseleave");
+            jQuery('.region-navigation').unbind('hover');
+            jQuery('.region-navigation').hide();
+            jQuery('.menu-block-1 li.expanded ul.menu').hide();
+            jQuery('li.expanded ul.menu').css('border-bottom', 'none');
+
+            jQuery(".toggleMenu").css("display", "inline-block");
+
+            jQuery(".toggleMenu").unbind('click').bind('click', function(e) {
+                // must be attached to anchor element to prevent bubbling
+                e.preventDefault();
+                jQuery('.region-navigation').toggle();
+            });
+
+            jQuery(".menu li").unbind('mouseenter mouseleave');
+            jQuery(".menu li a.parent").unbind('click').bind('click', function(e) {
+                // must be attached to anchor element to prevent bubbling
+                e.preventDefault();
+                jQuery(this).next('ul').toggle();
+            });
+        }
+        //if the screen is greater than or equal to 768px, do not display the toggle button and show the menu
+        else if ((ww >= 768)) {
+
+            jQuery(".region-navigation").show();
+            jQuery(".menu-block-1 > ul.menu").css("display", "block");
+            jQuery(".toggleMenu").css("display", "none");
+            jQuery(".menu li").removeClass("hover");
+            jQuery(".menu li a").unbind('click');
+            jQuery(".menu li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+                //must be attached to li so that mouseleave is not triggered when hover over submenu
+                jQuery(this).toggleClass('hover');
+            });
+
+            /*Eric's drop-down -- */
+            jQuery('.region-navigation').hoverIntent(
+
+                function() {
+
+                    // slideDown drop down menus
+                    jQuery('.menu-block-1 li.expanded ul.menu').slideDown('fast').css('border-bottom', '7px solid #003594');
+
+                    // Check if there is any content in .main-top
+                    // We'll only need to apply .animate to this element since it will push
+                    // elements below .main-top down as well.
+                    if (jQuery('.main-top').length > 0) {
+
+                        // Push .main-top down
+                        jQuery('.main-top').animate({
+                            marginTop: '160px'
+                        }, 'fast');
+
+                        // Same idea as above but with #map-canvas instead
+                    } else if (jQuery('#map-canvas').length > 0) {
+
+                        // Push #map-canvas down
+                        jQuery('#map-canvas').animate({
+                            marginTop: '176px'
+                        }, 'fast');
+
+                        // If there isn't anything set in .main-top we'll have to target the
+                        // #content, .left-sidebar, and .right-sidebar individually.
+                    } else {
+
+                        // Push #content down
+                        jQuery('#content').animate({
+                            marginTop: '160px'
+                        }, 'fast');
+
+                        // Push .right-sidebar down
+                        jQuery('.right-sidebar').animate({
+                            marginTop: '160px'
+                        }, 'fast');
+
+                        // Push .left-sidebar down
+                        jQuery('.left-sidebar').animate({
+                            marginTop: '160px'
+                        }, 'fast');
+
+                    }
+
+                },
+                function() {
+
+                    // slideUp drop down menus
+                    jQuery('li.expanded ul.menu').slideUp('fast');
+
+                    // Check if there is any content in .main-top
+                    // We'll only need to apply .animate to this element since it will pull
+                    // elements below .main-top up as well.
+                    if (jQuery('.main-top').length > 0) {
+
+                        // Pull .main-top up
+                        jQuery('.main-top').animate({
+                            marginTop: '0px'
+                        }, 'fast');
+
+                        // Same idea as above but with #map-canvas instead
+                    } else if (jQuery('#map-canvas').length > 0) {
+
+                        // Pull #map-canvas up
+                        jQuery('#map-canvas').animate({
+                            marginTop: '16px'
+                        }, 'fast', function() {
+                            jQuery('li.expanded ul.menu').css('border-bottom', '0');
+                        });
+
+                        // If there isn't anything set in .main-top we'll have to target the
+                        // #content, .left-sidebar, and .right-sidebar individually.
+                    } else {
+
+                        // Pull #content up
+                        jQuery('#content').animate({
+                            marginTop: '0px'
+                        }, 'fast');
+
+                        // Pull .right-sidebar up
+                        jQuery('.right-sidebar').animate({
+                            marginTop: '0px'
+                        }, 'fast');
+
+                        // Pull .left-sidebar up
+                        jQuery('.left-sidebar').animate({
+                            marginTop: '0px'
+                        }, 'fast', function() {
+                            jQuery('li.expanded ul.menu').css('border-bottom', '0');
+                        });
+
+                    }
+
+                }
+
+            );
+            /*end Eric's drop-down -- */
+
+        }
+    }
+    /*end Tina's mobile menu -- */
+
+}
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                    $(window).width() < 768 ? (e || o(), t = !1) : t || (e = !(t = !0), $(".show-for-desktop").prepend($(".show-for-desktop .lifestage-solutions")), $(".show-for-desktop").append($(".show-for-desktop .contact-us")))
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

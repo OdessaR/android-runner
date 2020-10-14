@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<script>
+var testFunc = function() {
+                return v
+            }));
+            var v = function(e) {
+                    var n = e.CmsEntryContainer,
+                        t = e.entries,
+                        i = e.id,
+                        r = e.entry || t[i] || t || {},
+                        l = function(e) {
+                            var n = e.CmsEntryContainer,
+                                t = e.entries,
+                                o = e.entry,
+                                i = e.ownProps;
+                            return Object.keys(o.fields || {}).reduce((function(e, r) {
+                                var l, a, v = [],
+                                    m = [],
+                                    y = {},
+                                    f = {},
+                                    h = o.fields[r];
+                                if ("object" === Object(p.a)(h) && "entry" === h.referenceType) {
+                                    var b, j, O, E, C = null == t ? void 0 : null === (b = t[h.id]) || void 0 === b ? void 0 : b.fields,
+                                        T = {
+                                            contentType: null == t ? void 0 : null === (j = t[h.id]) || void 0 === j ? void 0 : j.contentType,
+                                            props: null !== (O = null == t ? void 0 : null === (E = t[h.id]) || void 0 === E ? void 0 : E.props) && void 0 !== O ? O : C,
+                                            id: h.id
+                                        },
+                                        w = d.a.createElement(n, {
+                                            contentNamespace: i.contentNamespace,
+                                            id: h.id,
+                                            key: "".concat(o.id, "_").concat(h.id),
+                                            entries: t
+                                        });
+                                    m.push(T), v.push(w), y["".concat(r, "Element")] = w, f["".concat(r, "ElementData")] = T
+                                } else Array.isArray(h) && "entry" === (null == h ? void 0 : null === (l = h[0]) || void 0 === l ? void 0 : l.referenceType) && (h.forEach((function(e) {
+                                    var c, r, l, a, u = null == t ? void 0 : null === (c = t[e.id]) || void 0 === c ? void 0 : c.fields;
+                                    m.push({
+                                        contentType: null == t ? void 0 : null === (r = t[e.id]) || void 0 === r ? void 0 : r.contentType,
+                                        props: null !== (l = null == t ? void 0 : null === (a = t[e.id]) || void 0 === a ? void 0 : a.props) && void 0 !== l ? l : u,
+                                        id: e.id
+                                    }), v.push(d.a.createElement(n, {
+                                        contentNamespace: i.contentNamespace,
+                                        id: e.id,
+                                        key: "".concat(o.id, "_").concat(e.id),
+                                        entries: t
+                                    }))
+                                })), y["".concat(r, "Elements")] = v, f["".concat(r, "ElementsData")] = m);
+                                return Object(c.a)({}, e, (a = {}, Object(u.a)(a, r, h), Object(u.a)(a, "children", [].concat(Object(s.a)(e.children), v)), Object(u.a)(a, "childrenData", [].concat(Object(s.a)(e.childrenData), m)), a), y, f)
+                            }), {
+                                children: [],
+                                childrenData: []
+                            })
+                        }({
+                            CmsEntryContainer: n,
+                            entries: t,
+                            entry: r,
+                            ownProps: e
+                        }),
+                        a = l.children,
+                        v = Object(o.a)(l, ["children"]);
+                    return Object(c.a)({}, v, e, a.length ? {
+                        children: a
+                    } : {}, r["media-items"] ? {
+                        mediaItems: r["media-items"]
+                    } : {}, r.products ? {
+                        products: r.products
+                    } : {}, r.product ? {
+                        product: r.product
+                    } : {}, r["elements-product"] ? {
+                        elementsProduct: r["elements-product"]
+                    } : {}, r["fetch-all"] ? {
+                        fetchAllEntries: r["fetch-all"]
+                    } : {}, {
+                        contentType: r.contentType
+                    })
+                },
+                m = Object(i.a)(Object(i.i)((function() {
+                    return {
+                        CmsEntryContainer: m
+                    }
+                }
+</script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    testFunc();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>

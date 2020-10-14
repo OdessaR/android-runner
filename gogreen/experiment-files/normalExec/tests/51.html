@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<script src="../../websites/gyazo.com/7af0b4a2752dda406b54.js"></script>
+</head>
+<body>
+<div id="res">Failed</div>
+<script>
+let failed = true;
+try {
+    e();
+    failed = false;
+} catch (e) {
+    failed = true;
+}
+
+document.getElementById("res").innerHTML = failed ? "Failed" : "Ok";
+</script>
+</body>
+</html>
