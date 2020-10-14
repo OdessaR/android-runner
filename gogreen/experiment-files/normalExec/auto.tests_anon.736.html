@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "736", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    return false;\n", "};\n", "kiwi._pageLoadTime = s_getLoadTime();\n", "\n", "kiwi.pageBottomFired = true;\n", "\n", "//load tags\n", "kiwi.util = kiwi.util || {\n", "    tagsAllowedHere: _satellite.getVar('kiwi.util.tagsAllowedHere') || function() {\n", "    }\n", "}\n", "kiwi.otReady = kiwi.otReady || false;\n", "if (kiwi.otReady) {\n", "    _satellite.track('kiwi.loadTags.pageBottom.performance');\n", "    _satellite.track('kiwi.loadTags.pageBottom.functional');\n", "    _satellite.track('kiwi.loadTags.pageBottom.marketing');\n", "    //_satellite.track('kiwi.loadTags.pageBottom.socialMedia');\n", "} else {\n", "    _satellite.notify('kiwi.loadTags.pageBottom::paused to wait for OT to be ready')\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    return false;
+};
+kiwi._pageLoadTime = s_getLoadTime();
+
+kiwi.pageBottomFired = true;
+
+//load tags
+kiwi.util = kiwi.util || {
+    tagsAllowedHere: _satellite.getVar('kiwi.util.tagsAllowedHere') || function() {
+    }
+}
+kiwi.otReady = kiwi.otReady || false;
+if (kiwi.otReady) {
+    _satellite.track('kiwi.loadTags.pageBottom.performance');
+    _satellite.track('kiwi.loadTags.pageBottom.functional');
+    _satellite.track('kiwi.loadTags.pageBottom.marketing');
+    //_satellite.track('kiwi.loadTags.pageBottom.socialMedia');
+} else {
+    _satellite.notify('kiwi.loadTags.pageBottom::paused to wait for OT to be ready')
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    

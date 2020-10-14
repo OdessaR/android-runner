@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- METADATA (JSON): {"number": "520", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    var e = {\n", "            detected: null,\n", "            regexp: {\n", "                Ios: /iphone|ipod|ipad/gi,\n", "                Android: /android/gi,\n", "                Windows: /windows/gi,\n", "                MacOsX: /mac os x/gi\n", "            }\n", "        },\n", "        r = {\n", "            getItem: function(e) {\n", "            },\n", "            setItem: function(e, r) {\n", "            },\n", "            removeItem: function(e) {\n", "            },\n", "            isAvailable: !0\n", "        };\n", "    try {\n", "    } catch (e) {\n", "        r.isAvailable = !1\n", "    }\n", "    return {\n", "        localStorage: r,\n", "        getBrowser: function() {\n", "            return e.browser ? e.browser : function() {\n", "                var r;\n", "                return e.browser\n", "            }()\n", "        },\n", "        removeFromArray: function(e, r) {\n", "            var o = e.indexOf(r);\n", "            o >= 0 && e.splice(o, 1);\n", "            return e\n", "        }\n", "    };\n", "\n", "    function o() {\n", "        return e && e.detected ? e.detected : function() {\n", "            if (e && e.detected) return o();\n", "        }()\n", "    }\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    var e = {
+            detected: null,
+            regexp: {
+                Ios: /iphone|ipod|ipad/gi,
+                Android: /android/gi,
+                Windows: /windows/gi,
+                MacOsX: /mac os x/gi
+            }
+        },
+        r = {
+            getItem: function(e) {
+            },
+            setItem: function(e, r) {
+            },
+            removeItem: function(e) {
+            },
+            isAvailable: !0
+        };
+    try {
+    } catch (e) {
+        r.isAvailable = !1
+    }
+    return {
+        localStorage: r,
+        getBrowser: function() {
+            return e.browser ? e.browser : function() {
+                var r;
+                return e.browser
+            }()
+        },
+        removeFromArray: function(e, r) {
+            var o = e.indexOf(r);
+            o >= 0 && e.splice(o, 1);
+            return e
+        }
+    };
+
+    function o() {
+        return e && e.detected ? e.detected : function() {
+            if (e && e.detected) return o();
+        }()
+    }
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+            // memo
+            testFunc()
+        }
+    </script>
+</body>
+</html>
+    
