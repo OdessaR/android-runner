@@ -3,77 +3,128 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 
+
 #get csv paths of test folder
-csv_paths_test <- list.files(path="./data/test",
-           recursive=TRUE,
-           pattern="^Joule.*\\.csv",
-           full.names=TRUE)
+#csv_paths_test <- list.files(path="./data/test",
+#           recursive=TRUE,
+#           pattern="^Joule.*\\.csv",
+#           full.names=TRUE)
+
+aggr_memoized_file <- 'data/memoized/Aggregated_Results_Trepn.csv'
+aggr_nonmemoized_file <- 'data/nonmemoized/Aggregated_Results_Trepn.csv'
+
+m <- read_csv(aggr_memoized_file) %>%
+  mutate(experiment="memoized")
+n <- read_csv(aggr_nonmemoized_file) %>%
+  mutate(experiment="nonmemoized")
+
+new_column_names <- c("device", "subject", "browser", "bp_delta_uw", "bp_raw_uw", "cpu_load", "memory_usage_kb", "experiment" ) #bp = battery power
+colnames(m) <- new_column_names
+colnames(n) <- new_column_names
+
+combined_data <- bind_rows(m,n)
 
 #get data from csv files
-test_data <- csv_paths_test %>%
-  lapply(read_csv) %>%
-  bind_rows
+#test_data <- csv_paths_test %>%
+#  lapply(read_csv) %>%
+#  bind_rows
 
 #add new factor to data which are taken from the path (memoized an non_memoized)
-test_data['experiment'] <-csv_paths_test %>%
-  strsplit('/', fixed=TRUE) %>%
-  rapply(nth, n=4) %>%
-  factor()
-
-#battery_data <- ...
-#cpu_data <- ...
-#memory_data < ...
+#test_data['experiment'] <-csv_paths_test %>%
+#  strsplit('/', fixed=TRUE) %>%
+#  rapply(nth, n=4) %>%
+#  factor()
 
 #-Check assumptions
 #--Assumption 1: Are the two samples independents? Yes
+
 #--Assumption 2: Normal distribution in both groups?
-par(mfrow=c(2,2))
+par(mfrow=c(3,2))
 
 check_normality <- function(data) {
   plot(density(data))
   qqnorm(data)
   shapiro.test(data)
 }
-#Shapiro-Wilk normality test
-test_data %>%
+#Shapiro-Wilk normality test. The p-value should be greater than 0.05, then it is a normal distribution.
+combined_data %>%
   filter(experiment == 'memoized') %>%
-  select(Joule_calculated) %>%
+  select(bp_delta_uw) %>%
   unlist() %>%
-  check_normality #p-value should be greater than 0.05
+  check_normality 
 
-test_data %>%
+combined_data %>%
   filter(experiment == 'non_memoized') %>%
-  select(Joule_calculated) %>%
+  select(bp_delta_uw) %>%
   unlist() %>%
-  check_normality #p-value should be greater than 0.05
+  check_normality 
 
+combined_data %>%
+  filter(experiment == 'memoized') %>%
+  select(cpu_load) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'non_memoized') %>%
+  select(cpu_load) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'memoized') %>%
+  select(memory_usage_kb) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'non_memoized') %>%
+  select(memory_usage_kb) %>%
+  unlist() %>%
+  check_normality 
 
 #--Assumption 3: Homogeneity in variances?
-res.ftest <- var.test(Joule_calculated ~ experiment, data = test_data)
+res.ftest <- var.test(bp_delta_uw ~ experiment, data = combined_data)
 res.ftest #p-value should be greater than 0.05
 
+res.ftest <- var.test(cpu_load ~ experiment, data = combined_data)
+res.ftest #p-value should be greater than 0.05
 
-#-T-test is used to compare two means
-res.ttest <- t.test(Joule_calculated ~ experiment, data = test_data)
+res.ftest <- var.test(memory_usage_kb ~ experiment, data = combined_data)
+res.ftest #p-value should be greater than 0.05
+
+#-T-test is used to compare two means. var.equal is set to TRUE when the variance is equal.
+res.ttest <- t.test(bp_delta_uw ~ experiment, data = combined_data, var.equal=TRUE)
 res.ttest
 
-#effect size?
-require(effsize)
-cohen.d(Joule_calculated ~ experiment, data = test_data)
+res.ttest <- t.test(cpu_load ~ experiment, data = combined_data, var.equal=TRUE)
+res.ttest
 
-ggplot(test_data, aes(y=Joule_calculated, x=experiment, fill=experiment)) + 
-    #limits are possible
-    #ylim(50, 55) +
-    #add labels
-    xlab("Experiment") + ylab("Joule calculated") + 
-    #interesting looking shape represents the distribution
-    geom_violin(trim=FALSE, alpha=1, show.legend = FALSE) +
-    #add boxplots
-    geom_boxplot(show.legend = FALSE) +
-    #add points
-    stat_summary(fun=mean, color='black', geom ='point', show.legend = FALSE)
- 
-ggplot(test_data, aes(y=Joule_calculated, x=experiment, fill=experiment)) + 
+res.ttest <- t.test(memory_usage_kb ~ experiment, data = combined_data, var.equal=TRUE)
+res.ttest
+
+#effect size to see how big the effect is when the t.test resulting p-value is below 0.05
+require(effsize)
+cohen.d(bp_delta_uw ~ experiment, data = combined_data)
+cohen.d(cpu_load ~ experiment, data = combined_data)
+cohen.d(memory_usage_kb ~ experiment, data = combined_data)
+
+
+# VISUALIZATION
+# FOR BP_DELTA_UW - copy this for the other variables
+ggplot(combined_data, aes(y=bp_delta_uw, x=experiment, fill=experiment)) + 
+  #limits are possible
+  #ylim(50, 55) +
+  #add labels
+  xlab("Experiment") + ylab("Battery Power Delta in uW") + 
+  #interesting looking shape represents the distribution
+  geom_violin(trim=FALSE, alpha=1, show.legend = FALSE) +
+  #add boxplots
+  geom_boxplot(show.legend = FALSE) +
+  #add points
+  stat_summary(fun=mean, color='black', geom ='point', show.legend = FALSE)
+
+ggplot(combined_data, aes(y=bp_delta_uw, x=experiment, fill=experiment)) + 
   #points
   geom_jitter(width=.1, show.legend = FALSE) +
   #add boxplots
@@ -82,8 +133,9 @@ ggplot(test_data, aes(y=Joule_calculated, x=experiment, fill=experiment)) +
   stat_summary(fun=mean, color='black', geom ='point', show.legend = FALSE)
 
 #qqplot with beautiful line
-ggplot(test_data, aes(sample=Joule_calculated))+stat_qq(color="blue")+geom_qq_line(color="black")
+ggplot(combined_data, aes(sample=bp_delta_uw))+stat_qq(color="blue")+geom_qq_line(color="black")
 
 ##density plot
-ggplot(test_data, aes(x=Joule_calculated)) + 
+ggplot(combined_data, aes(x=bp_delta_uw)) + 
   geom_density()
+
