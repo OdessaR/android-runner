@@ -116,6 +116,7 @@ rcode/.Rproj.user
 .Rproj.user
 rcode/.RData
 rcode/.Rhistory
+rcode/data
 
 # ignore macOS
 .DS_Store
