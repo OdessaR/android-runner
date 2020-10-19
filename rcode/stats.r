@@ -22,7 +22,19 @@ new_column_names <- c("device", "subject", "browser", "bp_delta_uw", "bp_raw_uw"
 colnames(m) <- new_column_names
 colnames(n) <- new_column_names
 
-combined_data <- bind_rows(m,n)
+#Experimenting with data transformations
+combined_data <- bind_rows(m,n) %>%
+  mutate(bp_delta_uw_log = log(bp_delta_uw),
+         bp_delta_uw_sqrt = sqrt(bp_delta_uw),
+         bp_delta_uw_reciprocal = 1/bp_delta_uw,
+         cpu_load_log = log(cpu_load),
+         cpu_load_sqrt = sqrt(cpu_load),
+         cpu_load_reciprocal = 1/cpu_load,
+         memory_usage_kb_log = log(memory_usage_kb),
+         memory_usage_kb_sqrt = sqrt(memory_usage_kb),
+         memory_usage_kb_reciprocal = 1/memory_usage_kb,)
+
+combined_data
 
 #get data from csv files
 #test_data <- csv_paths_test %>%
@@ -51,11 +63,48 @@ combined_data %>%
   filter(experiment == 'memoized') %>%
   select(bp_delta_uw) %>%
   unlist() %>%
-  check_normality 
+  check_normality()
 
 combined_data %>%
   filter(experiment == 'nonmemoized') %>%
   select(bp_delta_uw) %>%
+  unlist() %>%
+  check_normality 
+
+#Experimenting with data transformations
+combined_data %>%
+  filter(experiment == 'memoized') %>%
+  select(bp_delta_uw_log) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'nonmemoized') %>%
+  select(bp_delta_uw_log) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'memoized') %>%
+  select(bp_delta_uw_sqrt) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'nonmemoized') %>%
+  select(bp_delta_uw_sqrt) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'memoized') %>%
+  select(bp_delta_uw_reciprocal) %>%
+  unlist() %>%
+  check_normality 
+
+combined_data %>%
+  filter(experiment == 'nonmemoized') %>%
+  select(bp_delta_uw_reciprocal) %>%
   unlist() %>%
   check_normality 
 
