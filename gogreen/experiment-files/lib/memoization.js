@@ -1,3 +1,10 @@
+/*
+ ********************
+ * Memoization
+ * 
+ * based on: https://scotch.io/tutorials/understanding-memoization-in-javascript
+ ********************
+ */
 function memoizer(fun){
     let cache = {}
     return function (n){
