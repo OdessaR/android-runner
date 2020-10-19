@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {'number': '6', 'folder': 'tests', 'anonymous': False, 'src': '../websites/hexun.com/hexunhm.js', 'fn_name': '    hexunHm();\n'} -->
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/hexun.com/hexunhm.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(hexunHm);
+        while (true) {
+            // memo
+                memoFunc();
+
+        }
+    </script>
+</body>
+</html>

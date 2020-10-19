@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/elsevierhealth.com/main1.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(isType);
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            var row = {type: "configurable"}
+            var row2 = {type: "configurable"}
+            var row3 = {type: "configurable"}
+            var row4 = {type: "configurable"}
+            var row5 = {type: "configurable"}
+            var row6 = {type: "configurable"}
+            var row7 = {type: "configurable"}
+            var row8 = {type: "configurable"}
+            var row9 = {type: "configurable"}
+            var row10 = {type: "configurable"}
+            var rowArray = [row, row2, row3, row4, row5, row6, row7, row8, row9, row10]
+            var arrayLength = rowArray.length;
+
+            for (var i = 0; i < arrayLength; i++) {
+                // memo    
+                memoFunc(rowArray[i]);
+            }
+
+        }
+    </script>
+</body>
+</html>

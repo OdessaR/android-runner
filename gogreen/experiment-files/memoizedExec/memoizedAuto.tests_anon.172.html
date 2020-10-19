@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "172", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "\n", "    let payloads = [];\n", "    let promises = [];\n", "\n", "\n", "    /**\n", "     * Resolve all promises and track\n", "     * @return {Promise}\n", "     */\n", "    const resolveAndTrack = () => Promise\n", "        .all(promises)\n", "        .then((newPayloads) => {\n", "            payloads = payloads.concat([].concat(...newPayloads));\n", "            payloads.forEach(monetatePush);\n", "            promises = [];\n", "            monetateTrack();\n", "        });\n", "\n", "    /**\n", "     * Check if the payload is an object\n", "     * @param {any} obj\n", "     * @return {boolean}\n", "     */\n", "    const isObject = (obj) => {\n", "        if (obj instanceof Array) return false; // array also considered object\n", "        return obj instanceof Object;\n", "    }\n", "\n", "    /**\n", "     * @param obj - methodName/methodData pairs, e.g. {setPageType: 'products', addProducts: ['a123']}\n", "     * @return {Array|void}\n", "     */\n", "    const toArray = (obj) => {\n", "        return Object\n", "            .keys(obj)\n", "            .map((methodName) => [methodName, obj[methodName]]);\n", "    }\n", "\n", "    return {\n", "\n", "        /**\n", "         * Add data to currentPayload for further sending to Monetate\n", "         * @param {Object|Promise} promise\n", "         * @return {Object} - self for daisy chaining\n", "         */\n", "        push: function(promise) {\n", "            promises.push(promise.then(toArray));\n", "        },\n", "\n", "        /**\n", "         * Send only current payload\n", "         * @return {Promise} for testing\n", "         */\n", "        track: function() {\n", "            payloads = [];\n", "            return resolveAndTrack();\n", "        },\n", "\n", "        /**\n", "         * Send current and previous payloads\n", "         * @return {Promise} for testing\n", "         */\n", "        retrack: function() {\n", "            return resolveAndTrack();\n", "        },\n", "\n", "    };\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+
+    let payloads = [];
+    let promises = [];
+
+
+    /**
+     * Resolve all promises and track
+     * @return {Promise}
+     */
+    const resolveAndTrack = () => Promise
+        .all(promises)
+        .then((newPayloads) => {
+            payloads = payloads.concat([].concat(...newPayloads));
+            payloads.forEach(monetatePush);
+            promises = [];
+            monetateTrack();
+        });
+
+    /**
+     * Check if the payload is an object
+     * @param {any} obj
+     * @return {boolean}
+     */
+    const isObject = (obj) => {
+        if (obj instanceof Array) return false; // array also considered object
+        return obj instanceof Object;
+    }
+
+    /**
+     * @param obj - methodName/methodData pairs, e.g. {setPageType: 'products', addProducts: ['a123']}
+     * @return {Array|void}
+     */
+    const toArray = (obj) => {
+        return Object
+            .keys(obj)
+            .map((methodName) => [methodName, obj[methodName]]);
+    }
+
+    return {
+
+        /**
+         * Add data to currentPayload for further sending to Monetate
+         * @param {Object|Promise} promise
+         * @return {Object} - self for daisy chaining
+         */
+        push: function(promise) {
+            promises.push(promise.then(toArray));
+        },
+
+        /**
+         * Send only current payload
+         * @return {Promise} for testing
+         */
+        track: function() {
+            payloads = [];
+            return resolveAndTrack();
+        },
+
+        /**
+         * Send current and previous payloads
+         * @return {Promise} for testing
+         */
+        retrack: function() {
+            return resolveAndTrack();
+        },
+
+    };
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

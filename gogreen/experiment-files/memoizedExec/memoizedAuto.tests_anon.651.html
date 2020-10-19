@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "651", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    return {\n", "        checkElement: function(e, n) {\n", "            var n = typeof n === \"undefined\" ? 0 : n;\n", "            var t = e.getBoundingClientRect().top;\n", "            var r = e.getBoundingClientRect().bottom;\n", "            var i = -n;\n", "            if (t >= i && t <= o || r >= i && r <= o) {\n", "                return true\n", "            } else {\n", "                return false\n", "            }\n", "        }\n", "    }\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    return {
+        checkElement: function(e, n) {
+            var n = typeof n === "undefined" ? 0 : n;
+            var t = e.getBoundingClientRect().top;
+            var r = e.getBoundingClientRect().bottom;
+            var i = -n;
+            if (t >= i && t <= o || r >= i && r <= o) {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

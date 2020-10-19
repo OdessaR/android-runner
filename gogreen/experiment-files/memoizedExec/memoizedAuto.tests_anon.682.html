@@ -1,0 +1,132 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "682", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    \"use strict\";\n", "    var e = \"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\";\n", "    var t = /(object-fit|object-position)\\s*:\\s*([^;$\"'\\s]+)/g;\n", "    var n = false;\n", "\n", "    function r(e) {\n", "        var i = getComputedStyle(e).fontFamily;\n", "        var n;\n", "        var r = {};\n", "        while ((n = t.exec(i)) !== null) {\n", "            r[n[1]] = n[2]\n", "        }\n", "        return r\n", "    }\n", "\n", "    function o(t, i) {\n", "        var n = r(t);\n", "        if (!n[\"object-fit\"] || n[\"object-fit\"] === \"fill\") {\n", "            return\n", "        }\n", "        i = i || t.currentSrc || t.src;\n", "        if (t.srcset) {\n", "            t.srcset = \"\"\n", "        }\n", "        if (!t[e]) {\n", "            t.src = e;\n", "            a(t)\n", "        }\n", "        t[e] = t[e] || {\n", "            s: i\n", "        };\n", "        t.style.backgroundImage = \"url(\" + i + \")\";\n", "        t.style.backgroundPosition = n[\"object-position\"] || \"center\";\n", "        t.style.backgroundRepeat = \"no-repeat\";\n", "        if (n[\"object-fit\"].indexOf(\"scale-down\") < 0) {\n", "            t.style.backgroundSize = n[\"object-fit\"].replace(\"none\", \"auto\")\n", "        } else {\n", "            if (!t[e].i) {\n", "                t[e].i.src = i\n", "            }(function o() {\n", "                if (t[e].i.naturalWidth) {\n", "                    if (t[e].i.naturalWidth > t.width || t[e].i.naturalHeight > t.height) {\n", "                        t.style.backgroundSize = \"contain\"\n", "                    } else {\n", "                        t.style.backgroundSize = \"auto\"\n", "                    }\n", "                    return\n", "                }\n", "                setTimeout(o, 100)\n", "            })()\n", "        }\n", "    }\n", "\n", "    function a(t) {\n", "        var i = {\n", "            get: function() {\n", "                return t[e].s\n", "            },\n", "            set: function(i) {\n", "                delete t[e].i;\n", "                return o(t, i)\n", "            }\n", "        };\n", "        Object.defineProperty(t, \"src\", i);\n", "        Object.defineProperty(t, \"currentSrc\", {\n", "            get: i.get\n", "        })\n", "    }\n", "\n", "    function c(e) {\n", "    }\n", "\n", "    function u(e) {\n", "        if (e.target.tagName === \"IMG\") {\n", "            o(e.target)\n", "        }\n", "    }\n", "\n", "    function f(e, t) {\n", "        if (i) {\n", "            return false\n", "        }\n", "        var r = !n && !e;\n", "        t = t || {};\n", "        e = e || \"img\";\n", "        if (typeof e === \"string\") {\n", "        } else if (!e.length) {\n", "            e = [e]\n", "        }\n", "        for (var a = 0; a < e.length; a++) {\n", "            o(e[a])\n", "        }\n", "        if (r) {\n", "            n = true;\n", "            e = \"img\"\n", "        }\n", "        if (t.watchMQ) {\n", "            c(e)\n", "        }\n", "    }\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    "use strict";
+    var e = "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+    var t = /(object-fit|object-position)\s*:\s*([^;$"'\s]+)/g;
+    var n = false;
+
+    function r(e) {
+        var i = getComputedStyle(e).fontFamily;
+        var n;
+        var r = {};
+        while ((n = t.exec(i)) !== null) {
+            r[n[1]] = n[2]
+        }
+        return r
+    }
+
+    function o(t, i) {
+        var n = r(t);
+        if (!n["object-fit"] || n["object-fit"] === "fill") {
+            return
+        }
+        i = i || t.currentSrc || t.src;
+        if (t.srcset) {
+            t.srcset = ""
+        }
+        if (!t[e]) {
+            t.src = e;
+            a(t)
+        }
+        t[e] = t[e] || {
+            s: i
+        };
+        t.style.backgroundImage = "url(" + i + ")";
+        t.style.backgroundPosition = n["object-position"] || "center";
+        t.style.backgroundRepeat = "no-repeat";
+        if (n["object-fit"].indexOf("scale-down") < 0) {
+            t.style.backgroundSize = n["object-fit"].replace("none", "auto")
+        } else {
+            if (!t[e].i) {
+                t[e].i.src = i
+            }(function o() {
+                if (t[e].i.naturalWidth) {
+                    if (t[e].i.naturalWidth > t.width || t[e].i.naturalHeight > t.height) {
+                        t.style.backgroundSize = "contain"
+                    } else {
+                        t.style.backgroundSize = "auto"
+                    }
+                    return
+                }
+                setTimeout(o, 100)
+            })()
+        }
+    }
+
+    function a(t) {
+        var i = {
+            get: function() {
+                return t[e].s
+            },
+            set: function(i) {
+                delete t[e].i;
+                return o(t, i)
+            }
+        };
+        Object.defineProperty(t, "src", i);
+        Object.defineProperty(t, "currentSrc", {
+            get: i.get
+        })
+    }
+
+    function c(e) {
+    }
+
+    function u(e) {
+        if (e.target.tagName === "IMG") {
+            o(e.target)
+        }
+    }
+
+    function f(e, t) {
+        if (i) {
+            return false
+        }
+        var r = !n && !e;
+        t = t || {};
+        e = e || "img";
+        if (typeof e === "string") {
+        } else if (!e.length) {
+            e = [e]
+        }
+        for (var a = 0; a < e.length; a++) {
+            o(e[a])
+        }
+        if (r) {
+            n = true;
+            e = "img"
+        }
+        if (t.watchMQ) {
+            c(e)
+        }
+    }
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

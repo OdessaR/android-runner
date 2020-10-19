@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {'number': '731', 'folder': 'tests', 'anonymous': False, 'src': '../websites/smithsonianmag.com/off-canvas-toggle.js', 'fn_name': '    OffCanvasToggle();\n'} -->
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/smithsonianmag.com/off-canvas-toggle.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(OffCanvasToggle);
+        while (true) {
+            // memo
+                memoFunc();
+
+        }
+    </script>
+</body>
+</html>

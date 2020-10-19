@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {'number': '433', 'folder': 'tests', 'anonymous': False, 'src': '../websites/kompasiana.com/1.js', 'fn_name': '    IzootoOptin();\n'} -->
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/kompasiana.com/1.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(IzootoOptin);
+        while (true) {
+            // memo
+                memoFunc();
+
+        }
+    </script>
+</body>
+</html>

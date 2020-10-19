@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <script>
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/theglobeandmail.com/chunk-user-customizations.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(d);
+        var f = ">>";
+        var u = {a:{info:console.log}};
+        function d(e) {
+            if (u.a.info("".concat(f, " Parse anonymous user data"), e), e.Features) {
+                var t = Object.values(e.Features),
+                    n = t.length;
+                return {
+                    sectionGroups: t.reduce((function(e, t) {
+                        return t.TimestampFeatures && Object.keys(t.TimestampFeatures).forEach((function(n) {
+                            var a = t.TimestampFeatures[n].ArticleSectionCount;
+                            a && Object.keys(a).length && e.push(a)
+                        })), e
+                    }), []),
+                    intervals: n
+                }
+            }
+        }
+
+        // console.log(d(1));
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            for (i = 0; i < 100; i++) {
+                // memo
+                memoFunc(i);
+            }
+
+        }
+    </script>
+</body>
+</html>

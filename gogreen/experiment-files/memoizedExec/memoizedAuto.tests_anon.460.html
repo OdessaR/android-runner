@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "460", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    var i = {\n", "        fbPixelId: \"319443022307966\",\n", "        domain: \".scmp.com\",\n", "        appId: 860,\n", "        in_eu: !0,\n", "        ping_activity: !0,\n", "        snowplow_src: \"//cdn.keywee.co/dist/sp-2.9.1.js\"\n", "    };\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    var i = {
+        fbPixelId: "319443022307966",
+        domain: ".scmp.com",
+        appId: 860,
+        in_eu: !0,
+        ping_activity: !0,
+        snowplow_src: "//cdn.keywee.co/dist/sp-2.9.1.js"
+    };
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

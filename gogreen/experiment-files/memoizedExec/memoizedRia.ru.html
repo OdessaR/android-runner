@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <script>
+        function define(crap, fn){
+        }
+        /**
+         *
+         * @desc This is just a helper to encode the custom params.
+         * @param {object} params
+         *
+         */
+        function encodeCustomParams(params) {
+            var encodedParams = '';
+
+            for (var key in params) {
+                if (params.hasOwnProperty(key)) {
+                    encodedParams = encodedParams + key + '%3D' + params[key] + '%26';
+                }
+            }
+
+            return encodedParams.substring(0, encodedParams.length - 3);
+        }
+    </script>
+    <script>
+        var d = {document:document};
+        /**
+         * @param c src
+         * @param a function on load, maybe false
+         * @param false if async
+         */
+        var c = function(c, a, e) {
+            var f, g = d.document.getElementsByTagName("script")[0],
+                b = d.document.createElement("script");
+            b.src = c;
+            b.async = !e;
+            g.parentNode.insertBefore(b, g);
+            a && "function" === typeof a && (b.onload = a);
+            return b
+        };
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/ria.ru/loadjs.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(c);
+
+        var set = [
+        ["#q=e"],
+        ["#a=w&r=g"],
+        ["#u=i&y=a&v=b"],
+        ["#u=i&m=n&2=3&m=i"],
+        ["#m=n&n=m&u=t&u=i&m=n&2=3&m=i"],
+        ["#m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i",],
+        ["#m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i",],
+        ["#m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i",],
+        ["#m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i",],
+        ["#m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i&m=n&n=m&u=t&u=i&m=n&2=3&m=i",],
+        ];
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            for (i = 0; i < set.length; i++) {
+                // memo
+                memoFunc(set[i], false, true);
+            }
+
+        }
+    </script>
+</body>
+</html>

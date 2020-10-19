@@ -1,0 +1,28 @@
+<experiment>
+  <configHash>86c6868c69e516fe33deaf46aafb31bc</configHash>
+  <outputDir>/home/pjotr/projects/GreenLab/examples/performance/output/2020.09.02_163200/</outputDir>
+  <runsToRun>
+    <run runId="3">
+      <device>oneplus</device>
+      <path>com.android.chrome</path>
+      <runCount>2</runCount>
+    </run>
+  </runsToRun>
+  <runsDone>
+    <run runId="0">
+      <device>oneplus</device>
+      <path>com.google.android.calendar</path>
+      <runCount>1</runCount>
+    </run>
+    <run runId="1">
+      <device>oneplus</device>
+      <path>com.google.android.calendar</path>
+      <runCount>2</runCount>
+    </run>
+    <run runId="2">
+      <device>oneplus</device>
+      <path>com.android.chrome</path>
+      <runCount>1</runCount>
+    </run>
+  </runsDone>
+</experiment>
