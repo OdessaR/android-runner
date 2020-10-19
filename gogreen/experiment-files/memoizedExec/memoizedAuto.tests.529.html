@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {'number': '529', 'folder': 'tests', 'anonymous': False, 'src': '../websites/elsevierhealth.com/confirm.js', 'fn_name': '    confirm();\n'} -->
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/elsevierhealth.com/confirm.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(confirm);
+        while (true) {
+            // memo
+                memoFunc();
+
+        }
+    </script>
+</body>
+</html>

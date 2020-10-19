@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/pcworld.com/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(rotateleft);
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            for (i = 0; i < 10; i++) {
+                // memo
+                memoFunc(i, i+1);
+            }
+
+        }
+    </script>
+</body>
+</html>

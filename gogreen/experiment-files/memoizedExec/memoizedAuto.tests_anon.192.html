@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "192", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "        var e = {},\n", "            t = {\n", "                exports: e\n", "            };\n", "        (function() {\n", "            if (!(e && e.length)) return;\n", "            var t = e[0];\n", "            r.src = \"https://assets.alicdn.com/g/big-brother/sentry/2.x/index.js\";\n", "            r.crossOrigin = \"anonymous\";\n", "            r.addEventListener(\"load\", function() {\n", "                if (e) {\n", "                    e.performance.autoReport();\n", "                    e.api.autoReport()\n", "                }\n", "            });\n", "            t.appendChild(r)\n", "        })();\n", "        return t.exports\n", "    }\n"]} -->
+    <script>
+        var testFunc = function() {
+        var e = {},
+            t = {
+                exports: e
+            };
+        (function() {
+            if (!(e && e.length)) return;
+            var t = e[0];
+            r.src = "https://assets.alicdn.com/g/big-brother/sentry/2.x/index.js";
+            r.crossOrigin = "anonymous";
+            r.addEventListener("load", function() {
+                if (e) {
+                    e.performance.autoReport();
+                    e.api.autoReport()
+                }
+            });
+            t.appendChild(r)
+        })();
+        return t.exports
+    }
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

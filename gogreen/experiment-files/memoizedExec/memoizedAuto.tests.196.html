@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {'number': '196', 'folder': 'tests', 'anonymous': False, 'src': '../websites/over-blog.com/mediametrie.js', 'fn_name': '    _eStat_Whap_loaded_func();\n'} -->
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/over-blog.com/mediametrie.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(_eStat_Whap_loaded_func);
+        while (true) {
+            // memo
+                memoFunc();
+
+        }
+    </script>
+</body>
+</html>

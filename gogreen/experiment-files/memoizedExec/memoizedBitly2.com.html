@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly2.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(getShortLink);
+
+        var set = [
+        "1/=2",
+        "1/=2&a=b",
+        "1=2&a=b&c=3",
+        "1/=2&a=b&c=3&q=z",
+        "1/=1#1=2&a=b&c=3&q=z",
+        "/",
+        "1/=1&1=2",
+        "1=/1&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2&1=2",
+        "-",
+        "",
+        ".",
+        "f097a/sf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%f097asf89safd6sa78f436f7834yg7w9h785gt!!@@!3%$%g",
+        ];
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            var i;
+            for (i = 0; i < set.length; i++) {
+                // memo
+                memoFunc(set[i]);
+            }
+
+        }
+    </script>
+</body>
+</html>

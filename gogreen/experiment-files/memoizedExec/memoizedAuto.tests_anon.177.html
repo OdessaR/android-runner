@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "177", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    setTimeout(function() {\n", "        $(\"#sindonewsiframe\").append('<iframe src=\"https://index.sindonews.com/widget\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden;\"  width=\"100%\" height=\"400\"  allowTransparency=\"true\" noresize frameborder=\"0\"></iframe>');\n", "        $(\"#inewsiframe\").append('<iframe src=\"https://sindikasi.okezone.com/widget/inews\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden;\"  width=\"100%\" height=\"400\"  allowTransparency=\"true\" noresize frameborder=\"0\"></iframe>');\n", "        $(\"#mnctrijayaiframe\").append('<iframe src=\"https://sindikasi.okezone.com/widget/mnctrijaya\"scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden;\"  width=\"100%\" height=\"400\"  allowTransparency=\"true\" noresize frameborder=\"0\"></iframe>');\n", "        $(\"#mncnowiframe\").append('<iframe src=\"https://okezone.visionplus.id/widget-dark.html\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden;\"  width=\"100%\" height=\"625\"  allowTransparency=\"true\" noresize frameborder=\"0\"></iframe>');\n", "        $(\"#rctiplusiframe\").append('<iframe src=\"https://embed.rctiplus.com/newswidget/okezone\"scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden;\"  width=\"100%\" height=\"400\"  allowTransparency=\"true\" noresize frameborder=\"0\"></iframe>');\n", "        $(\"#sindonewsiframe\").addClass(\" widget-mobile other-widget \");\n", "        $(\"#inewsiframe\").addClass(\" widget-mobile other-widget \");\n", "        $(\"#mncnowiframe\").addClass(\" widget-mobile other-widget \");\n", "        $(\"#rctiplusiframe\").addClass(\" widget-mobile other-widget \");\n", "        $(\"#mnctrijayaiframe\").addClass(\" widget-mobile other-widget \");\n", "    }, 1000);\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    setTimeout(function() {
+        $("#sindonewsiframe").append('<iframe src="https://index.sindonews.com/widget" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#inewsiframe").append('<iframe src="https://sindikasi.okezone.com/widget/inews" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#mnctrijayaiframe").append('<iframe src="https://sindikasi.okezone.com/widget/mnctrijaya"scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#mncnowiframe").append('<iframe src="https://okezone.visionplus.id/widget-dark.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="625"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#rctiplusiframe").append('<iframe src="https://embed.rctiplus.com/newswidget/okezone"scrolling="no" frameborder="0" style="border:none; overflow:hidden;"  width="100%" height="400"  allowTransparency="true" noresize frameborder="0"></iframe>');
+        $("#sindonewsiframe").addClass(" widget-mobile other-widget ");
+        $("#inewsiframe").addClass(" widget-mobile other-widget ");
+        $("#mncnowiframe").addClass(" widget-mobile other-widget ");
+        $("#rctiplusiframe").addClass(" widget-mobile other-widget ");
+        $("#mnctrijayaiframe").addClass(" widget-mobile other-widget ");
+    }, 1000);
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

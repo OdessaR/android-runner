@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "336", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    var i = !0,\n", "        n = {\n", "            fbPixelId: \"905617079525218\",\n", "            domain: \".nypost.com\",\n", "            appId: 127,\n", "            ping_activity: !0,\n", "            snowplow_src: \"//cdn.keywee.co/dist/sp-2.9.1.js\",\n", "            bt: !1,\n", "            in_eu: !0,\n", "            eid: !1\n", "        };\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    var i = !0,
+        n = {
+            fbPixelId: "905617079525218",
+            domain: ".nypost.com",
+            appId: 127,
+            ping_activity: !0,
+            snowplow_src: "//cdn.keywee.co/dist/sp-2.9.1.js",
+            bt: !1,
+            in_eu: !0,
+            eid: !1
+        };
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

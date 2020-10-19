@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "598", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    var etLogoRightNow = new Date();\n", "\n", "    //\u4e2d\u79cb\u7bc0\n", "    var etLogoStartTime1 = new Date(2020, 9 - 1, 28, 0, 0, 0); // \u7d50\u675f\u6642\u9593 (\u5e74,\u6708(0-11),\u65e5,\u6642,\u5206,\u79d2)\n", "    var etLogoEndTime1 = new Date(2020, 10 - 1, 4, 23, 59, 59); // \u7d50\u675f\u6642\u9593 (\u5e74,\u6708(0-11),\u65e5,\u6642,\u5206,\u79d2)\n", "    // var etLogoSrc1 = \"./images/logo/moon_2020.gif\"; //\u5716\u6a94\u8def\u5f91\n", "    var etLogoSrc1 = \"https://static.ettoday.net/style/ettoday2017/images/logo/moon_2020.gif\";\n", "\n", "    if (etLogoRightNow > etLogoStartTime1 && etLogoRightNow < etLogoEndTime1) {\n", "    } else {\n", "        //\u4e0b\u6a94\u671f\u9593-\u9810\u8a2dLogo\n", "    }\n", "\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    var etLogoRightNow = new Date();
+
+    //中秋節
+    var etLogoStartTime1 = new Date(2020, 9 - 1, 28, 0, 0, 0); // 結束時間 (年,月(0-11),日,時,分,秒)
+    var etLogoEndTime1 = new Date(2020, 10 - 1, 4, 23, 59, 59); // 結束時間 (年,月(0-11),日,時,分,秒)
+    // var etLogoSrc1 = "./images/logo/moon_2020.gif"; //圖檔路徑
+    var etLogoSrc1 = "https://static.ettoday.net/style/ettoday2017/images/logo/moon_2020.gif";
+
+    if (etLogoRightNow > etLogoStartTime1 && etLogoRightNow < etLogoEndTime1) {
+    } else {
+        //下檔期間-預設Logo
+    }
+
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    
