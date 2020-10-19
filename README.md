@@ -1,5 +1,5 @@
 # GoGreen Experiment Replication Package
-This repository indends to be the Replication Package for the Green-Lab experiment with the title _What is the impact of memoization on the energy efficiency of mobile web apps?_ which was contucted at the Vrije Universiteit Amsterdam 2020. The actual report is available [here](https://github.com/OdessaR/android-runner/blob/master/documentation/GoGreen_Report.pdf).
+This repository intends to be the Replication Package for the Green-Lab experiment with the title _What is the impact of memoization on the energy efficiency of mobile web apps?_ which was contucted at the Vrije Universiteit Amsterdam 2020. The actual report is available [here](https://github.com/OdessaR/android-runner/blob/master/documentation/GoGreen_Report.pdf).
 
 
 ## Structure
@@ -40,7 +40,7 @@ This Replication Package contains all necessary files and data to reproduce the 
 ```
 
 ## Experiment Architecture
-The experiment itself is structured into three different major parts
+The experiment itself is structured into three different major parts:
 
 ### Data Mining
 Since the experiment is based on real-world JavaScript functions, the [Tranco List](https://tranco-list.eu/) is used as groundwork. Based on this, several steps are computed to extract only pure JavaScript functions. The result of this process are several JavaScript files which contain only pure JavaScript functions.
@@ -62,6 +62,11 @@ The results are analyzed by using R for the statistical tests. The data are exam
 ## Source Code
 
 ### Data Mining
+
+- [[Selenium](https://github.com/OdessaR/android-runner/tree/master/selenium)] To extract pure JavaScript functions from real-world applications, Selenium and Node.js is used to store all websites from the Tranco List locally, remove non-pure JavaScript functions, and format the functions in a readable manner.
+- [[Websites](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/websites)] The actual selection process for the final 100 pure JavaScript functions was two-fold:
+    - 50 pure JavaScript functions were selected with zero parameters. This selection process was done in an automatic process. (see [Generator](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/normalExec/generator))
+    - 50 pure JavaScript functions were selected with 1 or more parameters. This selection process was done in a manual process. This means, that 50 functions with parameters were extracted by the authors best knowledge in a random Trial & Error process.
 
 ### Experiment Execution
 
