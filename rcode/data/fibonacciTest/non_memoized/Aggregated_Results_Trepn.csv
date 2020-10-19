@@ -1,4 +1,0 @@
-device,subject,browser,Battery Power [uW] (Delta),Battery Power [uW] (Raw),CPU Load (Normalized) [%],Memory Usage [KB]
-nexusLab,file-storage-emulated-0-gogreen-experiment-files-normalexec-normalfib1-html,chrome,723134.1449367088,2406491.455696203,71.67274525316456,1622429.906610849
-nexusLab,file-storage-emulated-0-gogreen-experiment-files-normalexec-normalfib2-html,chrome,300519.34011864377,2787730.130150983,79.6147005138583,1604333.7645179853
-nexusLab,file-storage-emulated-0-gogreen-experiment-files-normalexec-normalfib3-html,chrome,149572.0148262061,2528020.361388774,76.64464423020051,1606609.9518739774
