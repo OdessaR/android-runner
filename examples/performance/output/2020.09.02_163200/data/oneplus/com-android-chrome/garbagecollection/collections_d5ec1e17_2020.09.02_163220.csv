@@ -1,0 +1,6 @@
+09-02 16:32:16.947  2655  2675 I gle.android.gm: Background concurrent copying GC freed 283470(9MB) AllocSpace objects, 19(960KB) LOS objects, 48% free, 25MB/49MB, paused 195us total 157.198ms
+09-02 16:32:17.248 19454 20572 I .android.chrom: Explicit concurrent copying GC freed 6015(310KB) AllocSpace objects, 0(0B) LOS objects, 50% free, 4MB/8MB, paused 32us total 20.008ms
+09-02 16:32:17.518 19454 20572 I .android.chrom: Explicit concurrent copying GC freed 28821(1361KB) AllocSpace objects, 3(124KB) LOS objects, 49% free, 3MB/7MB, paused 35us total 37.844ms
+09-02 16:32:17.778  1218  1242 I system_server: Background concurrent copying GC freed 499962(21MB) AllocSpace objects, 92(2MB) LOS objects, 37% free, 39MB/63MB, paused 246us total 115.289ms
+09-02 16:32:17.791  1843  1859 I ndroid.systemu: Background concurrent copying GC freed 736827(23MB) AllocSpace objects, 5(716KB) LOS objects, 34% free, 45MB/69MB, paused 118us total 203.353ms
+09-02 16:32:17.792 19454 20572 I .android.chrom: Explicit concurrent copying GC freed 10517(457KB) AllocSpace objects, 1(20KB) LOS objects, 50% free, 3MB/7MB, paused 61us total 24.365ms

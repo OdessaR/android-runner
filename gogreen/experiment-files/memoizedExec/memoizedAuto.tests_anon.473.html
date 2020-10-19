@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {"number": "473", "folder": "tests_anon", "fn_name": "testFunc", "anonymous": true, "def_lines": ["var testFunc = function() {\n", "    'use strict';\n", "\n", "    function ajaxResponsePatch(jQuery) {\n", "        jQuery.ajaxPrefilter(function(s) {\n", "            if (s.crossDomain) {\n", "            }\n", "        });\n", "    }\n", "    return function($) {\n", "        var majorVersion = $.fn.jquery.split('.')[0];\n", "        if (majorVersion >= 3) {\n", "        }\n", "        ajaxResponsePatch($);\n", "        return $;\n", "    };\n", "}\n"]} -->
+    <script>
+        var testFunc = function() {
+    'use strict';
+
+    function ajaxResponsePatch(jQuery) {
+        jQuery.ajaxPrefilter(function(s) {
+            if (s.crossDomain) {
+            }
+        });
+    }
+    return function($) {
+        var majorVersion = $.fn.jquery.split('.')[0];
+        if (majorVersion >= 3) {
+        }
+        ajaxResponsePatch($);
+        return $;
+    };
+}
+
+    </script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/bitly.com/unauth.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(testFunc);
+
+        while (true) {
+            // memo
+            memoFunc()
+        }
+    </script>
+</body>
+</html>
+    

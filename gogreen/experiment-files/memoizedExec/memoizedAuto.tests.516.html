@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- METADATA (JSON): {'number': '516', 'folder': 'tests', 'anonymous': False, 'src': '../websites/it168.com/h1278_002.js', 'fn_name': '    BLA();\n'} -->
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/it168.com/h1278_002.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(BLA);
+        while (true) {
+            // memo
+                memoFunc();
+
+        }
+    </script>
+</body>
+</html>

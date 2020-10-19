@@ -3,6 +3,7 @@ import os
 
 
 for path in glob(os.path.sep.join(["experiment-files", "normalExec", "*"])):
+    if os.path.isdir(path): continue
     with open(path, "r") as f:
         print(path + " -> ", end="", flush=True)
         lines = []
