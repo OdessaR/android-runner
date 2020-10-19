@@ -54,7 +54,7 @@ combined_data %>%
   check_normality 
 
 combined_data %>%
-  filter(experiment == 'non_memoized') %>%
+  filter(experiment == 'nonmemoized') %>%
   select(bp_delta_uw) %>%
   unlist() %>%
   check_normality 
@@ -66,7 +66,7 @@ combined_data %>%
   check_normality 
 
 combined_data %>%
-  filter(experiment == 'non_memoized') %>%
+  filter(experiment == 'nonmemoized') %>%
   select(cpu_load) %>%
   unlist() %>%
   check_normality 
@@ -78,7 +78,7 @@ combined_data %>%
   check_normality 
 
 combined_data %>%
-  filter(experiment == 'non_memoized') %>%
+  filter(experiment == 'nonmemoized') %>%
   select(memory_usage_kb) %>%
   unlist() %>%
   check_normality 
