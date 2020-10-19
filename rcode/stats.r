@@ -2,6 +2,7 @@ library(magrittr) #to use %>% notation
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
+library(car)
 
 
 #get csv paths of test folder
@@ -56,6 +57,7 @@ par(mfrow=c(3,2))
 check_normality <- function(data) {
   plot(density(data))
   qqnorm(data)
+  hist(data)
   shapiro.test(data)
 }
 #Shapiro-Wilk normality test. The p-value should be greater than 0.05, then it is a normal distribution.
@@ -132,6 +134,14 @@ combined_data %>%
   unlist() %>%
   check_normality 
 
+# mann whitney tests
+wilcox.test(n$bp_delta_uw, m$bp_delta_uw)
+wilcox.test(n$memory_usage_kb, m$memory_usage_kb)
+wilcox.test(n$cpu_load, m$cpu_load)
+
+# different syntax same result
+wilcox.test(combined_data$cpu_load~combined_data$experiment, data = combined_data, exact = FALSE)
+
 #--Assumption 3: Homogeneity in variances?
 res.ftest <- var.test(bp_delta_uw ~ experiment, data = combined_data)
 res.ftest #p-value should be greater than 0.05
@@ -173,7 +183,26 @@ ggplot(combined_data, aes(y=bp_delta_uw, x=experiment, fill=experiment)) +
   #add points
   stat_summary(fun=mean, color='black', geom ='point', show.legend = FALSE)
 
+#battery
 ggplot(combined_data, aes(y=bp_delta_uw, x=experiment, fill=experiment)) + 
+  #points
+  geom_jitter(width=.1, show.legend = FALSE) +
+  #add boxplots
+  geom_boxplot(show.legend = FALSE) +
+  #add points
+  stat_summary(fun=mean, color='black', geom ='point', show.legend = FALSE)
+
+#cpu_load
+ggplot(combined_data, aes(y=cpu_load, x=experiment, fill=experiment)) + 
+  #points
+  geom_jitter(width=.1, show.legend = FALSE) +
+  #add boxplots
+  geom_boxplot(show.legend = FALSE) +
+  #add points
+  stat_summary(fun=mean, color='black', geom ='point', show.legend = FALSE)
+
+#memory_usage_kb
+ggplot(combined_data, aes(y=memory_usage_kb, x=experiment, fill=experiment)) + 
   #points
   geom_jitter(width=.1, show.legend = FALSE) +
   #add boxplots
