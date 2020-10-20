@@ -15,8 +15,10 @@ aggr_memoized_file <- 'data/memoized/Aggregated_Results_Trepn.csv'
 aggr_nonmemoized_file <- 'data/nonmemoized/Aggregated_Results_Trepn.csv'
 
 m <- read_csv(aggr_memoized_file) %>%
+  #filter(!grepl('test', subject)) %>%
   mutate(experiment="memoized")
 n <- read_csv(aggr_nonmemoized_file) %>%
+  #filter(!grepl('test', subject)) %>%
   mutate(experiment="nonmemoized")
 
 new_column_names <- c("device", "subject", "browser", "bp_delta_uw", "bp_raw_uw", "cpu_load", "memory_usage_kb", "experiment" ) #bp = battery power
