@@ -174,7 +174,32 @@ The output of the data analysis are the actual statistical results and visualiza
 
 ## Figures
 
-__TODO!__
+__TODO! @Wouter @Sven put figures into folder './documentation/report_figures/'__
+
+[[Figures](https://github.com/OdessaR/android-runner/tree/master/documentation/report_figures)] Figures from the statsitical analysis and the actual results.
 
 
 ## Steps to Reproduce
+### Data Mining (Selenium)
+
+```
+npm -g install js-beautify npm -g install purecheck
+
+pip install -r requirements.txt
+
+python3.6 selenium/main.py
+```
+
+### Experiment Execution (AndroidRunner)
+
+```
+python3.6 android-runner android-runner/gogreenExperiment/trepn/config_web_gogreen_normal.json
+
+python3.6 android-runner android-runner/gogreenExperiment/trepn/config_web_gogreen_memoized.json
+```
+
+### Data Analysis (RStudio)
+
+```
+open and execute ./rcode/stats.r in RStudio
+```
