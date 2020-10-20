@@ -60,23 +60,121 @@ The results are analyzed by using R for the statistical tests. The data are exam
 
 
 ## Source Code
+The relevant source code is explained and structure according to the experiment architecture.
 
 ### Data Mining
-
-- [[Selenium](https://github.com/OdessaR/android-runner/tree/master/selenium)] To extract pure JavaScript functions from real-world applications, Selenium and Node.js is used to store all websites from the Tranco List locally, remove non-pure JavaScript functions, and format the functions in a readable manner.
+- [[Selenium](https://github.com/OdessaR/android-runner/tree/master/selenium)] To extract pure JavaScript functions from real-world applications, Selenium and Node.js is used to store all websites from the Tranco List locally, remove non-pure JavaScript functions, and format the functions in a readable manner. The result of this process can be found in this [ZIP file](https://github.com/OdessaR/android-runner/blob/master/gogreen/experiment-files/websites/pure.zip).
 - [[Websites](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/websites)] The actual selection process for the final 100 pure JavaScript functions was two-fold:
-    - 50 pure JavaScript functions were selected with zero parameters. This selection process was done in an automatic process. (see [Generator](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/normalExec/generator))
-    - 50 pure JavaScript functions were selected with 1 or more parameters. This selection process was done in a manual process. This means, that 50 functions with parameters were extracted by the authors best knowledge in a random Trial & Error process.
+    - 50 pure JavaScript functions were selected with zero parameters. This selection process was done in an automatic process. (see [Generator](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/normalExec/generator)) The actual selected JavaScript functions are not part of this repository, since the functions were selected in an automatic process.
+    - 50 pure JavaScript functions were selected with 1 or more parameters. This selection process was done in a manual process. This means, that 50 functions with parameters were extracted by the authors best knowledge in a random Trial & Error process. The actual selected JavaScript functions can be found [here](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/websites)
 
 ### Experiment Execution
+- [[Android Runner - Trepn](https://github.com/OdessaR/android-runner/tree/master/gogreenExperiment/trepn)] The experiment configuration are split in two configurations.
+    - [[Non-Memoized Config](https://github.com/OdessaR/android-runner/blob/master/gogreenExperiment/trepn/config_web_gogreen_normal.json)] JSON configuration file which contains all pure JavaScript functions __without__ memoization.
+    - [[Memoized Config](https://github.com/OdessaR/android-runner/blob/master/gogreenExperiment/trepn/config_web_gogreen_memoized.json)] JSON configuration file which contains all pure JavaScript functions __with__ memoization.
 
 ### Data Analysis
+- [[R-Script](https://github.com/OdessaR/android-runner/blob/master/rcode/stats.r)] The data analysis is based on one single R-Script which executes the data transformations, normality tests, hypothesis tests, and perfoms different vizualizations.
 
 
 ## Data
+The relevant data is explained and structure according to the experiment architecture.
 
+### Data Mining
+#### Input
+- [[Tranco List](https://tranco-list.eu/)] The official (standard) Tranco list serves as initial input for the data mining process. The list represents 1 million real world domains.
+
+#### Output
+- [[Websites](https://github.com/OdessaR/android-runner/blob/master/gogreen/experiment-files/websites/pure.zip)] After applying the mining process (see Selenium step), the results are JavaScript files, structured according to their domain (Tranco list). The actual website resoursces (html, CSS, media content) were removed as well as non-pure JavaScript functions.
+- [[Pure JavaScript Functions](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/websites)] After the selection process (automatic and manuel - see Source Code Data Mining), 50 pure JavaScript functions __without__ paramesters and 50 pure JavaScript functions __with__ 1 to N parameters are available.
+
+### Experiment Execution
+#### Input
+- [[non-memoized HTML/JS](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/normalExec)] non-memoized HTML files which uses the pure JavaScript functions for the actual experiment execution.
+- [[memoized HTML/JS](https://github.com/OdessaR/android-runner/tree/master/gogreen/experiment-files/memoizedExec)] memoized HTML files which uses the pure JavaScript functions for the actual experiment execution in their memoized version.
+
+All HTML files follow the same structure:
+
+__non-memoized:__
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/myWebsite/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            for (x = 0; x < 40; x++) {
+                // memo
+                myJSfunction(x)
+            }
+
+        }
+    </script>
+</body>
+</html>
+```
+
+__memoized:__
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- memoization lib -->
+    <script src="../lib/memoization.js"></script>
+    <!-- ==> CONF: WEBSITE -->
+    <script src="../websites/myWebsite/main.js"></script>
+
+    <!-- exectution -->
+    <script type="text/javascript">
+
+        /* ==> CONF: MEMOIZE FUNCTION */
+        const memoFunc = memoizer(myJSfunction);
+
+        while (true) {
+
+            /* ==> CONF: FUNCTION EXECUTION WITH PARAMS */
+            for (x = 0; x < 40; x++) {
+                // memo
+                memoFunc(x)
+            }
+
+        }
+    </script>
+</body>
+</html>
+```
+
+#### Output
+- [[Experiment Results](https://github.com/OdessaR/android-runner/blob/master/rcode/data/data_memoized_non-memoized.zip)] Raw measured values from Trepn and aggregated values by AndroidRunner. Contains the results from both runs, non-memoized and memoized.
+
+### Data Analysis
+#### Input
+- [[Experiment Results](https://github.com/OdessaR/android-runner/blob/master/rcode/data/data_memoized_non-memoized.zip)] Raw measured values from Trepn and aggregated values by AndroidRunner. Contains the results from both runs, non-memoized and memoized.
+
+#### Output
+The output of the data analysis are the actual statistical results and visualizations. See 'Figures' and the actual [report](https://github.com/OdessaR/android-runner/blob/master/documentation/GoGreen_Report.pdf).
 
 ## Figures
+
+__TODO!__
 
 
 ## Steps to Reproduce
