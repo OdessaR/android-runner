@@ -174,8 +174,6 @@ The output of the data analysis is the actual statistical result and the visuali
 
 ## Figures
 
-__TODO! @Wouter @Sven put figures into folder './documentation/report_figures/'__
-
 [[Figures](https://github.com/OdessaR/android-runner/tree/master/documentation/report_figures)] Figures from the statistical analysis and the actual results.
 
 
