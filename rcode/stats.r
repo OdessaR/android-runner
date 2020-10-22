@@ -4,7 +4,32 @@ library(dplyr)
 library(ggplot2)
 library(car)
 
+### Data Exploration
+par(mfrow=c(1,2))
 
+# Overall
+function_stats_file <- 'data/function_stats_overall.csv'
+function_stats <- read_csv(function_stats_file)
+
+barplot(table(cut(function_stats$params,
+                  c(-1:4,Inf),
+                  labels = c('0', '1', '2', '3', '4', '5-11'))),
+                  main = "overall",
+                  xlab = "# of Parameters",
+                  ylab = "# of Functions")
+
+# Selected
+function_stats_file <- 'data/function_stats_selected.csv'
+function_stats <- read_csv(function_stats_file)
+
+barplot(table(function_stats$params),
+        main = "selected",
+        xlab = "# of Parameters",
+        ylab = "# of Functions")
+
+
+
+### Data Analyzis
 #get csv paths of test folder
 #csv_paths_test <- list.files(path="./data/test",
 #           recursive=TRUE,
